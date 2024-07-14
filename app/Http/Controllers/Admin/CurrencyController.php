@@ -25,7 +25,7 @@ class CurrencyController extends Controller
                     return $data->currency . ' ' . $comment;
                 })
                 ->addColumn('action', function ($data) {
-                    if ($data->currency == 'USD') {
+                    if ($data->currency == 'BDT') {
                         return '<span class="status active">Main Currency</span>';
                     } else {
                         $btn = '<div class="action__buttons">';

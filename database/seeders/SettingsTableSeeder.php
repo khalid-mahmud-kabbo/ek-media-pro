@@ -21,7 +21,7 @@ class SettingsTableSeeder extends Seeder
         Setting::create(['slug' => 'title', 'value' => 'Zairito - Ecommerce',]);
         Setting::create(['slug' => 'main_logo', 'value' => 'logo.png',]);
         Setting::create(['slug' => 'footer_logo', 'value' => 'footer-logo.png',]);
-        Setting::create(['slug' => 'footer_title', 'value' => 'Designed & Developed By Zainiktheme',]);
+        Setting::create(['slug' => 'footer_title', 'value' => 'Developed By EK Softwares',]);
         Setting::create(['slug' => 'favicon', 'value' => 'favicon.png',]);
         Setting::create(['slug' => 'version', 'value' => 1.0,]);
         Setting::create(['slug' => 'meta_author', 'value' => 'zainiktheme',]);
