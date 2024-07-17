@@ -848,3 +848,16 @@
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
+
+
+.header-area .header-middle .header-middle-wrap .search-area .search-wrap .form-group::before {
+    display: none !important;
+}
+
+.for-desktop{
+    position: sticky;
+    background-color: #00A663;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
