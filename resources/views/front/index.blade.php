@@ -4,11 +4,8 @@
 @section('keywords', isset($keywords) ? $keywords : '')
 
 @section('content')
-    @if ((session('theme') && session('theme') == 'theme2') || $allsettings['theme'] == 'two')
-        @include('front.home.themetwo')
-    @else
-        @include('front.home.themeone')
-    @endif
+   
+        @include('front.home.home')
 @endsection
 
 @section('subscribe_pop_up_modal')

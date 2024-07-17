@@ -13,7 +13,7 @@
     </div>
     <!-- Preloader Area End -->
 
-    @include('front.layouts.include.desktop_header')
+    @include('front.layouts.include.header')
 
     @include('front.layouts.include.mobile_header')
 
@@ -29,7 +29,7 @@
     <div id="currency-symbol-url" data-url="{{ route('currency_symbol') }}"></div>
     <div id="productImgAsset" data-url="{{ asset(ProductImage()) }}"></div>
 
-    @include('front.layouts.include.footer')
+    @include('front.layouts.include.mainfooter')
 
     @yield('subscribe_pop_up_modal')
 

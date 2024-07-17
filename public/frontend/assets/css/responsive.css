@@ -40,6 +40,10 @@
     padding: 7px;
     margin-top: 10px;
 }
+
+.for-desktop{
+    display: none !important;
+}
 /* Checkout Page New Login Box End */
 
 }
@@ -70,6 +74,10 @@
         height: 100px;
     }
     /* Home 2 version product */
+
+    .for-desktop{
+        display: none !important;
+    }
 }
 
 @media (max-width: 767px) {
@@ -89,6 +97,10 @@
         margin-right: 0;
         margin-left: 0;
     }
+
+    .for-desktop{
+        display: none !important;
+    }
     /* Home 2 Product details */
 }
 
@@ -97,6 +109,10 @@
 @media (min-width: 320px) and (max-width: 767px) {
 	.contact-us-area.section-bottom .row {
         padding: 0 15px;
+    }
+
+    .for-desktop{
+        display: none !important;
     }
 }
 
@@ -116,6 +132,10 @@
     /* Home 2 Product */
     .product-single-area-v2 .product-single-left .product-thumbnail-image .single-item {
         height: 130px;
+    }
+
+    .for-desktop{
+        display: none !important;
     }
     /* Home 2 Product */
 }
