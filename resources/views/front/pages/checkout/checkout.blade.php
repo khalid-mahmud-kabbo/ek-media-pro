@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <select class="form-select" id="billing_country" name="billing_country" required>
-                                            <option>{{ __('Country') }}</option>
+                                            <option>{{ __('Area') }}</option>
                                             @foreach (country() as $cnt)
                                                 <option value="{{ $cnt }}"
                                                     {{ isset($billing) && $billing->Country == $cnt ? 'selected' : '' }}>
@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <select class="form-select" id="shipping_country" name="shipping_country">
-                                            <option>{{ __('Country') }}</option>
+                                            <option>{{ __('Area') }}</option>
                                             @foreach (country() as $cnt)
                                                 <option value="{{ $cnt }}">
                                                     {{ $cnt }}

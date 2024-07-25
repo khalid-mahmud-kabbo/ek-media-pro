@@ -855,9 +855,77 @@
 }
 
 .for-desktop{
-    position: sticky;
+    position: fixed;
     background-color: #00A663;
     top: 0;
     width: 100%;
     z-index: 999;
+}
+
+
+.slick-slider {
+    height: 350px !important;
+}
+
+.slick-slider .slick-list{
+    height: 100% !important;
+}
+
+.search-wrap .form-group .form-control {
+    height: 4.2rem !important;
+}
+
+.search-wrap .form-group .search-btn{
+    top: 1.4rem !important;
+}
+
+input#search {
+    background: #fff !important;
+}
+
+button.search-btn {
+    background: #00A663 !important;
+    color: #fff !important;
+    width: 6rem;
+    height: 3.4rem;
+    top: 0.8rem !important;
+}
+
+.header-area .header-middle .header-middle-wrap .search-area .search-wrap .form-group .search-btn {
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem !important;
+    padding: 0;
+    line-height: 1;
+    border: none;
+    background-color: transparent;
+    color: var(--black);
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    font-weight: 700;
+}
+
+.header-area .header-middle .header-middle-wrap .header-right .single-btn {
+    margin-right: 2rem !important;
+}
+
+.hero-section, .breadcrumb-area{
+    margin-top: 8.9rem !important;
+}
+
+.header-area 
+.header-middle {
+    padding: 1.4rem 0 !important;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-track {
+    background: none;
+}
+
+.brand-slider-area{
+    border: 2px solid #ddd;
 }

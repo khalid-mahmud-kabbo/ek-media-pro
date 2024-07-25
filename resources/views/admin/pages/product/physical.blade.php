@@ -302,6 +302,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-md-6">
                                         <div class="form-vertical__item bg-style">
                                             <div class="item-top mb-30">
@@ -358,6 +360,9 @@
 
                                         </div>
                                     </div>
+
+
+                                    
                                 </div>
                             </form>
                         </div>

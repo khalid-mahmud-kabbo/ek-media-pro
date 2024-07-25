@@ -22,20 +22,56 @@
                 </div>
 
                 <div class="header-right">
+                    @if (Auth::user())
+                    <div class="wishlist single-btn">
+
+                        @if (Auth::user()->is_admin == ACTIVE)
+                                <a class="wishlist-btn header-btn" href="{{ route('admin.dashboard') }}">
+                                    <div class="btn-left">
+                                        <i class="btn-icon flaticon-user text-white"></i>
+                                    </div>
+                                </a>
+                                        
+                        @else
+                                <a class="wishlist-btn header-btn" href="{{ route('user.profile') }}">
+                                    <div class="btn-left">
+                                        <i class="btn-icon flaticon-user text-white"></i>
+                                    </div>
+                                </a>
+                                          
+                        @endif
+
+
+                    </div>
+                    @else
+                    <div class="wishlist single-btn">
+                    <a href="{{ route('login') }}" class="wishlist-btn header-btn">
+                        <div class="btn-left">
+                            <i class="btn-icon flaticon-user text-white"></i>
+                        </div>
+                        
+                    </a>
+                </div>
+
+                    @endif
+
+                    
+
+
+
+
+
+
+
 
                     <div class="wishlist single-btn">
                         <a href="{{ route('wishlist') }}" class="wishlist-btn header-btn">
                             <div class="btn-left">
-                                <i class="btn-icon flaticon-like"></i>
+                                <i class="btn-icon flaticon-like text-white"></i>
                                 <span
                                     class="count wishListCuntFromController">{{ auth()->check() ? wishlistCount() : '0' }}</span>
                             </div>
-                            <div class="btn-right">
-                                <span class="btn-text">{{ __('Wishlist') }}</span>
-                                <span
-                                    class="item-count wishListCuntFromController">{{ auth()->check() ? wishlistCount() : '0' }}
-                                    {{ __('items') }}</span>
-                            </div>
+                           
                         </a>
                     </div>
 
@@ -44,23 +80,10 @@
                         <a data-bs-toggle="offcanvas" href="#cartOffcanvasSidebar" role="button"
                             aria-controls="cartOffcanvasSidebar" class="cart-btn header-btn">
                             <div class="btn-left">
-                                <i class="btn-icon flaticon-shopping-bag"></i>
+                                <i class="btn-icon flaticon-shopping-bag text-white"></i>
                                 <span class="count totalCountItem">{{ cartCountItem() }}</span>
                             </div>
-                            <div class="btn-right">
-                                <span class="btn-text">{{ __('Your Cart') }}</span>
-                                @php
-                                    $content = Cart::content();
-                                    $total = 0;
-                                @endphp
-                                @foreach ($content as $item)
-                                    @php
-                                        $total += $item->subtotal;
-                                    @endphp
-                                @endforeach
-                                <span class="price totalAmount">
-                                    {{ currencyConverter($total) }}</span>
-                            </div>
+                            
                         </a>
                     </div>
                 </div>

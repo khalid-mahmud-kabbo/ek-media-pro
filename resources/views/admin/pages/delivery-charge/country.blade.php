@@ -33,8 +33,8 @@
                     <table id="BlogTable" class="row-border data-table-filter table-style">
                         <thead>
                         <tr>
-                            <th>{{ __('Country')}}</th>
-                            <th>{{ __('Charge (in USD)')}}</th>
+                            <th>{{ __('State')}}</th>
+                            <th>{{ __('Charge (in BDT)')}}</th>
                             <th>{{ __('Status')}}</th>
                             <th>{{ __('Action')}}</th>
                         </tr>
@@ -60,9 +60,9 @@
                     <div class="modal-body">
                         @csrf
                         <div class="input__group mb-25">
-                            <label for="country">{{__('Country')}}</label>
+                            <label for="country">{{__('State')}}</label>
                             <select name="country" id="country" required>
-                                <option value="">{{__('---Country---')}}</option>
+                                <option value="">{{__('---State---')}}</option>
                                 @foreach (country() as $cn)
                                     <option value="{{$cn}}">{{$cn}}</option>
                                 @endforeach
@@ -95,7 +95,7 @@
                         <div class="modal-body">
                             @csrf
                             <div class="input__group mb-25">
-                                <label for="country">{{__('Country')}}</label>
+                                <label for="country">{{__('State')}}</label>
                                 <input name="country" id="country" value="{{$dc->country}}" readonly>
                             </div>
                             <div class="input__group mb-25">

@@ -37,6 +37,15 @@ body {
   background: #FAFBFC;
 }
 
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+body::-webkit-scrollbar-track {
+  background: none;
+}
+
 h1,
 h2,
 h3,

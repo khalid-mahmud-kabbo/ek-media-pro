@@ -26,9 +26,44 @@
         $('#en-product-slug').val(str);
     })
 
-    $('#fr-product-name').on('keyup', function () {
+    $('#en-product-name').on('keyup', function () {
+        let $this = $(this);
+        let str = $this.val();
+        $('#fr-product-name').val(str);
+    })
+
+    $('#en_about').on('keyup', function () {
+        let $this = $(this);
+        let str = $this.val();
+        $('#fr_about').val(str);
+    })
+
+    // $('#summernote').on('keyup', function () {
+    //     let $this = $(this);
+    //     let str = $this.val();
+    //     $('#summernote4').val(str);
+    // })
+
+    // $('#summernote2').on('keyup', function () {
+    //     let $this = $(this);
+    //     let str = $this.val();
+    //     $('#summernote5').val(str);
+    // })
+
+    // $('#summernote3').on('keyup', function () {
+    //     let $this = $(this);
+    //     let str = $this.val();
+    //     $('#summernote6').val(str);
+    // })
+
+    $('#en-product-name').on('keyup', function () {
         let $this = $(this);
         let str = $this.val().toLowerCase().replace(/[0-9`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-').replace(/ /g, '-');
         $('#fr-product-slug').val(str);
     })
+
+
+
+
+
 })(jQuery)

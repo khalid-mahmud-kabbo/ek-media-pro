@@ -347,20 +347,20 @@
                 <span>{{ __('Slider & Banner') }}</span>
             </a>
             <ul>
-                @canany(['banner-list'])
+                {{-- @canany(['banner-list'])
                     <li class="{{ isset($submenu) && $submenu == 'banner' ? 'mm-active' : '' }}">
                         <a href="{{ route('admin.banner') }}">{{ __('Banner') }} ({{ __('Home two') }})</a>
                     </li>
-                @endcanany
+                @endcanany --}}
                 @canany(['slider-list'])
                     <li class="{{ isset($submenu) && $submenu == 'slider' ? 'mm-active' : '' }}">
-                        <a href="{{ route('admin.slider') }}">{{ __('Slider') }} ({{ __('Home one') }})</a>
+                        <a href="{{ route('admin.slider') }}">{{ __('Home') }} ({{ __('Slider') }})</a>
                     </li>
                 @endcanany
-                <li class="{{ isset($submenu) && $submenu == 'special_offer' ? 'mm-active' : '' }}">
+                {{-- <li class="{{ isset($submenu) && $submenu == 'special_offer' ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.theme.special.offer') }}">{{ __('Offer') }}
                         ({{ __('Home two') }})</a>
-                </li>
+                </li> --}}
             </ul>
         </li>
         @canany(['cms-create', 'cms-edit'])
