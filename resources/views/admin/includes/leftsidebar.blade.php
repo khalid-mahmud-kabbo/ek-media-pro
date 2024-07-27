@@ -308,12 +308,6 @@
                             <span>{{ __('Social Link') }}</span>
                         </a>
                     </li>
-                    <li class="{{ isset($submenu) && $submenu == 'image_gallery' ? 'mm-active' : '' }}">
-                        <a href="{{ route('admin.image.gallery') }}">
-                            <i class="fa fa-circle"></i>
-                            <span>{{ __('Image Gallery') }}</span>
-                        </a>
-                    </li>
                     <li class="{{ isset($submenu) && $submenu == 'testimonial' ? 'mm-active' : '' }}">
                         <a href="{{ route('admin.testimonial') }}">
                             <i class="fa fa-circle"></i>
@@ -344,7 +338,7 @@
         <li class="{{ isset($menu) && $menu == 'slider_banner' ? 'mm-active' : '' }}">
             <a class="has-arrow" href="#">
                 <i class="fas fa-list-ol"></i>
-                <span>{{ __('Slider & Banner') }}</span>
+                <span>{{ __('Slider & Image Gallery') }}</span>
             </a>
             <ul>
                 {{-- @canany(['banner-list'])
@@ -354,13 +348,25 @@
                 @endcanany --}}
                 @canany(['slider-list'])
                     <li class="{{ isset($submenu) && $submenu == 'slider' ? 'mm-active' : '' }}">
-                        <a href="{{ route('admin.slider') }}">{{ __('Home') }} ({{ __('Slider') }})</a>
+                        
+                        <a href="{{ route('admin.slider') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Home') }} ({{ __('Slider') }})</span>
+
+                            </a>
                     </li>
+
+                    <li class="{{ isset($submenu) && $submenu == 'image_gallery' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.image.gallery') }}">
+                                 <i class="fa fa-circle"></i>
+                                 <span>{{ __('Image Gallery') }}</span>
+                             </a>
+                     </li>
+
                 @endcanany
-                {{-- <li class="{{ isset($submenu) && $submenu == 'special_offer' ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.theme.special.offer') }}">{{ __('Offer') }}
-                        ({{ __('Home two') }})</a>
-                </li> --}}
+
+                
+                
             </ul>
         </li>
         @canany(['cms-create', 'cms-edit'])

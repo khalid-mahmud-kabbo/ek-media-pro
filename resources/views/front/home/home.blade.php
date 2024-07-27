@@ -1,22 +1,15 @@
-<div class="hero-section">
+<div class="hero-section d-flex gap-3">
     <div class="hero-slider">
         @foreach ($sliders as $slider)
             <div class="signle-slide"
                 style="background-image: url('{{ asset(SliderImage() . $slider->Background_Image) }}');">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 offset-lg-1 col-6">
-                            <div class="hero-slider-image text-center">
-                                <img class="hero-image img-fluid" src="{{ asset(SliderImage() . $slider->Thumbnail) }}"
-                                    alt="hero-banner-image" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         @endforeach
     </div>
+
+    <x-frontend.image-gallery></x-frontend.image-gallery>
 </div>
+
 
 
 <div class="brands-wrapper">
@@ -31,8 +24,6 @@
     </div>
 </div>
 </div>
-
-
 
 
 
