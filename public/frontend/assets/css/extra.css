@@ -910,7 +910,7 @@ button.search-btn {
     margin-top: 8.9rem !important;
 }
 
-.header-area 
+.header-area
 .header-middle {
     padding: 1.4rem 0 !important;
 }
@@ -948,4 +948,11 @@ body::-webkit-scrollbar-track {
 
 .gallery-image{
     height: 100% !important;
+}
+
+
+
+
+.single-grid-product .product-top .product-thumbnal {
+    height: 171px !important;
 }

@@ -323,17 +323,6 @@
                 </ul>
             </li>
         @endcanany
-        {{-- <li class="{{ isset($menu) && $menu == 'theme_management' ? 'mm-active' : '' }}">
-            <a class="has-arrow" href="#">
-                <i class="fas fa-cog"></i>
-                <span>{{ __('Theme Management') }}</span>
-            </a>
-            <ul>
-                <li class="{{ isset($submenu) && $submenu == 'theme' ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.theme') }}">{{ __('Select Theme') }}</a>
-                </li>
-            </ul>
-        </li> --}}
 
         <li class="{{ isset($menu) && $menu == 'slider_banner' ? 'mm-active' : '' }}">
             <a class="has-arrow" href="#">
@@ -341,11 +330,6 @@
                 <span>{{ __('Slider & Image Gallery') }}</span>
             </a>
             <ul>
-                {{-- @canany(['banner-list'])
-                    <li class="{{ isset($submenu) && $submenu == 'banner' ? 'mm-active' : '' }}">
-                        <a href="{{ route('admin.banner') }}">{{ __('Banner') }} ({{ __('Home two') }})</a>
-                    </li>
-                @endcanany --}}
                 @canany(['slider-list'])
                     <li class="{{ isset($submenu) && $submenu == 'slider' ? 'mm-active' : '' }}">
                         
