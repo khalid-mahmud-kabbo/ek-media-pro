@@ -332,7 +332,7 @@
             <ul>
                 @canany(['slider-list'])
                     <li class="{{ isset($submenu) && $submenu == 'slider' ? 'mm-active' : '' }}">
-                        
+
                         <a href="{{ route('admin.slider') }}">
                             <i class="fa fa-circle"></i>
                             <span>{{ __('Home') }} ({{ __('Slider') }})</span>
@@ -349,8 +349,14 @@
 
                 @endcanany
 
-                
-                
+                <li class="{{ isset($submenu) && $submenu == 'special_offer' ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.theme.special.offer') }}"><i class="fa fa-circle"></i> <span>{{ __('Offer') }}
+                        ({{ __('Home') }})</span>
+                    </a>
+                </li>
+
+
+
             </ul>
         </li>
         @canany(['cms-create', 'cms-edit'])
