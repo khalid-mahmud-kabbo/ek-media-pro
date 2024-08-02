@@ -3219,7 +3219,7 @@ scrollUp
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  height: 680px;
+  /* height: 680px; */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -4150,7 +4150,7 @@ scrollUp
 }
 
 /*-------------------------
-#.section-header-three 
+#.section-header-three
 --------------------------*/
 .section-header-three.text-center .section-sub-title:before {
   display: block;
@@ -13306,7 +13306,7 @@ secendary-tabs
 }
 
 /* ---------------------------------
-    Compare Page 
+    Compare Page
 -------------------------------------*/
 .compare-page-area .compare-table table {
   margin-bottom: 0;

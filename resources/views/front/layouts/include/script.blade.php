@@ -8,6 +8,7 @@
 <script src="{{ asset('frontend/assets/js/front/extra.js') }}"></script>
 <script src="{{ asset('frontend/assets/js/front/sweat_aleart.js') }}"></script>
 <script src="{{ asset('frontend/assets/js/common.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 {{-- toastr --}}
 <script src="{{ asset('admin/js/toastr.min.js') }}"></script>
 

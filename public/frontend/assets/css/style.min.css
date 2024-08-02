@@ -3208,7 +3208,7 @@ ul {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    height: 680px;
+    /* height: 680px; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover
