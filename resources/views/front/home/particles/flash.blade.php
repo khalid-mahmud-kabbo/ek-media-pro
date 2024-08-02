@@ -3,6 +3,7 @@
         <h2 class="text-black mb-4">Flash Sell</h2>
         <div class="row">
             @foreach ($products->take(6) as $product)
+            @if($product->On_Sale === 1)
                 <div class="col-lg-2 col-md-4 col-sm-6">
                     <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                         <div class="product-top">
@@ -44,13 +45,17 @@
     <a href="{{ route('single.product', $product->en_Product_Slug) }}" title="{{ __('Buy Now') }}" class="add-cart addCart buynow rounded"
         data-id="{{ $product->id }}">{{ __('Buy Now') }}</a>
 
-    <a href="javascript:void(0)" title="{{ __('Add To Cart') }}" class="add-cart addCart rounded"
+    <a href="javascript:void(0)" title="{{ __('Add To Cart') }}" stroke='#FCA610'  class="add-cart addCart addedtocart rounded"
         data-id="{{ $product->id }}">{{ __('Add To Cart') }}</a>
 
 </div>
                         </div>
                     </div>
+
+
                 </div>
+                @endif
+
             @endforeach
         </div>
     </div>

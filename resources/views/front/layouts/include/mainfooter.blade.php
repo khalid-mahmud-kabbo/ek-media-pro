@@ -1,10 +1,10 @@
-<footer class="footer bg-black" style="padding: 5rem 4rem 0 !important;">
+<footer class="footer bg-black" style="padding: 5rem 4rem 0;">
 
 
     <div class="row g-0 justify-content-center text-white">
 
 
-        <div class="col-md-3">
+        <div class="col-md-3 for-mobile-footer">
             <h3>Company</h3>
             <ul>
                 <li><a href="{{ route('about.us') }}">About Us</a></li>
@@ -15,7 +15,7 @@
 
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 for-mobile-footer">
             <h3>Help Center</h3>
 
             <ul>
@@ -25,7 +25,7 @@
             </ul>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 for-mobile-footer">
             <h3>Terms & Conditions</h3>
 
             <ul>
@@ -52,11 +52,15 @@
                             <button type="button"
                                 class="subscribe-btn subscribe_btn">{{ __('Subscribe') }}</button>
                         </div>
-                        <div class="d-flex gap-4 mt-5">
+                        <div class="for-desktop-contact d-flex gap-4 mt-5">
                             <p class="contact"><i class="fa-solid fa-phone"></i> {{ $allsettings['call_us'] }}</p>
                             <p class="contact"><i class="fa-solid fa-envelope"></i> {{ $allsettings['email'] }}</p>
                         </div>
 
+                        <div class="for-mobile-contact d-none mt-5">
+                        <p class="contact"><i class="fa-solid fa-phone"></i> {{ $allsettings['call_us'] }}</p>
+                        <p class="contact"><i class="fa-solid fa-envelope"></i> {{ $allsettings['email'] }}</p>
+                    </div>
 
 
                         <ul class="social-media d-flex gap-3">
@@ -108,18 +112,18 @@
 <div class="col-md-6">
 
     <div class="payment-methood" style="text-align: end;">
- 
+
        <img src="{{asset('frontend/assets/images/payments.png')}}" alt="Payment Gateway">
-     
-     
-     
+
+
+
      </div>
 
 
 
 </div>
 
-       
+
     </div>
 
 

@@ -1086,3 +1086,20 @@ img.thumbnail-image {
 .single-grid-product .product-top .product-flags .product-flag {
     background-color: #FCA610;
 }
+
+
+.addedtocart{
+    stroke: #26CD59 !important;
+    stroke-width: 50%;
+}
+
+.best-selling .product-review{
+    display: flex;
+    gap: 2;
+}
+
+
+.best-selling a {
+    color: #D0D0D0;
+    text-decoration: none;
+}

@@ -12,6 +12,7 @@
             <div class="d-flex gap-5 flex-wrap mt-4">
 
                 @foreach ($products->take(3) as $key => $item)
+                @if($item->New_Arrival === 1)
                 @if ($key == 0)
 
                 <a href="{{ route('single.product', $item->en_Product_Slug) }}" class="card" style="width: 38rem; border-radius: .5rem">
@@ -44,6 +45,7 @@
                 </div>
                 </a>
                 @endif
+                @endif
                 @endforeach
 
             </div>
@@ -59,6 +61,7 @@
             <div class="d-flex gap-5 flex-wrap mt-4">
 
                 @foreach ($products->take(9) as $key => $item)
+                @if($item->Best_Selling === 1)
                 @if ($key == 0)
 
                 <a href="{{ route('single.product', $item->en_Product_Slug) }}" class="card" style="width: 38rem; border-radius: .5rem">
@@ -68,6 +71,9 @@
                 </div>
                     <div class="card-body">
                       <h3 class="card-title text-black">{{ langConverter($item->en_Product_Name, $item->fr_Product_Name) }}</h3>
+                      <div class="d-flex gap-2">
+                        {!! productReview($item->id) !!}
+                        </div>
                       <div class="product-price mt-3">
                         <h4 class="price text-black">{{ currencyConverter($item->Discount_Price) }}</h4>
                     </div>
@@ -84,12 +90,17 @@
                 </div>
                     <div class="card-body">
                       <h3 class="card-title text-black">{{ langConverter($item->en_Product_Name, $item->fr_Product_Name) }}</h3>
+
+<div class="d-flex gap-2">
+                        {!! productReview($item->id) !!}
+                        </div>
                       <div class="product-price mt-3">
                         <h4 class="price text-black">{{ currencyConverter($item->Discount_Price) }}</h4>
                     </div>
                     </div>
                 </div>
                 </a>
+                @endif
                 @endif
                 @endforeach
 

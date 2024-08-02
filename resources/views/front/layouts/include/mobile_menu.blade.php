@@ -70,63 +70,6 @@
             </ul>
         </nav>
         <div class="menu-bottom">
-            <div class="switcher-lang-currency">
-                <div class="currency-switcher">
-                    <span class="flag">{{ currencySymbol()[currency()] }}</span>
-                    <a href="#" class="currency">{{ currency() }} <i class="fas fa-angle-down"></i></a>
-                    <ul class="currency-list">
-                        @foreach (currency_array(currency()) as $crr)
-                            <li class="single-currency"><span class="flag">{{ $crr->symbol }}</span><a
-                                    class="currency-text"
-                                    href="{{ route('currency.switch', $crr->currency) }}">{{ $crr->currency }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="lang-switcher">
-                    @if (app()->getLocale() == 'en')
-                        @if(getLanguage('en')->status == 1)
-                        <span class="flag"><img src="{{ asset(IMG_LANGUAGE . getLanguage('en')->thumb) }}"
-                                alt="united-states" /></span>
-                        <a href="javascript:void(0)" class="lang">{{ getLanguage('en')->name }}
-                            @if(getLanguage('fr')->status == 1)
-                                <i class="fas fa-angle-down"></i>
-                            @endif
-                        </a>
-                        @endif
-                    @elseif(app()->getLocale() == 'fr')
-                        @if(getLanguage('fr')->status == 1)
-                        <span class="flag"><img src="{{ asset(IMG_LANGUAGE . getLanguage('fr')->thumb) }}"
-                                alt="india" /></span>
-                        <a href="javascript:void(0)" class="lang">{{ getLanguage('fr')->name }}
-                            @if(getLanguage('en')->status == 1)
-                                <i class="fas fa-angle-down"></i>
-                            @endif
-                        </a>
-                        @endif
-                    @endif
-
-                    <ul class="{{ activeLanguage() > 1 ? 'lang-list' : '' }}">
-                        @if (app()->getLocale() == 'en')
-                            @if(getLanguage('fr')->status == 1)
-                                <li class="single-lang"><span class="flag"><img
-                                            src="{{ asset(IMG_LANGUAGE . getLanguage('fr')->thumb) }}"
-                                            alt="united-states" /></span><a class="lang-text"
-                                        href="{{ route('locale.switch', 'fr') }}">{{ getLanguage('fr')->name }}</a>
-                                </li>
-                            @endif
-                        @elseif(app()->getLocale() == 'fr')
-                            @if(getLanguage('en')->status == 1)
-                                <li class="single-lang"><span class="flag"><img
-                                            src="{{ asset(IMG_LANGUAGE . getLanguage('en')->thumb) }}"
-                                            alt="united-states" /></span><a class="lang-text"
-                                        href="{{ route('locale.switch', 'en') }}">{{ getLanguage('en')->name }}</a>
-                                </li>
-                            @endif
-                        @endif
-                    </ul>
-                </div>
-            </div>
             @if (Auth::user())
                 @if (Auth::user()->is_admin == ACTIVE)
                     <a class="account-btn mb-3" href="{{ route('admin.dashboard') }}"><i
