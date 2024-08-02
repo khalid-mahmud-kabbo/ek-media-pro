@@ -2,9 +2,6 @@
     <div class="brands p-3">
         <h2 class="text-black mb-4">Just For You</h2>
         <div class="row">
-
-
-            <div class="row">
                 @foreach ($products as $product)
                     <div class="col-lg-2 col-md-4 col-sm-6">
                         <div class="single-grid-product">
@@ -53,7 +50,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
 
 
         </div>
