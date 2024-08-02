@@ -179,13 +179,6 @@
                                     </li>
                                 </ul>
 
-                                @if ($allsettings['news_letter_status'] == '1')
-                                    <div class="guarantee-checkout-area">
-                                        <h3 class="guarantee-title">{{ $allsettings['news_letter_title'] }}</h3>
-                                        <img src="{{ asset(IMG_FOOTER_PATH . $allsettings['news_letter_img']) }}"
-                                            alt="payment-method-image" />
-                                    </div>
-                                @endif
 
                                 <div class="share-area mt-30">
                                     <h3 class="share-title">{{ __('SHARE:') }}</h3>

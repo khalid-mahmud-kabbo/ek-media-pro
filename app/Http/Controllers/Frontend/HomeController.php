@@ -51,6 +51,8 @@ class HomeController extends Controller
             return redirect()->to('/install');
         }
     }
+
+
     public function theme_set(Request $request)
     {
         if (env('APP_DEMO') == true) {

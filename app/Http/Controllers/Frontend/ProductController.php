@@ -50,6 +50,7 @@ class ProductController extends Controller
         $data['keywords'] = $seo->keywords;
         if ($products) {
             return view('front.pages.product.all_product', $data);
+            return view('front', $data);
         }
         return view('front.pages.product.empty-product', $data);
     }

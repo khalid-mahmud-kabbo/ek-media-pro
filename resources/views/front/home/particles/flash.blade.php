@@ -2,20 +2,17 @@
     <div class="brands p-3">
         <h2 class="text-black mb-4">Flash Sell</h2>
         <div class="row">
-            @foreach ($products as $product)
+            @foreach ($products->take(6) as $product)
                 <div class="col-lg-2 col-md-4 col-sm-6">
-                    <div class="single-grid-product">
+                    <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                         <div class="product-top">
                             <a href="{{ route('single.product', $product->en_Product_Slug) }}"><img
                                     class="product-thumbnal"
                                     src="{{ asset(ProductImage() . $product->Primary_Image) }}"
                                     alt="{{ __('product') }}" /></a>
                             <div class="product-flags">
-                                @if ($product->ItemTag)
-                                    <span class="product-flag sale">{{ $product->ItemTag }}</span>
-                                @endif
                                 @if ($product->Discount)
-                                    <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }}</span>
+                                    <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }} {{__('Sale')}}</span>
                                 @endif
                             </div>
                             <ul class="prdouct-btn-wrapper">
@@ -43,9 +40,14 @@
                             <div class="pricer d-flex">
                             {!! productReview($product->id) !!} <div>{{_('(')}} {{ productReviewerNumber($product->id) }} {{_(')')}}</div>
 </div>
-                            <a href="javascript:void(0)" title="{{ __('Add To Cart') }}" class="add-cart addCart"
-                                data-id="{{ $product->id }}">{{ __('Add To Cart') }} <i
-                                    class="icon fas fa-plus-circle"></i></a>
+<div class="d-flex gap-2">
+    <a href="{{ route('single.product', $product->en_Product_Slug) }}" title="{{ __('Buy Now') }}" class="add-cart addCart buynow rounded"
+        data-id="{{ $product->id }}">{{ __('Buy Now') }}</a>
+
+    <a href="javascript:void(0)" title="{{ __('Add To Cart') }}" class="add-cart addCart rounded"
+        data-id="{{ $product->id }}">{{ __('Add To Cart') }}</a>
+
+</div>
                         </div>
                     </div>
                 </div>
