@@ -195,6 +195,7 @@
         el: ".swiper-pagination",
         clickable: true,
       },
+
     })
 
     var swiper = new Swiper(".brandSwiper", {
@@ -204,6 +205,60 @@
         delay: 2500,
         disableOnInteraction: false,
       },
+
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesPerView: 4
+          }
+        },
+        {
+            slidesPerView: 768,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+            slidesPerView: 576,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+
+    });
+
+
+    var swiper = new Swiper(".CategorySwiper", {
+        slidesPerView: 9,
+      spaceBetween: 40,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesPerView: 4
+          }
+        },
+        {
+            slidesPerView: 768,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+            slidesPerView: 576,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+
     });
 
 

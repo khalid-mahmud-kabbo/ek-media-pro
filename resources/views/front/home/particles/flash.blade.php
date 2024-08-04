@@ -1,5 +1,5 @@
 <div class="brands-wrapper mt-5">
-    <div class="brands p-3">
+    <div class="brands">
         <h2 class="text-black mb-4">Flash Sell</h2>
         <div class="row">
             @foreach ($products->take(6) as $product)

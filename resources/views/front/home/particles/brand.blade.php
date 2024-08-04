@@ -1,5 +1,5 @@
 <div class="brands-wrapper mt-5">
-    <div class="brands p-3">
+    <div class="brands">
         <h2 class="text-black mb-4">Most Popular Brands</h2>
 
         <div class="brand-slider-area swiper brandSwiper d-flex gap-5 p-5">

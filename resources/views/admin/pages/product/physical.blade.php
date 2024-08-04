@@ -247,7 +247,7 @@
                                                     <input type="checkbox" value="1" name="status"
                                                         class="custom-control-input" id="customSwitch1">
                                                     <label class="custom-control-label"
-                                                        for="customSwitch1">{{ __('Status') }}</label>
+                                                        for="customSwitch1">{{ __('Activate Product') }}</label>
                                                 </div>
                                                 @error('status')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -258,7 +258,7 @@
                                                     <input type="checkbox" value="1" name="feature"
                                                         class="custom-control-input" id="customSwitch2">
                                                     <label class="custom-control-label"
-                                                        for="customSwitch2">{{ __('Featured Product') }}</label>
+                                                        for="customSwitch2">{{ __('Just For You') }}</label>
                                                 </div>
                                                 @error('feature')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -280,7 +280,7 @@
                                                     <input type="checkbox" value="1" name="on_sale"
                                                         class="custom-control-input" id="customSwitch4">
                                                     <label class="custom-control-label"
-                                                        for="customSwitch4">{{ __('On Sale') }}</label>
+                                                        for="customSwitch4">{{ __('Flash Sale') }}</label>
                                                 </div>
                                                 @error('on_sale')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -362,7 +362,7 @@
                                     </div>
 
 
-                                    
+
                                 </div>
                             </form>
                         </div>
