@@ -1,4 +1,4 @@
-<div class="brands-wrapper mt-5">
+<div class="brands-wrapper">
     <div class="brands">
         <h2 class="text-black mb-4">Most Popular Brands</h2>
 

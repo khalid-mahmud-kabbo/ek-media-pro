@@ -1,12 +1,19 @@
-<div class="brands-wrapper mt-5">
+<div class="brands-wrapper">
     <div class="brands">
         <div class="d-flex justify-content-between">
         <h2 class="text-black mb-4">Flash Sell</h2>
         <a href="">See All</a>
     </div>
         <div class="row">
-            @foreach ($products->take(6) as $product)
-            @if($product->On_Sale == 1)
+
+
+            @php
+            $FlashSellingProducts = $products->filter(function ($item) {
+                return $item->On_Sale == 1;
+            })->take(6);
+        @endphp
+
+            @foreach ($FlashSellingProducts as $product)
                 <div class="col-lg-2 col-md-4 col-sm-6">
                     <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                         <div class="product-top">
@@ -57,7 +64,6 @@
 
 
                 </div>
-                @endif
 
             @endforeach
         </div>
