@@ -14,7 +14,7 @@
 
             <div class="d-flex gap-5 flex-wrap mt-4 justify-content-end">
                 @foreach ($products->take(3) as $key => $item)
-                @if($item->New_Arrival === 1)
+                @if($item->New_Arrival == 1)
                 @if ($key == 0)
 
                 <a href="{{ route('single.product', $item->en_Product_Slug) }}" class="card" style="width: 30rem; border-radius: .5rem; height:105px !important; overflow:hidden !important;">
@@ -65,7 +65,7 @@
             <div class="d-flex gap-5 flex-wrap mt-4 justify-content-end">
 
                 @foreach ($products->take(6) as $key => $item)
-                @if($item->Best_Selling === 1)
+                @if($item->Best_Selling == 1)
                 @if ($key == 0)
 
                 <a href="{{ route('single.product', $item->en_Product_Slug) }}" class="card" style="width: 30rem; border-radius: .5rem; height:105px !important; overflow:hidden !important;">

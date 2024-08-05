@@ -1314,3 +1314,40 @@ a.product-link {
   .swiper-pagination-bullet-active {
     background-color: var(--second-color);
   }
+
+
+  .breadcrumb-area
+{
+    display: none !important;
+}
+
+
+.product-single-area .product-single-left .product-slier-big-image .product-priview-slide .single-slide .slide-image {
+    position: relative;
+    overflow: hidden;
+    float: left;
+   margin: 10px;
+    height: unset !important;
+}
+
+
+ .slide-image__image {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     -webkit-transition: -webkit-transform .5s ease-out;
+     transition: -webkit-transform .5s ease-out;
+     transition: transform .5s ease-out;
+     transition: transform .5s ease-out,-webkit-transform .5s ease-out;
+ }
+
+
+ h1, h2, h3, h4, h5, h6, p, span {
+    font-family: 'Arial' !important;
+    font-weight: 600;
+}
