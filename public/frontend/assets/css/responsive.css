@@ -81,6 +81,14 @@
     font-size: smaller !important;
     margin-bottom: 2rem !important;
 }
+
+.deal-of-the-day{
+    width: 100% !important;
+}
+
+.deal-of-the-day-wrapper{
+    margin-bottom: 3rem;
+}
 /* Checkout Page New Login Box End */
 
 }
@@ -150,6 +158,15 @@
     font-size: smaller !important;
     margin-bottom: 2rem !important;
 }
+
+.deal-of-the-day{
+    width: 100% !important;
+}
+
+.deal-of-the-day-wrapper{
+    margin-bottom: 3rem;
+}
+
 }
 
 @media (max-width: 767px) {
@@ -222,6 +239,15 @@ margin-top: 2rem;
 .home-new-cont{
     margin-top: 8rem !important;
 }
+
+.deal-of-the-day{
+    width: 100% !important;
+}
+
+.deal-of-the-day-wrapper{
+    margin-bottom: 3rem;
+}
+
 }
 
 
@@ -284,6 +310,15 @@ margin-top: 2rem;
     font-size: smaller !important;
     margin-bottom: 2rem !important;
 }
+
+.deal-of-the-day{
+    width: 100% !important;
+}
+
+.deal-of-the-day-wrapper{
+    margin-bottom: 3rem;
+}
+
 }
 
 @media (max-width: 450px) {
@@ -349,9 +384,17 @@ margin-top: 2rem;
     .home-new-cont{
         margin-top: 8rem !important;
     }
-
-    .{
+    .copiright{
         font-size: smaller !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .deal-of-the-day{
+        width: 100% !important;
+    }
+
+    .deal-of-the-day-wrapper{
+        margin-bottom: 3rem;
     }
     /* Home 2 Product */
 }

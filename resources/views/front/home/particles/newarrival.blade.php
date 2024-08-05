@@ -3,7 +3,7 @@
         <div class="row g-0">
 
 
-<div class="col-md-3">
+<div class="col-md-3 deal-of-the-day-wrapper">
 
 
 
