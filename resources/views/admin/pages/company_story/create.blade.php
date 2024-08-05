@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label
-                                                    for="exampleInputEmail1">{{ __('Description ' . langString('fr')) }}</label>
+                                                    for="exampleInputEmail1">{{ __('Description ' . langString('bn')) }}</label>
                                                 <textarea name="fr_description" id="summernote2" class="form-control "></textarea>
                                             </div>
                                             <div class="input__button">

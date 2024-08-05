@@ -36,7 +36,7 @@
                                                 <input type="text" id="en_category_name" name="en_category_name" value="{{ old('en_category_name') }}" placeholder="Name (English)">
                                             </div>
                                             <div class="input__group mb-25">
-                                                <label>{{ __('Category Name '.langString('fr'))}}</label>
+                                                <label>{{ __('Category Name '.langString('bn'))}}</label>
                                                 <input type="text" id="fr_category_name" name="fr_category_name"  value="{{ old('fr_category_name') }}" placeholder="Name (Bangla)">
                                             </div>
                                             <div class="input__group mb-25">
@@ -48,7 +48,7 @@
                                                 <textarea name="en_description" id="en_description" placeholder="Description (English)">{{ old('en_description') }}</textarea>
                                             </div>
                                             <div class="input__group mb-25">
-                                                <label>{{__('Description '.langString('fr'))}}</label>
+                                                <label>{{__('Description '.langString('bn'))}}</label>
                                                 <textarea name="fr_description" id="fr_description" placeholder="Description (Bangla)">{{ old('fr_description') }}</textarea>
                                             </div>
                                             <div class="input__button">

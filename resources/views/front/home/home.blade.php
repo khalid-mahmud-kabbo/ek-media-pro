@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container home-new-cont">
 @include('front.home.particles.slider')
 @include('front.home.particles.categories')
 @include('front.home.particles.brand')

@@ -65,7 +65,7 @@
                             <input type="text" name="question" placeholder="{{__('Enter Question')}}">
                         </div>
                         <div class="input__group mb-25">
-                            <label for="question">{{__('Question')}} {{langString('fr')}}</label>
+                            <label for="question">{{__('Question')}} {{langString('bn')}}</label>
                             <input type="text" name="question_fr" placeholder="{{__('Enter Question')}}">
                         </div>
                         <div class="input__group mb-25">
@@ -73,7 +73,7 @@
                             <textarea name="answer" id="answer" placeholder="{{__('Enter Answer')}}"></textarea>
                         </div>
                         <div class="input__group mb-25">
-                            <label for="exampleInputEmail1">{{ __('Answer')}}  {{langString('fr')}}</label>
+                            <label for="exampleInputEmail1">{{ __('Answer')}}  {{langString('bn')}}</label>
                             <textarea name="answer_fr" id="answer-fr" placeholder="{{__('Enter Answer')}}"></textarea>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                                 <input type="text" name="question" value="{{$fq->question}}">
                             </div>
                             <div class="input__group mb-25">
-                                <label for="question">{{__('Question')}} {{langString('fr')}}</label>
+                                <label for="question">{{__('Question')}} {{langString('bn')}}</label>
                                 <input type="text" name="question_fr" value="{{$fq->question_fr}}">
                             </div>
                             <div class="input__group mb-25">
@@ -111,7 +111,7 @@
                                 <textarea name="answer" id="answer">{{$fq->answer}}</textarea>
                             </div>
                             <div class="input__group mb-25">
-                                <label for="exampleInputEmail1">{{ __('Answer')}} {{langString('fr')}}</label>
+                                <label for="exampleInputEmail1">{{ __('Answer')}} {{langString('bn')}}</label>
                                 <textarea name="answer_fr" id="answer-fr">{{$fq->answer_fr}}</textarea>
                             </div>
                         </div>

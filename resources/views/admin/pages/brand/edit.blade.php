@@ -37,7 +37,7 @@
                                                 <input type="text" class="form-control" id="en_brand_name"  name="en_brand_name" value="{{$edit->en_BrandName}}" placeholder="Name (English)">
                                             </div>
                                             <div class="input__group mb-25">
-                                                 <label>{{ __('Brand Name ' . langString('fr')) }}</label>
+                                                 <label>{{ __('Brand Name ' . langString('bn')) }}</label>
                                                 <input type="text" class="form-control" id="fr_brand_name"  name="fr_brand_name" value="{{$edit->fr_BrandName}}" placeholder="Name (Arabic)">
                                             </div>
                                             <div class="input__group mb-25">

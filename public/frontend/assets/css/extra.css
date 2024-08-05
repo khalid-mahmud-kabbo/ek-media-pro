@@ -1357,3 +1357,27 @@ a.product-link {
     font-family: 'Arial' !important;
     font-weight: 600;
 }
+
+
+.header-area .header-middle .header-middle-wrap .header-right .single-btn .header-btn.cart-btn .btn-left .count {
+    background-color: #26CD59 !important;
+}
+
+
+.header-area .header-middle .header-middle-wrap .header-right .single-btn .header-btn.wishlist-btn .btn-left .count {
+    background-color: #66499D !important;
+}
+
+
+.mobile-header-area .header-right .header-btn.wishlist-btn .btn-left .count {
+    background-color: #66499D !important;
+}
+
+
+.mobile-header-area {
+    position: fixed !important;
+    z-index: 999 !important;
+    top: 0 !important;
+    width: 100% !important;
+    background-color: #fff !important;
+}

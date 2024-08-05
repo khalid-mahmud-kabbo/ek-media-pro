@@ -72,6 +72,15 @@
 .footer{
     padding: 3rem 2rem 0 !important;
 }
+
+.home-new-cont{
+    margin-top: 8rem !important;
+}
+
+.copiright{
+    font-size: smaller !important;
+    margin-bottom: 2rem !important;
+}
 /* Checkout Page New Login Box End */
 
 }
@@ -131,6 +140,15 @@
 }
 .footer{
     padding: 3rem 2rem 0 !important;
+}
+
+.home-new-cont{
+    margin-top: 8rem !important;
+}
+
+.copiright{
+    font-size: smaller !important;
+    margin-bottom: 2rem !important;
 }
 }
 
@@ -196,8 +214,17 @@
     display: block !important;
 margin-top: 2rem;
 }
-    /* Home 2 Product details */
+.copiright{
+    font-size: smaller !important;
+    margin-bottom: 2rem !important;
 }
+
+.home-new-cont{
+    margin-top: 8rem !important;
+}
+}
+
+
 
 /*  Small mobile :320px. */
 
@@ -248,6 +275,14 @@ margin-top: 2rem;
 
     .footer{
         padding: 3rem 2rem 0 !important;
+}
+.home-new-cont{
+    margin-top: 8rem !important;
+}
+
+.copiright{
+    font-size: smaller !important;
+    margin-bottom: 2rem !important;
 }
 }
 
@@ -309,6 +344,14 @@ margin-top: 2rem;
 
     .hero-section .swiper-slide {
         margin-left: 0 !important;
+    }
+
+    .home-new-cont{
+        margin-top: 8rem !important;
+    }
+
+    .{
+        font-size: smaller !important;
     }
     /* Home 2 Product */
 }

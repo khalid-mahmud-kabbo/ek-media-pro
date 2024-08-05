@@ -182,14 +182,14 @@
                 </a>
             </li>
         @endcanany
-        @canany(['currency-list'])
+        {{-- @canany(['currency-list'])
             <li class="{{ isset($menu) && $menu == 'currency' ? 'mm-active' : '' }}">
                 <a href="{{ route('admin.currency_list') }}">
                     <i class="fa fa-dollar-sign"></i>
                     <span>{{ __('Currency') }}</span>
                 </a>
             </li>
-        @endcanany
+        @endcanany --}}
         @canany(['currency-list'])
             <li class="{{ isset($menu) && $menu == 'coupon' ? 'mm-active' : '' }}">
                 <a href="{{ route('admin.coupon') }}">
@@ -447,7 +447,8 @@
                 </ul>
             </li>
         @endcanany
-        @canany(['menu-list'])
+
+        {{-- @canany(['menu-list'])
             <li class="{{ isset($menu) && $menu == 'pages' ? 'mm-active' : '' }}">
                 <a href="{{ route('admin.pages') }}">
                     <i class="fas fa-book"></i>
@@ -480,7 +481,7 @@
                     </li>
                 </ul>
             </li>
-        @endcanany
+        @endcanany --}}
         @canany(['cms-list'])
             <li class="{{ isset($menu) && $menu == 'sitemap' ? 'mm-active' : '' }}">
                 <a href="{{ route('admin.sitemap_list') }}">
