@@ -200,34 +200,29 @@
 
     var swiper = new Swiper(".brandSwiper", {
         slidesPerView: 8,
-      spaceBetween: 40,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesPerView: 4
-          }
+        spaceBetween: 40,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
         },
-        {
-            slidesPerView: 768,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-            slidesPerView: 576,
-          settings: {
-            slidesToShow: 2
+        breakpoints: {
+          // when window width is >= 576px
+          320: {
+            slidesPerView: 2,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 4,
+          },
+          // when window width is >= 992px
+          992: {
+            slidesPerView: 8,
           }
         }
-      ]
-
-    });
+      });
 
 
     var swiper = new Swiper(".CategorySwiper", {
@@ -238,26 +233,23 @@
         disableOnInteraction: false,
       },
 
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesPerView: 4
-          }
+      breakpoints: {
+        320: {
+            slidesPerView: 2,
+          },
+        // when window width is >= 576px
+        576: {
+          slidesPerView: 2,
         },
-        {
-            slidesPerView: 768,
-          settings: {
-            slidesToShow: 2
-          }
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 4,
         },
-        {
-            slidesPerView: 576,
-          settings: {
-            slidesToShow: 2
-          }
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 9,
         }
-      ]
+      }
 
     });
 

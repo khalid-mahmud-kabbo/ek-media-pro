@@ -35,6 +35,21 @@ class ProductController extends Controller
         }
         return redirect()->back()->with('error', __('Product Not Found!'));
     }
+
+
+    public function loadMoreProducts(Request $request)
+{
+    $page = $request->get('page', 1);
+    $products = Product::where('Featured_Product', 1)
+                ->skip($page * 6)
+                ->take(2)
+                ->get();
+
+    return view('front.home.particles.products', compact('products'));
+}
+
+
+
     public function allProduct()
     {
         $data['tags'] = ProductTag::with('product')->latest()->get();

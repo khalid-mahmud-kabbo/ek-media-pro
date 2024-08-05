@@ -20,7 +20,7 @@ class SpecialOfferTableSeeder extends Seeder
             'fr_title' => 'SPECTIAL OFFER',
             'category_id' => '1',
             'discount' => '50',
-            'url' => 'www.sadekurrahman.com',
+            'url' => 'link',
             'status' => '1',
         ]);
     }

@@ -1,14 +1,4 @@
-<div class="brands-wrapper mt-5">
-    <div class="brands">
-        <h2 class="text-black mb-4">Just For You</h2>
-        <div class="row" id="product-container">
-            @php
-            $JustForYouProducts = $products->filter(function ($item) {
-                return $item->Featured_Product == 1;
-            })->take(12);
-            @endphp
-
-            @foreach ($JustForYouProducts as $product)
+@foreach ($products as $product)
                 <div class="col-lg-2 col-md-4 col-sm-6 product-item">
                     <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                         <div class="product-top">
@@ -50,44 +40,3 @@
                     </div>
                 </div>
             @endforeach
-        </div>
-        <div class="text-center">
-            <button class="loadmore mb-5 mt-3" data-page="1">Load More Products</button>
-        </div>
-    </div>
-</div>
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('.loadmore').on('click', function() {
-        var page = $(this).data('page');
-        $.ajax({
-            url: "{{ route('load.more.products') }}",
-            type: "GET",
-            data: {
-                page: page
-            },
-            beforeSend: function() {
-                $('.loadmore').text('Loading...').prop('disabled', true);
-            },
-            success: function(response) {
-                if (response.trim() === '') {
-                    $('.loadmore').text('No More Products').prop('disabled', true);
-                } else {
-                    $('#product-container').append(response);
-                    $('.loadmore').text('Load More Products').prop('disabled', false);
-                    $('.loadmore').data('page', page + 1);
-                }
-            },
-            error: function() {
-                alert('Error loading more products');
-                $('.loadmore').text('Load More Products').prop('disabled', false);
-            }
-        });
-    });
-});
-</script>

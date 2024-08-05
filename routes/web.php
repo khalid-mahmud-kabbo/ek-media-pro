@@ -99,6 +99,10 @@ Route::group(['middleware' => ['is_user']], function () {
         Route::get('wishlist/add', [WishlistController::class, 'add'])->name('wishlist.add')->middleware(['isDemo']);
     });
 
+
+    Route::get('/load-more-products', 'ProductController@loadMoreProducts')->name('load.more.products');
+
+
     Route::group(['prefix' => 'cart'], function () {
         Route::post('add', [CartController::class, 'addToCart'])->name('add.to.cart');
         Route::get('/content', [CartController::class, 'cartContent'])->name('cart.content');
