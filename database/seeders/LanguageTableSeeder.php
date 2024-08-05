@@ -23,7 +23,7 @@ class LanguageTableSeeder extends Seeder
             'status' => 1,
         ]);
         Language::create([
-            'name' => 'Arabic',
+            'name' => 'Bangla',
             'direction' => 'rtl',
             'locale' => 'fr',
             'file' => 'fr.json',

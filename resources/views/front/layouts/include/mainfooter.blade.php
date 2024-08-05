@@ -1,4 +1,6 @@
-<footer class="footer bg-black" style="padding: 5rem 4rem 0;">
+<footer class="footer bg-black">
+
+    <div class="container pt-5">
 
 
     <div class="row g-0 justify-content-center text-white">
@@ -103,7 +105,7 @@
 
 <div class="col-md-6 m-auto">
 
-    <p class="text-white" style="margin: 0!important;">Copyright @ 2024 ASRMART All Right Reserved. | Developed By <a style="color: brown;" href="https://eksoftwares.com" target="_blank">EK Softwares</a></p>
+    <p class="text-white" style="margin: 0!important;">{{ $allsettings['footer_title'] }} | Developed By <a style="color: brown;" href="https://eksoftwares.com" target="_blank">EK Softwares</a></p>
 </div>
 
 
@@ -113,7 +115,7 @@
 
     <div class="payment-methood" style="text-align: end;">
 
-       <img src="{{asset('frontend/assets/images/payments.png')}}" alt="Payment Gateway">
+       <img src="{{asset('frontend/assets/images/payments.png')}}" width="366px"  alt="Payment Gateway">
 
 
 
@@ -127,5 +129,5 @@
     </div>
 
 
-
+</div>
 </footer>

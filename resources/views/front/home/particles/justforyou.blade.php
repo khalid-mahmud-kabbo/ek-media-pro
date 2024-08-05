@@ -1,6 +1,7 @@
 <div class="brands-wrapper mt-5">
     <div class="brands">
         <h2 class="text-black mb-4">Just For You</h2>
+
         <div class="row">
                 @foreach ($products as $product)
                 @if($product->Featured_Product == 1)

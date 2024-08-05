@@ -1,6 +1,9 @@
 <div class="brands-wrapper mt-5">
     <div class="brands">
+        <div class="d-flex justify-content-between">
         <h2 class="text-black mb-4">Flash Sell</h2>
+        <a href="">See All</a>
+    </div>
         <div class="row">
             @foreach ($products->take(6) as $product)
             @if($product->On_Sale == 1)

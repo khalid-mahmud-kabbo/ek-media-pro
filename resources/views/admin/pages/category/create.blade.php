@@ -37,7 +37,7 @@
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label>{{ __('Category Name '.langString('fr'))}}</label>
-                                                <input type="text" id="fr_category_name" name="fr_category_name"  value="{{ old('fr_category_name') }}" placeholder="Name (Arabic)">
+                                                <input type="text" id="fr_category_name" name="fr_category_name"  value="{{ old('fr_category_name') }}" placeholder="Name (Bangla)">
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label>{{ __('Icon Class')}}</label>
@@ -49,7 +49,7 @@
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label>{{__('Description '.langString('fr'))}}</label>
-                                                <textarea name="fr_description" id="fr_description" placeholder="Description (Arabic)">{{ old('fr_description') }}</textarea>
+                                                <textarea name="fr_description" id="fr_description" placeholder="Description (Bangla)">{{ old('fr_description') }}</textarea>
                                             </div>
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Add')}}</button>

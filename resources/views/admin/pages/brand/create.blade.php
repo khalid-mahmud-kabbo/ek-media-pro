@@ -41,7 +41,7 @@
                                             <div class="input__group mb-25">
                                                 <label>{{ __('Brand Name ' . langString('fr')) }}</label>
                                                 <input type="text" id="fr_brand_name" name="fr_brand_name"
-                                                    value="{{ old('fr_brand_name') }}" placeholder="Name (Arabic)">
+                                                    value="{{ old('fr_brand_name') }}" placeholder="Name (Bangla)">
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label>{{ __('Brand Image') }}</label>

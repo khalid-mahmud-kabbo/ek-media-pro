@@ -50,7 +50,7 @@
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label>{{__('Description '.langString('fr'))}}</label>
-                                                <textarea name="fr_description" id="fr_description" placeholder="Description (Arabic)">{{$edit->fr_Description}}</textarea>
+                                                <textarea name="fr_description" id="fr_description" placeholder="Description (Bangla)">{{$edit->fr_Description}}</textarea>
                                             </div>
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Update')}}</button>

@@ -169,7 +169,16 @@
                             </div>
                         </div>
                     </div>
-                    <div id="filterProduct">
+
+
+
+
+
+
+
+
+
+                    {{-- <div id="filterProduct">
                         <div class="product-list">
                             <div class="row">
                                 @foreach ($products as $product)
@@ -221,25 +230,10 @@
                                                     <span
                                                         class="price">{{ currencyConverter($product->Discount_Price) }}</span>
                                                 </div>
-                                                {{-- <div class="variable-single-item color-switch"> --}}
-                                                {{-- <div class="product-variable-color"> --}}
-                                                {{-- @foreach ($product->colors as $color) --}}
-                                                {{-- <label> --}}
-                                                {{-- <input type="hidden" name="colorId" value="{{$color->id}}"> --}}
-                                                {{-- <input name="productColor" class="color-select" type="radio" value="{{$color->id}}"> --}}
-                                                {{-- <span style="background:{{$color->ColorCode}};"></span> --}}
-                                                {{-- </label> --}}
-                                                {{-- @endforeach --}}
-                                                {{-- </div> --}}
-                                                {{-- </div> --}}
+
                                                 <input type="hidden" name="quantity" value="1"
                                                     id="product_quantity">
-                                                {{-- <ul class="size-switch"> --}}
-                                                {{-- @foreach ($product->sizes as $item) --}}
-                                                {{-- <input type="hidden"  class="sizeValue" name="productSize" value="{{$item->Size}}"> --}}
-                                                {{-- <li class="single-size activeSize" data-size="{{$item->id}}">{{$item->Size}}</li> --}}
-                                                {{-- @endforeach --}}
-                                                {{-- </ul> --}}
+
                                                 <a href="javascript:void(0)" title="{{ __('Add to cart') }}"
                                                     class="add-cart addCart"
                                                     data-id="{{ $product->id }}">{{ __('Add To Cart') }} <i
@@ -255,7 +249,86 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
+
+
+
+
+
+
+
+
+                    <div class="row">
+                        @foreach ($products as $product)
+                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+                                <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
+                                    <div class="product-top">
+                                        <a href="{{ route('single.product', $product->en_Product_Slug) }}"><img
+                                                class="product-thumbnal"
+                                                src="{{ asset(ProductImage() . $product->Primary_Image) }}"
+                                                alt="{{ __('product') }}" /></a>
+                                        <div class="product-flags">
+                                            @if ($product->Discount)
+                                                <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }} {{__('Sale')}}</span>
+                                            @endif
+                                        </div>
+                                        <ul class="prdouct-btn-wrapper">
+                                            <li class="single-product-btn">
+                                                <a class="product-btn CompareList" data-id="{{ $product->id }}"
+                                                    title="{{ __('Add To Compare') }}"><i class="icon flaticon-bar-chart"></i></a>
+                                            </li>
+                                            <li class="single-product-btn">
+                                                <a class="product-btn MyWishList" data-id="{{ $product->id }}"
+                                                    title="{{ __('Add To Wishlist') }}"><i class="icon flaticon-like"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-info text-center">
+                                        <input type="hidden" name="quantity" value="1" id="product_quantity">
+                                        <h3 class="product-name"><a class="product-link"
+                                                href="{{ route('single.product', $product->en_Product_Slug) }}">{{ langConverter($product->en_Product_Name, $product->fr_Product_Name) }}</a>
+                                        </h3>
+                                        <!-- This is server side code. User can not modify it. -->
+
+                                        <div class="product-price">
+                                            <span class="price">{{ currencyConverter($product->Discount_Price) }}</span>
+                                            <span class="regular-price">{{ currencyConverter($product->Price) }}</span>
+                                        </div>
+                                        <div class="pricer d-flex">
+                                        {!! productReview($product->id) !!} <div>{{_('(')}} {{ productReviewerNumber($product->id) }} {{_(')')}}</div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <a href="{{ route('single.product', $product->en_Product_Slug) }}" title="{{ __('Buy Now') }}" class="add-cart addCart buynow rounded"
+                    data-id="{{ $product->id }}">{{ __('Buy Now') }}</a>
+
+                                        <a href="javascript:void(0)" title="{{ __('Add To Cart') }}" class="add-cart addCart addedtocart rounded"
+                                            data-id="{{ $product->id }}">{{ __('Add To Cart') }}</a>
+
+
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endforeach
+
+
+                </div>
+                <div class="pagination-area mt-30">
+                    <ul class="paginations text-center">
+                        {{ $products->links('vendor.pagination.custom') }}
+                    </ul>
+                </div>
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
