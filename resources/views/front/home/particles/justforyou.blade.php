@@ -5,7 +5,7 @@
             @php
             $JustForYouProducts = $products->filter(function ($item) {
                 return $item->Featured_Product == 1;
-            })->take(12);
+            })->take(10);
             @endphp
 
             @foreach ($JustForYouProducts as $product)
