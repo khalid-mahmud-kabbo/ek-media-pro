@@ -105,7 +105,7 @@
 
 <div class="col-md-6 m-auto">
 
-    <p class="text-white copiright" style="margin: 0;">{{ $allsettings['footer_title'] }} | Developed By <a style="color: #ef1b27;" href="https://eksoftwares.com" target="_blank">EK Softwares</a></p>
+    <p class="text-white copiright" style="margin: 0;">{{ $allsettings['footer_title'] }} | Developed By <a style="color: #26CD59;" href="https://eksoftwares.com" target="_blank">EK Softwares</a></p>
 </div>
 
 

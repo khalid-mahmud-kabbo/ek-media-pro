@@ -196,6 +196,24 @@
         clickable: true,
       },
 
+      breakpoints: {
+        // when window width is >= 576px
+        320: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 1,
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 1,
+        },
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 1,
+        }
+      }
+
     })
 
     var swiper = new Swiper(".brandSwiper", {

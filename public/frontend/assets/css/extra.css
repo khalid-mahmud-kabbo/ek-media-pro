@@ -816,13 +816,18 @@ body{
     -webkit-box-shadow: none;
     box-shadow: none;
     padding: 0;
-    background-color: #FCA610;
+    background-color: #26CD59;
     font-size: 1.6rem;
     font-weight: 700;
     text-transform: capitalize;
     color: var(--white);
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+
+
+.brand-slider-area {
+    border-radius: .5rem;
 }
 
 
@@ -1063,17 +1068,18 @@ img.thumbnail-image {
     height: 45px;
     line-height: 45px;
     border-radius: 7px;
-    background-color: #26CD59;
-    color: white;
+    border: 2px solid #26CD59;
+    background-color: #fff;
+    color: #000;
     font-weight: 400;
     font-size: 16px;
-    box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
     transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
 }
 
 .loadmore:hover{
-    background: #000;
+    background: #5A4091;
     color: #fff;
+    border-color: #5A4091;
     box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
 }
 
@@ -1160,8 +1166,8 @@ a.product-link {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    height: 36px;
-    line-height: 18px;
+    height: 48px;
+    line-height: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -1353,7 +1359,7 @@ a.product-link {
  }
 
 
- h1, h2, h3, h4, h5, h6, p, span {
+ h1, h2, h4, h3, h5, h6, p, span {
     font-family: 'Arial' !important;
     font-weight: 600;
 }
@@ -1411,7 +1417,7 @@ a.product-link {
 }
 
 .brands{
-    margin-top: 6rem !important;
+    margin-top: 5rem !important;
 }
 
 
@@ -1439,4 +1445,74 @@ a.product-link {
     color: var(--black);
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+
+
+
+.single-grid-product .product-info .product-name {
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
+}
+
+
+.product-info .product-name {
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
+}
+
+.new-arrival-product {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.single-grid-product .product-info .product-price .price {
+    display: block !important;
+    font-weight: 500 !important;
+    color: #26CD59 !important;
+}
+
+.product-price .price {
+    display: block !important;
+    font-weight: 500 !important;
+    color: #26CD59 !important;
+}
+
+
+.price {
+    display: block !important;
+    font-weight: 500 !important;
+    color: #26CD59 !important;
+}
+
+.single-grid-product .product-info .add-cart:hover {
+    color: var(--white);
+    background-color: #5A4091 !important;
+    border-color: #5A4091 !important;
+}
+
+.single-grid-product .product-info .product-name .product-link:hover {
+    color: #5A4091 !important;
+}
+
+.product-name .product-link:hover {
+    color: #5A4091 !important;
+}
+
+
+
+.best-selling .card-title, .new-arrivals .card-title {
+    font-weight: 500 !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: 19px;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.product-info {
+    padding: 0 1rem;
 }

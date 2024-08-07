@@ -10,11 +10,11 @@
             @php
             $FlashSellingProducts = $products->filter(function ($item) {
                 return $item->On_Sale == 1;
-            })->take(6);
+            })->take(5);
         @endphp
 
             @foreach ($FlashSellingProducts as $product)
-                <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="col-lg-2 col-md-4 col-sm-6" style="width: 19.666667% !important;">
                     <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                         <div class="product-top">
                             <a href="{{ route('single.product', $product->en_Product_Slug) }}"><img
@@ -39,9 +39,9 @@
                         </div>
                         <div class="product-info text-center">
                             <input type="hidden" name="quantity" value="1" id="product_quantity">
-                            <h3 class="product-name"><a class="product-link"
+                            <h4 class="product-name"><a class="product-link"
                                     href="{{ route('single.product', $product->en_Product_Slug) }}">{{ langConverter($product->en_Product_Name, $product->fr_Product_Name) }}</a>
-                            </h3>
+                            </h4>
                             <!-- This is server side code. User can not modify it. -->
 
                             <div class="product-price">
