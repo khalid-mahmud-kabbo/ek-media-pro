@@ -82,13 +82,13 @@ class ImageGalleryController extends Controller
     public function dimension($name)
     {
         if ($name == 'gallery-one-1') {
-            return '425*391';
+            return '922*423';
         } elseif ($name == 'gallery-one-2') {
-            return '425*659';
+            return '922*423';
         } elseif ($name == 'gallery-one-3') {
-            return '425*322';
+            return '922*423';
         } elseif ($name == 'gallery-one-4') {
-            return '425*535';
+            return '922*423';
         } elseif ($name == 'gallery-one-5') {
             return '425*385';
         } elseif ($name == 'gallery-one-6') {

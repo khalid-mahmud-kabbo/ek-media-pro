@@ -5,11 +5,11 @@
             @php
             $JustForYouProducts = $products->filter(function ($item) {
                 return $item->Featured_Product == 1;
-            })->take(10);
+            })->take(12);
             @endphp
 
             @foreach ($JustForYouProducts as $product)
-                <div class="col-lg-2 col-md-4 col-sm-6 product-item" style="width: 19.666667% !important;">
+                <div class="col-lg-2 col-md-4 col-sm-6 product-item">
                     <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                         <div class="product-top">
                             <a href="{{ route('single.product', $product->en_Product_Slug) }}">

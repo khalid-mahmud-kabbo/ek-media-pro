@@ -7,8 +7,15 @@
     .product-single-area-v2 .product-single-left .product-thumbnail-image .single-item {
         height: 184px;
     }
+    .product-item{
+        width: 19.666667% !important;
+    }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
+
+    .product-item{
+        width: 19.666667% !important;
+    }
 
 }
 
@@ -22,6 +29,10 @@
     }
     .product-single-area-v2 .product-single-left .product-thumbnail-image .single-item {
         height: 149px;
+    }
+
+    .product-item{
+        width: 19.666667% !important;
     }
 }
 
@@ -88,6 +99,10 @@
 
 .deal-of-the-day-wrapper{
     margin-bottom: 3rem;
+}
+
+.product-item{
+    width: 19.666667% !important;
 }
 /* Checkout Page New Login Box End */
 
@@ -166,6 +181,20 @@
 .deal-of-the-day-wrapper{
     margin-bottom: 3rem;
 }
+
+.product-item{
+    width: 19.666667% !important;
+}
+
+}
+
+
+
+
+@media (min-width: 992px) {
+    .product-item{
+        width: 19.666667% !important;
+    }
 
 }
 
@@ -248,6 +277,10 @@ margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
+.product-item{
+    width: 16.666667% !important;
+}
+
 }
 
 
@@ -317,6 +350,12 @@ margin-top: 2rem;
 
 .deal-of-the-day-wrapper{
     margin-bottom: 3rem;
+}
+.product-item{
+    width: 16.666667% !important;
+}
+.offer-image{
+    display: none;
 }
 
 }
@@ -395,6 +434,14 @@ margin-top: 2rem;
 
     .deal-of-the-day-wrapper{
         margin-bottom: 3rem;
+    }
+
+    .product-item{
+        width: 100% !important;
+    }
+
+    .offer-image{
+        display: none;
     }
     /* Home 2 Product */
 }
