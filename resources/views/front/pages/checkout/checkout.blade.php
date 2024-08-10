@@ -25,8 +25,9 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="checkout-form">
-                            <form method="post" {{-- action="{{ auth()->check() ? route('checkout.order') : route('guest.checkout.order') }}" --}} action="{{ route('checkout.order') }}"
-                                id="paymentForm">
+                            <form method="post" action="{{ auth()->check() ? route('checkout.order') : route('guest.checkout.order') }}" id="paymentForm">
+                            {{-- <form method="post" action="{{ auth()->check() ? route('checkout.order') : route('guest.checkout.order') }}" action="{{ route('checkout.order') }}"
+                                id="paymentForm"> --}}
                                 @csrf
                                 <div class="row">
                                     @if (!auth()->check())
@@ -34,7 +35,7 @@
                                             <div
                                                 class="checkout-page-login-box d-flex justify-content-between align-items-center mb-30">
                                                 <h2 class="mb-0 text-capitalize fw-bold">Returning buyer? Please login:</h2>
-                                                <button type="button" class="primary-btn" data-bs-toggle="modal"
+                                                <button type="button" class="primary-btn" style="background-color: #26CD59 !important;" data-bs-toggle="modal"
                                                     data-bs-target="#loginModal">Login</button>
                                             </div>
                                         </div>
@@ -90,15 +91,25 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="col-lg-12 mt-3">
+                                        <div class="form-group form-check terms-agree">
+                                            <input type="checkbox" class="form-check-input " id="copy_address" />
+                                            <label class="form-check-label"
+                                                for="copy_address">{{ __('Shipping Address will Same as billing address') }}</label>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="pt-5"></div>
-                                <div class="row">
+
+
+                                <div class="row d-none">
                                     <div class="col-lg-12">
                                         <h2 class="checkout-title">{{ __('Shipping Address') }}</h2>
                                     </div>
                                     <div class="form-group form-check terms-agree">
-                                        <input type="checkbox" class="form-check-input " id="copy_address" />
+                                        <input type="checkbox" class="form-check-input " id="copy_address" checked />
                                         <label class="form-check-label"
                                             for="copy_address">{{ __('Same as billing address') }}</label>
                                     </div>
@@ -126,7 +137,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="shipping_street_address"
-                                                name="shipping_street_address" placeholder="{{ __('Street Address') }}"
+                                                name="shipping_street_address" placeholder="{{ __('Address') }}"
                                                 value="" />
                                             @error('shipping_street_address')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -136,7 +147,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="shipping_state"
-                                                name="shipping_state" placeholder="{{ __('State') }}"
+                                                name="shipping_state" placeholder="{{ __('City') }}"
                                                 value="" />
                                             @error('shipping_state')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -381,36 +392,9 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="cart-summary">
                             <div class="summary-top d-flex">
-                                <h2>{{ __('Cart Summary') }}</h2>
-                                <a class="edite-btn" href="{{ route('cart.content') }}">{{ __('Edit') }}</a>
+                                <h2>{{ __('Checkout') }}</h2>
                             </div>
-                            <ul class="cart-product-list">
-                                @php
-                                    $total = 0;
-                                @endphp
-                                @foreach ($content as $item)
-                                    <li class="single-cart-product d-flex justify-content-between">
-                                        <div class="product-info">
-                                            <h3>{{ $item->qty }} {{ $item->name }}</h3>
-                                            <p>{{ __('Size:') }}
-                                                {{ is_null($item->options->size) ? __('Free Size') : $item->options->size }}
-                                            </p>
-                                            <p class="checkout-page-color-show">{{ __('Color:') }} @if (is_null($item->options->color))
-                                                    {{ __('Any Color') }}
-                                                @else
-                                                    <span style="background:{{ $item->options->color }};"></span>
-                                                @endif
-                                            </p>
-                                        </div>
-                                        <div class="price-area">
-                                            <h3 class="price">
-                                                {{ currencyConverter($item->price * $item->qty) }}
-                                            </h3>
-                                        </div>
-                                    </li>
-                                @endforeach
 
-                            </ul>
                             <!-- Cart page bottom box -->
                             <div class="col-lg-12 col-md-12">
                                 <div class="checkout-discount-box">
@@ -420,7 +404,7 @@
                                         <div class="input-group mb-2">
                                             <input type="text" class="form-control" name="coupon_code"
                                                 placeholder="{{ __('Enter your coupon code') }}" required />
-                                            <button type="submit"
+                                            <button type="submit"  style="background-color: #26CD59 !important; color: #fff !important;"
                                                 class="border-0 px-4">{{ __('Apply Coupon') }}</button>
                                         </div>
                                     </form>
@@ -449,6 +433,8 @@
                                     </span>
                                 </h3>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

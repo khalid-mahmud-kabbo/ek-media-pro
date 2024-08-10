@@ -5,7 +5,7 @@
             @php
             $JustForYouProducts = $products->filter(function ($item) {
                 return $item->Featured_Product == 1;
-            })->take(12);
+            })->take(15);
             @endphp
 
             @foreach ($JustForYouProducts as $product)
@@ -54,42 +54,7 @@
             @endforeach
         </div>
         <div class="text-center">
-            <button class="loadmore mb-5 mt-3" data-page="1">Load More Products</button>
+            <a class="loadmore mb-5 mt-3" href="/product/all" target="_blank">Load More Products</a>
         </div>
     </div>
 </div>
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('.loadmore').on('click', function() {
-        var page = $(this).data('page');
-        $.ajax({
-            url: "{{ route('load.more.products') }}",
-            type: "GET",
-            data: {
-                page: page
-            },
-            beforeSend: function() {
-                $('.loadmore').text('Loading...').prop('disabled', true);
-            },
-            success: function(response) {
-                if (response.trim() === '') {
-                    $('.loadmore').text('No More Products').prop('disabled', true);
-                } else {
-                    $('#product-container').append(response);
-                    $('.loadmore').text('Load More Products').prop('disabled', false);
-                    $('.loadmore').data('page', page + 1);
-                }
-            },
-            error: function() {
-                alert('Error loading more products');
-                $('.loadmore').text('Load More Products').prop('disabled', false);
-            }
-        });
-    });
-});
-</script>
