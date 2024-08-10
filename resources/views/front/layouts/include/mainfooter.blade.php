@@ -133,7 +133,7 @@
 
 <div id="whatsapp" class="d-flex gap-2" style="position: fixed; z-index: 2147483647; justify-content: end;">
     <div class="bg-white rounded text-black" id="message" style="font-size: small !important; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-       <div class="message-box" id="hidemessage" style="position: absolute; top: -14px; left: -5px;"><i class="fa-solid fa-xmark"></i></div>
+       <div class="message-box" id="hidemessage" style="position: absolute; top: -13px; left: -4px;"><i class="fa-solid fa-xmark"></i></div>
 
         স্যার, কিভাবে সহযোগিতা করতে পারি?
         </div>
