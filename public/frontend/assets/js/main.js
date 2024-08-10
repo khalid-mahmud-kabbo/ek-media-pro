@@ -920,3 +920,21 @@ $('.slide-image')
             // set up a background image for each tile based on data-image attribute
             .children('.slide-image__image').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
         });
+
+
+
+
+
+
+
+        const hideMessage = ()=>{
+            const hidemessage = document.getElementById('hidemessage');
+
+
+
+        }
+
+
+        document.getElementById("hidemessage").addEventListener("click", function() {
+            document.getElementById("message").classList.add("remove");
+        });

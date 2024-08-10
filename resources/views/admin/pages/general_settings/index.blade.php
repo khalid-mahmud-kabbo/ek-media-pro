@@ -176,13 +176,13 @@
                                 <div class="col-md-6">
                                     <div class="form-vertical__item bg-style">
                                         <div class="item-top mb-30">
-                                            <h2>{{ __('Newsletter') }}</h2>
+                                            <h2>{{ __('Support Contact') }}</h2>
                                         </div>
                                         <form enctype="multipart/form-data" method="POST"
                                             action="{{ route('admin.general.settings.update_settings') }}">
                                             @csrf
                                             <div class="input__group mb-25">
-                                                <label for="title">{{ __('Title') }}</label>
+                                                <label for="title">{{ __('Contact Link') }}</label>
                                                 <input type="text" class="form-control" id="news_letter_title"
                                                     name="news_letter_title"
                                                     value="{{ $allsettings['news_letter_title'] }}">

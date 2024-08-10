@@ -1390,10 +1390,14 @@ a.product-link {
 }
 
 
-.deal-of-the-day{
-    background-color: #CDDDEC;
+.deal-of-the-day {
+    background-color: #d1d1d1;
     border: 1px solid #44BBFF;
     border-radius: .5rem;
+}
+
+.single-grid-product .product-info .product-price .regular-price {
+    font-size: 1.6rem !important;
 }
 
 .new-arrival-product{
@@ -1581,4 +1585,29 @@ a.product-link {
 
 .cart-product-item .single-grid-product .product-info .product-name-part {
     width: 69% !important;
+}
+
+
+
+#whatsapp {
+    bottom: 110px;
+    font-size: 20px;
+    display: block;
+    width: 275px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.message-box{
+    cursor: pointer;
+}
+
+
+.remove{
+    display: none;
 }
