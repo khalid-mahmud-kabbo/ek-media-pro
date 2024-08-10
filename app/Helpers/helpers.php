@@ -259,7 +259,7 @@ if (!function_exists('currency')) {
         if (session()->has('currency')) {
             return session()->get('currency');
         }
-        return 'USD';
+        return 'BDT';
     }
 }
 
@@ -284,6 +284,8 @@ if (!function_exists('format_price')) {
     {
         $currency = Currency::where('currency', currency())->first();
 
+        return currencySymbol()[currency()] . ' ' . $convert_price;
+
         if ($currency->position == 'before') {
             return currencySymbol()[currency()] . ' ' . $convert_price;
         } else {
@@ -291,6 +293,7 @@ if (!function_exists('format_price')) {
         }
     }
 }
+
 
 if (!function_exists('convertToINR')) {
     function convertToINR($price)

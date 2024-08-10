@@ -1564,3 +1564,21 @@ a.product-link {
     background-color: #26CD59 !important;
     cursor: pointer;
 }
+
+
+
+.cart-product-item a.product-link {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: 34px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.cart-product-item .single-grid-product .product-info .product-name-part {
+    width: 69% !important;
+}

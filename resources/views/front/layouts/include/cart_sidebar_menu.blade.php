@@ -13,7 +13,7 @@
             @if (cartCountItem() != 0)
                 @foreach (cartContentSideShow() as $item)
                     <!-- Product item start -->
-                    <div class="product-item cart-product-item">
+                    <div class="cart-product-item">
                         <div class="single-grid-product">
                             <div class="product-top">
                                 <a href="javascript:void(0)"><img class="product-thumbnal"
