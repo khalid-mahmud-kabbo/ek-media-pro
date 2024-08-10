@@ -174,7 +174,7 @@
 
                     <div class="row">
                         @foreach ($products as $product)
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 under-product">
                                 <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
                                     <div class="product-top">
                                         <a href="{{ route('single.product', $product->en_Product_Slug) }}"><img
@@ -182,7 +182,7 @@
                                                 src="{{ asset(ProductImage() . $product->Primary_Image) }}"
                                                 alt="{{ __('product') }}" /></a>
                                         <div class="product-flags">
-                                            @if ($product->Discount)
+                                            @if ($product->Discount > 0)
                                                 <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }} {{__('Sale')}}</span>
                                             @endif
                                         </div>

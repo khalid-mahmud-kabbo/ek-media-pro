@@ -2,7 +2,7 @@
     <div class="brands">
         <div class="d-flex justify-content-between">
         <h2 class="text-black mb-4">Flash Sell</h2>
-        <a href="">See All</a>
+        <a href="/product/all" class="text-black">See All</a>
     </div>
         <div class="row">
 
@@ -22,7 +22,7 @@
                                     src="{{ asset(ProductImage() . $product->Primary_Image) }}"
                                     alt="{{ __('product') }}" /></a>
                             <div class="product-flags">
-                                @if ($product->Discount)
+                                @if ($product->Discount > 0)
                                     <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }} {{__('Sale')}}</span>
                                 @endif
                             </div>

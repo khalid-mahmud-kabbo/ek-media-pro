@@ -149,47 +149,56 @@
                     <div id="filterProductleftsidebar">
                         <div class="product-list">
                             @forelse($products as $product)
-                                <div class="single-list-product">
-                                    <div class="product-left">
-                                        <a href="{{route('single.product',$product->en_Product_Slug)}}"><img class="product-thumbnal" src="{{asset(ProductImage().$product->Primary_Image)}}" alt="product" /></a>
+                            <div class="col-lg-2 col-md-4 col-sm-6 product-item">
+                                <div class="single-grid-product bg-white p-2" style="border: 1px solid #ddd; border-radius:.5rem;">
+                                    <div class="product-top">
+                                        <a href="{{ route('single.product', $product->en_Product_Slug) }}"><img
+                                                class="product-thumbnal"
+                                                src="{{ asset(ProductImage() . $product->Primary_Image) }}"
+                                                alt="{{ __('product') }}" /></a>
                                         <div class="product-flags">
-                                            @if($product->ItemTag)
-                                                <span class="product-flag sale">{{$product->ItemTag}}</span>
-                                            @endif
-                                            @if($product->Discount )
-                                                <span class="product-flag discount">{{ __('-')}}{{$product->Discount}}</span>
+                                            @if ($product->Discount > 0)
+                                                <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }} {{__('Sale')}}</span>
                                             @endif
                                         </div>
-                                    </div>
-                                    <div class="product-right">
-                                        <div class="product-catagory-review d-flex align-items-center">
-                                            @foreach($product->product_tags as $ppt)
-                                                <h4 class="product-catagory">{{$ppt->tag}}</h4>
-                                            @endforeach
-                                        <!-- This is server side code. User can not modify it. -->
-                                            {!!  productReview($product->id) !!}
-                                        </div>
-                                        <h3 class="product-name"><a class="product-link" href="{{route('single.product',$product->en_Product_Slug)}}">{{langConverter($product->en_Product_Name,$product->fr_Product_Name)}}</a></h3>
-                                        <div class="product-price-color d-flex align-items-center">
-                                            <div class="product-price">
-                                                <span class="regular-price">{{currencyConverter($product->Price)}}</span>
-                                                <span class="price">{{currencyConverter($product->Discount_Price)}}</span>
-                                            </div>
-                                        </div> <input type="hidden" name="quantity" value="1" id="product_quantity">
-                                        <p class="prdouct-content">{{langConverter($product->en_About,$product->fr_About)}}</p>
-                                        <ul class="prdouct-btn-wrapper d-flex align-items-center">
+                                        <ul class="prdouct-btn-wrapper">
                                             <li class="single-product-btn">
-                                                <a href="javascript:void(0)" title="{{__('Add To Cart')}}" class="add-cart addCart" data-id="{{$product->id}}">{{__('Add To Cart')}} <i class="icon fas fa-plus-circle"></i></a>
+                                                <a class="product-btn CompareList" data-id="{{ $product->id }}"
+                                                    title="{{ __('Add To Compare') }}"><i class="icon flaticon-bar-chart"></i></a>
                                             </li>
                                             <li class="single-product-btn">
-                                                <a class="product-btn MyWishList" data-id="{{$product->id}}" title="Add to wishlist"><i class="icon flaticon-like"></i></a>
-                                            </li>
-                                            <li class="single-product-btn">
-                                                <a class="product-btn CompareList" data-id="{{$product->id}}" title="Add to compare"><i class="icon flaticon-bar-chart"></i></a>
+                                                <a class="product-btn MyWishList" data-id="{{ $product->id }}"
+                                                    title="{{ __('Add To Wishlist') }}"><i class="icon flaticon-like"></i></a>
                                             </li>
                                         </ul>
                                     </div>
+                                    <div class="product-info text-center">
+                                        <input type="hidden" name="quantity" value="1" id="product_quantity">
+                                        <h4 class="product-name"><a class="product-link"
+                                                href="{{ route('single.product', $product->en_Product_Slug) }}">{{ langConverter($product->en_Product_Name, $product->fr_Product_Name) }}</a>
+                                        </h4>
+                                        <!-- This is server side code. User can not modify it. -->
+
+                                        <div class="product-price">
+                                            <span class="price">{{ currencyConverter($product->Discount_Price) }}</span>
+                                            <span class="regular-price">{{ currencyConverter($product->Price) }}</span>
+                                        </div>
+                                        <div class="pricer d-flex">
+                                        {!! productReview($product->id) !!} <div>{{_('(')}} {{ productReviewerNumber($product->id) }} {{_(')')}}</div>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="{{ route('single.product', $product->en_Product_Slug) }}" title="{{ __('Buy Now') }}" class="add-cart addCart buynow rounded"
+                    data-id="{{ $product->id }}">{{ __('Buy Now') }}</a>
+
+                <a href="javascript:void(0)" title="{{ __('Add To Cart') }}" stroke='#FCA610'  class="add-cart addCart addedtocart rounded"
+                    data-id="{{ $product->id }}">{{ __('Add To Cart') }}</a>
+
+            </div>
+                                    </div>
                                 </div>
+
+
+                            </div>
                             @empty
                                 <h1>{{__('No results found!')}}</h1>
                             @endforelse

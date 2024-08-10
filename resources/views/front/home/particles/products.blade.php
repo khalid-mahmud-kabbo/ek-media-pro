@@ -6,7 +6,7 @@
                                 <img class="product-thumbnal" src="{{ asset(ProductImage() . $product->Primary_Image) }}" alt="{{ __('product') }}" />
                             </a>
                             <div class="product-flags">
-                                @if ($product->Discount)
+                                @if ($product->Discount > 0)
                                     <span class="product-flag discount">{{ __('-') }}{{ $product->Discount }} {{__('Sale')}}</span>
                                 @endif
                             </div>

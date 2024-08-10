@@ -888,6 +888,7 @@ body{
 
 input#search {
     background: #fff !important;
+    border-radius: unset;
 }
 
 button.search-btn {
@@ -922,7 +923,7 @@ button.search-btn {
 
 .header-area
 .header-middle {
-    padding: 1rem 0 !important;
+    padding: .5rem 0 !important;
 }
 
 body::-webkit-scrollbar {
@@ -1515,4 +1516,51 @@ a.product-link {
 
 .product-info {
     padding: 0 1rem;
+}
+
+.product-single-right .buyNow{
+    background-color: #26CD59 !important;
+    border-color: #26CD59 !important;
+    width: 30% !important;
+    transition: 0.3s ease !important;
+}
+
+
+.product-single-right .addCart{
+    background-color: #5A4091 !important;
+    border-color: #5A4091 !important;
+    color: #fff !important;
+    width: 30% !important;
+    transition: 0.3s ease !important;
+}
+
+
+.product-single-right .addCart:hover{
+    background-color: #000 !important;
+    width: 30% !important;
+    border-color: #000 !important;
+}
+
+.product-single-right .buyNow:hover{
+    background-color: #000 !important;
+    width: 30% !important;
+    border-color: #000 !important;
+}
+
+
+.product-single-area .product-single-details .product-info .product-bottom-button {
+
+    justify-content: unset !important;
+}
+
+
+.header-area .header-middle .header-middle-wrap .search-area .search-wrap {
+    border: none !important;
+    border-radius: none !important;
+}
+
+
+.single-grid-product .product-top .prdouct-btn-wrapper .single-product-btn .product-btn:hover {
+    background-color: #26CD59 !important;
+    cursor: pointer;
 }
