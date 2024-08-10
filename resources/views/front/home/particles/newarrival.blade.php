@@ -62,9 +62,9 @@ alt="{{ __('product') }}" style="height: 210px;border: 1px solid #ddd;border-rad
                 @foreach ($newArrivalProducts as $item)
 
                 <a href="{{ route('single.product', $item->en_Product_Slug) }}" class="card" style="width: 30rem; border-radius: .5rem; height:105px !important; overflow:hidden !important;">
-                    <div class="card-wrapper d-flex gap-2">
+                    <div class="card-wrapper d-flex gap-2 m-auto">
                     <div class="p-image p-3">
-                    <img class="card-img-top" style="width: 100%; overflow:hidden; border-radius: 1rem;" src="{{ asset(ProductImage() . $item->Primary_Image) }}" alt="{{ __('product') }}">
+                    <img class="card-img-top" style="width: 100%; height: 100%; overflow:hidden; border-radius: 1rem;" src="{{ asset(ProductImage() . $item->Primary_Image) }}" alt="{{ __('product') }}">
                 </div>
                     <div class="card-body">
                       <h3 class="card-title text-black">{{ langConverter($item->en_Product_Name, $item->fr_Product_Name) }}</h3>
@@ -98,9 +98,9 @@ alt="{{ __('product') }}" style="height: 210px;border: 1px solid #ddd;border-rad
                 @foreach ($BestSellingProducts as $item)
 
                 <a href="{{ route('single.product', $item->en_Product_Slug) }}" class="card" style="width: 30rem; border-radius: .5rem; height:105px !important; overflow:hidden !important;">
-                    <div class="card-wrapper d-flex gap-2">
+                    <div class="card-wrapper d-flex gap-2 m-auto">
                     <div class="p-image p-3">
-                    <img class="card-img-top" style="width: 100%; overflow:hidden; border-radius: 1rem;" src="{{ asset(ProductImage() . $item->Primary_Image) }}" alt="{{ __('product') }}">
+                    <img class="card-img-top" style="width: 100%; height: 100%; overflow:hidden; border-radius: 1rem;" src="{{ asset(ProductImage() . $item->Primary_Image) }}" alt="{{ __('product') }}">
                 </div>
                     <div class="card-body">
                       <h3 class="card-title text-black">{{ langConverter($item->en_Product_Name, $item->fr_Product_Name) }}</h3>

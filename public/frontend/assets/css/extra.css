@@ -1048,8 +1048,8 @@ img.thumbnail-image {
 
 .p-image {
     width: 140px;
+    height: 80px;
 }
-
 
 .swiper {
     height: unset !important;

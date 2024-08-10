@@ -24,9 +24,11 @@
                             <h3 class="product-name">
                                 <a class="product-link" href="{{ route('single.product', $product->en_Product_Slug) }}">{{ langConverter($product->en_Product_Name, $product->fr_Product_Name) }}</a>
                             </h3>
-                            <div class="product-price">
+                             <div class="product-price d-flex gap-4">
                                 <span class="price">{{ currencyConverter($product->Discount_Price) }}</span>
+                                @if($product->Discount_Price <  $product->Price)
                                 <span class="regular-price">{{ currencyConverter($product->Price) }}</span>
+                                @endif
                             </div>
                             <div class="pricer d-flex">
                                 {!! productReview($product->id) !!}
