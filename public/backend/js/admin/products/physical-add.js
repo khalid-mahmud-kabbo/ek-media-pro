@@ -4,6 +4,10 @@
     $(".tag_one").select2({ placeholder: "Select One" });
     $(".tag_two").select2({ placeholder: "Select One" });
 
+
+
+
+
     $('#discount').on('keyup', function () {
         discount_price()
     })
@@ -19,6 +23,33 @@
         $('#discount_price').val(discount_price);
     }
     discount_price()
+
+
+
+
+
+    $('#discountpp').on('keyup', function () {
+        discount_price()
+    })
+
+    $('#price').on('keyup', function () {
+        discount_price()
+    })
+
+    function discount_price() {
+        var price = $('#price').val();
+        var discount = $('#discountpp').val();
+        var discount_price = (price) - (discount);
+        $('#discount_price').val(discount_price);
+    }
+    discount_price()
+
+
+
+
+
+
+
 
     $('#en-product-name').on('keyup', function () {
         let $this = $(this);

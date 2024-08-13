@@ -127,7 +127,7 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="input__group mb-25 d-none">
+                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
                                                 <label for="exampleInputEmail1">{{ __('Item Tag') }}</label>
                                                 <select class="form-control" id="item_teg" name="item_teg">
                                                     <option value="">{{ __('---Select item---') }}</option>
@@ -195,6 +195,8 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
+
+
                                             <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
                                                 <label for="discount">{{ __('Discount (in Percentage)') }}</label>
                                                 <input type="number" class="form-control" id="discount"
@@ -204,6 +206,19 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
+
+
+                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
+                                                <label for="discount">{{ __('Discount (in Amount)') }}</label>
+                                                <input type="number" class="form-control" id="discountpp"
+                                                    name="discountpp" value="{{ old('discount') ?? 0 }}"
+                                                    placeholder="Discount">
+                                                @error('discount')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+
+
                                             <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
                                                 <label for="discount_price">{{ __('Discount Price') }}</label>
                                                 <input type="number" class="form-control" id="discount_price"
