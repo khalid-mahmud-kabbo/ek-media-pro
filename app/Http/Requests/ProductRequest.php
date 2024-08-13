@@ -34,12 +34,12 @@ class ProductRequest extends FormRequest
             'en_about' => 'required',
             'fr_about' => 'required',
             'en_description' => 'required',
-            'en_shippingreturn' => 'required',
-            'en_additionalinformation' => 'required',
+            // 'en_shippingreturn' => 'required',
+            // 'en_additionalinformation' => 'required',
             'fr_product_name' => 'required',
-            'fr_description' => 'required',
-            'fr_shippingreturn' => 'required',
-            'fr_additionalinformation' => 'required',
+            // 'fr_description' => 'required',
+            // 'fr_shippingreturn' => 'required',
+            // 'fr_additionalinformation' => 'required',
         ];
     }
 
@@ -53,11 +53,11 @@ class ProductRequest extends FormRequest
             'en_about.required' => 'The about is required.',
             'fr_about.required' => 'The about is required.',
             'en_description.required' => 'The description is required.',
-            'fr_description.required' => 'The description is required.',
-            'en_shippingreturn.required' => 'The shipping return is required.',
-            'fr_shippingreturn.required' => 'The shipping return is required.',
-            'en_additionalinformation.required' => 'The additional information is required.',
-            'fr_additionalinformation.required' => 'The additional information is required.',
+            // 'fr_description.required' => 'The description is required.',
+            // 'en_shippingreturn.required' => 'The shipping return is required.',
+            // 'fr_shippingreturn.required' => 'The shipping return is required.',
+            // 'en_additionalinformation.required' => 'The additional information is required.',
+            // 'fr_additionalinformation.required' => 'The additional information is required.',
         ];
     }
 }
