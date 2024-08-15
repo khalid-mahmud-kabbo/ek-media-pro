@@ -131,19 +131,18 @@
 
 </div>
 
-<div id="whatsapp" class="d-flex gap-2" style="position: fixed; z-index: 2147483647; justify-content: end;">
+
+
+
+<div id="whatsapp" class="d-flex gap-2 whatsapp-hidden" style="position: fixed; z-index: 2147483647; justify-content: end;">
     <div class="bg-white rounded text-black" id="message" style="font-size: small !important; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-       <div class="message-box" id="hidemessage" style="position: absolute; top: -13px; left: -4px;"><i class="fa-solid fa-xmark"></i></div>
-
-        স্যার, কিভাবে সহযোগিতা করতে পারি?
+        <div class="message-box" id="hidemessage" style="position: absolute; top: -13px; left: -4px;">
+            <i class="fa-solid fa-xmark"></i>
         </div>
-
-    <a class="contact-links-main"  style="width: 65px !important;"  target="_blank" href="{{ $allsettings['news_letter_title'] }}">
-
-    <img class="profile-image-contact" style="border-radius: 50%;" src="{{ asset(IMG_FOOTER_PATH . $allsettings['news_letter_img']) }}" alt="Support">
-</a>
-
+        স্যার, কিভাবে সহযোগিতা করতে পারি?
+    </div>
+    <a class="contact-links-main" style="width: 65px !important;" target="_blank" href="{{ $allsettings['news_letter_title'] }}">
+        <img class="profile-image-contact" style="border-radius: 50%;" src="{{ asset(IMG_FOOTER_PATH . $allsettings['news_letter_img']) }}" alt="Support">
+    </a>
 </div>
-
-
 </footer>

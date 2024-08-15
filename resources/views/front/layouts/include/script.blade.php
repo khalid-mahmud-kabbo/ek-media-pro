@@ -13,6 +13,50 @@
 <script src="{{ asset('admin/js/toastr.min.js') }}"></script>
 
 <script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.getElementById('whatsapp').classList.add('show');
+        }, 5000); // 5000 milliseconds = 5 seconds
+    });
+
+
+
+
+    document.querySelectorAll('.zoom-container').forEach(container => {
+    const image = container.querySelector('.slide-image');
+
+    // Function to handle the panning effect
+    const handleMouseMove = (e) => {
+        const { left, top, width, height } = container.getBoundingClientRect();
+        const x = (e.clientX - left) / width * 100;
+        const y = (e.clientY - top) / height * 100;
+        image.style.transformOrigin = `${x}% ${y}%`;
+    };
+
+    // Function to reset the image
+    const resetImage = () => {
+        container.classList.remove('active');
+        image.style.transformOrigin = 'center center';
+        image.style.transform = 'scale(1)';
+    };
+
+    // Add event listeners
+    container.addEventListener('mouseenter', () => {
+        container.classList.add('active');
+        image.style.transform = 'scale(2)'; // Zoom in
+        container.addEventListener('mousemove', handleMouseMove);
+    });
+
+    container.addEventListener('mouseleave', () => {
+        resetImage();
+        container.removeEventListener('mousemove', handleMouseMove); // Stop listening to mousemove
+    });
+});
+
+
+</script>
+
+<script>
     toastr.options = {
         "closeButton": false,
         "debug": false,

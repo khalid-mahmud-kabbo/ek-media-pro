@@ -57,37 +57,37 @@
                             </div>
                             <div class="product-slier-big-image">
                                 <div class="product-priview-slide slider slider-for">
-                                    <div class="single-slide">
+                                    <div class="single-slide zoom-container">
                                         <img class="slide-image"
-                                            src="{{ asset(ProductImage() . $products->Primary_Image) }}"
-                                            alt="{{ __('product') }}" />
+                                             src="{{ asset(ProductImage() . $products->Primary_Image) }}"
+                                             alt="{{ __('product') }}" />
                                     </div>
                                     @if ($products->Image4)
-                                        <div class="single-slide">
+                                        <div class="single-slide zoom-container">
                                             <img class="slide-image" src="{{ asset(ProductImage() . $products->Image4) }}"
-                                                alt="{{ __('product') }}" />
+                                                 alt="{{ __('product') }}" />
                                         </div>
                                     @endif
                                     @if ($products->Image3)
-                                        <div class="single-slide">
+                                        <div class="single-slide zoom-container">
                                             <img class="slide-image" src="{{ asset(ProductImage() . $products->Image3) }}"
-                                                alt="{{ __('product') }}" />
+                                                 alt="{{ __('product') }}" />
                                         </div>
                                     @endif
                                     @if ($products->Image5)
-                                        <div class="single-slide">
+                                        <div class="single-slide zoom-container">
                                             <img class="slide-image" src="{{ asset(ProductImage() . $products->Image5) }}"
-                                                alt="{{ __('product') }}" />
+                                                 alt="{{ __('product') }}" />
                                         </div>
                                     @endif
                                     @if ($products->Image2)
-                                        <div class="single-slide">
+                                        <div class="single-slide zoom-container">
                                             <img class="slide-image" src="{{ asset(ProductImage() . $products->Image2) }}"
-                                                alt="{{ __('product') }}" />
+                                                 alt="{{ __('product') }}" />
                                         </div>
                                     @endif
-
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -213,18 +213,6 @@
                             <button class="nav-link" id="Reviews-tab" data-bs-toggle="tab" data-bs-target="#Reviews"
                                 type="button" role="tab" aria-controls="Reviews" aria-selected="false">
                                 {{ __('Reviews') }}</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="Shipping-Return-tab" data-bs-toggle="tab"
-                                data-bs-target="#Shipping-Return" type="button" role="tab"
-                                aria-controls="Shipping-Return" aria-selected="false">
-                                {{ __('Shipping & Return') }}</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="Additional-Information-tab" data-bs-toggle="tab"
-                                data-bs-target="#Additional-Information" type="button" role="tab"
-                                aria-controls="Additional-Information" aria-selected="false">
-                                {{ __('Additional Information') }}</button>
                         </li>
                     </ul>
                 </div>

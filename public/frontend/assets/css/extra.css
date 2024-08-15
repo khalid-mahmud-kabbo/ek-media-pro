@@ -1590,7 +1590,7 @@ a.product-link {
 
 
 #whatsapp {
-    bottom: 110px;
+    bottom: 90px;
     font-size: 20px;
     display: block;
     width: 275px;
@@ -1624,4 +1624,88 @@ a.product-link {
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
     color: var(--white);
+}
+
+
+.main-cookie-content .primary-btn {
+    display: inline-block;
+    padding: .5rem 1.7rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+    background-color: #26CD59 !important;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    border: none;
+}
+
+
+.close.admin-close-btn,
+.front-close-btn.btn-close,
+.close.admin-close-btn:hover, .front-close-btn.btn-close:hover {
+    color: #26CD59 !important;
+    opacity: 1!important;
+}
+
+
+#whatsapp {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#whatsapp.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+
+.product-single-area .product-single-left .product-thumbnail-image .product-thumb-silide .single-item .single-item-image {
+    height: unset !important;
+}
+
+
+.product-single-area .product-single-left .product-thumbnail-image .product-thumb-silide .single-item.slick-current {
+    width: 110px !important;
+    height: 110px !important;
+}
+
+
+.product-single-area .product-single-left .product-thumbnail-image .product-thumb-silide .single-item {
+    width: 110px !important;
+    height: 110px !important;
+}
+
+
+.product-priview-slide .single-slide{
+    width: 450px !important;
+    height: 360px !important;
+}
+
+
+
+.product-single-area .product-single-left .product-slier-big-image .product-priview-slide .single-slide .slide-image {
+    height: 100% !important;
+}
+
+
+
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in; /* Cursor changes when hovering over the image */
+}
+
+.zoom-container .slide-image {
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+    width: 100%;
+}
+
+.zoom-container:hover .slide-image {
+    cursor: zoom-out;
+}
+
+.zoom-container.active .slide-image {
+    transform: scale(2); /* Scale image to 2x its original size */
+    cursor: move; /* Change cursor to indicate the image can be panned */
 }
