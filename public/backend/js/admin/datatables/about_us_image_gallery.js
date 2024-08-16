@@ -11,6 +11,10 @@
                     name: 'Image'
                 },
                 {
+                    data: 'product_link',
+                    name: 'product_link'
+                },
+                {
                     data: 'action',
                     name: 'action',
                     orderable: false

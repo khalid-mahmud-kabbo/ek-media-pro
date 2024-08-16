@@ -30,6 +30,7 @@
                         <thead>
                             <tr>
                                 <th>{{ __('Image') }}</th>
+                                <th>{{ __('Product Link') }}</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
                         </thead>

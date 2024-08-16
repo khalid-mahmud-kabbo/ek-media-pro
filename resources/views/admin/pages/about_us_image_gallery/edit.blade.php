@@ -39,7 +39,7 @@
                                             <input type="hidden" name="id" value="{{ $edit->id }}">
                                             <div class="input__group mb-25">
                                                 <label for="exampleInputEmail1">{{ __('Product Link') }}</label>
-                                                <input type="text" class="form-control putImage1" name="product_link"
+                                                <input type="text" class="form-control putImage1" value="{{ $edit->product_link }}" name="product_link"
                                                     id="product_link">
                                             </div>
 

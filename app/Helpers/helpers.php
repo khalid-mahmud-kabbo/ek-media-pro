@@ -776,18 +776,43 @@ if (!function_exists('languageList')) {
     }
 }
 
+// if (!function_exists('langString')) {
+//     function langString($locale, $brace = true)
+//     {
+//         $primary = Language::where('locale', $locale)->first();
+//         $lang = $primary->name;
+//         if ($brace == true) {
+//             return '(' . $lang . ')';
+//         } else {
+//             return $lang;
+//         }
+//     }
+// }
+
+
 if (!function_exists('langString')) {
     function langString($locale, $brace = true)
     {
         $primary = Language::where('locale', $locale)->first();
-        $lang = $primary->name;
-        if ($brace == true) {
-            return '(' . $lang . ')';
+
+        if ($primary) {
+            $lang = $primary->name;
+
+            if ($brace == true) {
+                return '(' . $lang . ')';
+            } else {
+                return $lang;
+            }
         } else {
-            return $lang;
+            // Return a default value or handle the case where the language is not found
+            return $brace ? '(Unknown Language)' : 'Unknown Language';
         }
     }
 }
+
+
+
+
 
 if (!function_exists('orderCountUser')) {
     function orderCountuser($user_id)

@@ -26,8 +26,8 @@ class BannerController extends Controller
             $oldImage = $banner->image;
             $banner->image = fileUpload($request['image'], BannerImage(), $oldImage);
         }
-        $banner->en_title = $request->en_title;
-        $banner->en_summary = $request->en_summary;
+        // $banner->en_title = $request->en_title;
+        // $banner->en_summary = $request->en_summary;
         $banner->url = $request->url;
         $banner->position = $request->position;
         $banner->fr_title = $request->fr_title;

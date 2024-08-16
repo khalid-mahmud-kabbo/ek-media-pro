@@ -124,7 +124,8 @@ class ImageGalleryController extends Controller
         }
 
         $update = $gallery->update([
-            'Image' => $image
+            'Image' => $image,
+            'product_link' => $request->product_link
         ]);
         if ($update) {
             return redirect()->route('admin.image.gallery')->with('success', __('Successfully Updated !'));

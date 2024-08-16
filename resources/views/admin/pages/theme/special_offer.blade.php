@@ -34,18 +34,6 @@
                                     <div class="col-md-6">
                                         <div class="form-vertical__item bg-style">
                                             <div class="input__group mb-25">
-                                                <label for="en_title">{{ __('Title') }}
-                                                    ({{ langString('en', false) }})</label>
-                                                <input type="text" class="form-control" id="en_title" name="en_title"
-                                                    required="" value="{{ $specialOffer->en_title }}">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="fr_title">{{ __('Title') }}
-                                                    ({{ langString('fr', false) }})</label>
-                                                <input type="text" class="form-control" id="fr_title" name="fr_title"
-                                                    required="" value="{{ $specialOffer->fr_title }}">
-                                            </div>
-                                            <div class="input__group mb-25">
                                                 <label for="url">{{ __('Url') }}</label>
                                                 <input type="text" class="form-control" id="url" name="url"
                                                     required="" value="{{ $specialOffer->url }}">
