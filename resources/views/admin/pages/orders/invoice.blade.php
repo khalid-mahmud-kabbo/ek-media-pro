@@ -140,9 +140,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-danger">{{ __('Developed By EK Softwares.') }}</small>
-                    </div>
+
                 </div>
             </div>
         </div>

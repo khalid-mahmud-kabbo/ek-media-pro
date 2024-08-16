@@ -43,7 +43,7 @@ class OrderController extends Controller
                     return $data->user != null ? $data->user->name : __('Guest User');
                 })
                 ->addColumn('GrandTotal', function ($data) {
-                    return '$' . $data->Grand_Total;
+                    return '৳' . $data->Grand_Total;
                 })
                 ->addColumn('Products', function ($data) {
                     $html = '';
@@ -188,7 +188,7 @@ class OrderController extends Controller
                     return $email['email'];
                 })
                 ->addColumn('GrandTotal', function ($data) {
-                    return '$' . $data->Grand_Total;
+                    return '৳' . $data->Grand_Total;
                 })
                 ->addColumn('status', function ($data) {
                     $html = '';

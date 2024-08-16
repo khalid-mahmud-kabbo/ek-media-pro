@@ -25,7 +25,7 @@
     <tr>
         <td class="first-column">{{__('Price')}}</td>
         @foreach($compareList as $item)
-            <td class="pro-price">{{__('$')}}{{$item->products->Discount_Price}}</td>
+            <td class="pro-price">{{__('৳')}}{{$item->products->Discount_Price}}</td>
         @endforeach
     </tr>
     <tr>

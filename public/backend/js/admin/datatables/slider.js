@@ -11,24 +11,8 @@
                     name: 'Background_Image'
                 },
                 {
-                    data: 'Thumbnail',
-                    name: 'Thumbnail'
-                },
-                {
                     data: 'Title',
                     name: 'Title'
-                },
-                {
-                    data: 'Sub_Title',
-                    name: 'Sub_Title'
-                },
-                {
-                    data: 'Description',
-                    name: 'Description'
-                },
-                {
-                    data: 'Button_Text',
-                    name: 'Button_Text'
                 },
                 {
                     data: 'action',

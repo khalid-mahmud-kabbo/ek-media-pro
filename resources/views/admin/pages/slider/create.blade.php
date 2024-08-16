@@ -31,17 +31,19 @@
                             <form enctype="multipart/form-data" method="POST" action="{{ route('admin.slider.store') }}">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-vertical__item bg-style">
                                             <div class="item-top mb-30">
                                                 <h2>{{ langString('en', false) . ':' }}</h2>
                                             </div>
                                             <div class="input__group mb-25">
-                                                <label for="en_title">{{ __('Title') }}</label>
+                                                <label for="en_title">{{ __('Product Link') }}</label>
                                                 <input type="text" class="form-control" id="en_title" name="en_title"
-                                                    value="{{ old('en_title') }}" placeholder="{{ __('Title') }}">
+                                                    value="{{ old('en_title') }}" placeholder="{{ __('Product Link') }}">
                                             </div>
-                                            <div class="input__group mb-25">
+
+
+                                            {{-- <div class="input__group mb-25">
                                                 <label for="en_sub_title">{{ __('Sub Title') }}</label>
                                                 <input type="text" class="form-control" id="en_sub_title"
                                                     name="en_sub_title" value="{{ old('en_sub_title') }}"
@@ -62,9 +64,13 @@
                                                 <input type="file" class="form-control putImage1" name="thumbnail"
                                                     id="thumbnail">
                                                 <img src="" id="target1" />
-                                            </div>
+                                            </div> --}}
+
+
+
+
                                             <div class="input__group mb-25">
-                                                <label for="background_image">{{ __('BackGround Image') }}</label>
+                                                <label for="background_image">{{ __('Slider Image') }}</label>
                                                 <input type="file" class="form-control putImage2" name="background_image"
                                                     id="background_image">
                                                 <img src="" id="target2" />
@@ -74,7 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 d-none">
                                         <div class="form-vertical__item bg-style">
                                             <div class="item-top mb-30">
                                                 <h2>{{ langString('bn', false) . ':' }}</h2>

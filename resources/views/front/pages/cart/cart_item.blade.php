@@ -43,8 +43,8 @@
                 </td>
                 <td>
                     <div class="product-price text-center">
-                        <h4 class="regular-price">{{__('$')}}{{$item->weight}}</h4>
-                        <h3 class="price ">{{__('$')}} <span class="mainPrice">{{$item->price}}</span> </h3>
+                        <h4 class="regular-price">{{__('৳')}}{{$item->weight}}</h4>
+                        <h3 class="price ">{{__('৳')}} <span class="mainPrice">{{$item->price}}</span> </h3>
                     </div>
                 </td>
                 <td>

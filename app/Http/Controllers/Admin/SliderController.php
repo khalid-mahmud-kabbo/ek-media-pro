@@ -64,24 +64,19 @@ class SliderController extends Controller
         } else {
             return redirect()->back()->with('error', __('Image is  required'));
         }
-        if (!empty($request->thumbnail)) {
-            $thumbnail = fileUpload($request['thumbnail'], SliderImage());
-        } else {
-            return redirect()->back()->with('error', __('Image is  required'));
-        }
         $slider = Slider::create([
             'en_Title' => $request->en_title,
-            'en_Sub_Title' => $request->en_sub_title,
-            'en_Description' => $request->en_description,
-            'en_Button_Text' => $request->en_btn_text,
-
-            'fr_Title' => $request->fr_title,
-            'fr_Sub_Title' => $request->fr_sub_title,
-            'fr_Description' => $request->fr_description,
-            'fr_Button_Text' => $request->fr_btn_text,
-
-            'Thumbnail' => $thumbnail,
             'Background_Image' => $background_image
+            // 'en_Sub_Title' => $request->en_sub_title,
+            // 'en_Description' => $request->en_description,
+            // 'en_Button_Text' => $request->en_btn_text,
+
+            // 'fr_Title' => $request->fr_title,
+            // 'fr_Sub_Title' => $request->fr_sub_title,
+            // 'fr_Description' => $request->fr_description,
+            // 'fr_Button_Text' => $request->fr_btn_text,
+
+            // 'Thumbnail' => $thumbnail,
         ]);
         if ($slider) {
             return redirect()->route('admin.slider')->with('success', __('Successfully Stored !'));
@@ -109,17 +104,17 @@ class SliderController extends Controller
         }
         $update = $slider->update([
             'en_Title' => is_null($request->en_title) ? $slider->en_Title : $request->en_title,
-            'en_Sub_Title' => is_null($request->en_sub_title) ? $slider->en_Sub_Title : $request->en_sub_title,
-            'en_Description' => is_null($request->en_description) ? $slider->en_Description : $request->en_description,
-            'en_Button_Text' => is_null($request->en_btn_text) ? $slider->en_Button_Text : $request->en_btn_text,
-
-            'fr_Title' => is_null($request->fr_title) ? $slider->fr_Title : $request->fr_title,
-            'fr_Sub_Title' => is_null($request->fr_sub_title) ? $slider->fr_Sub_Title : $request->fr_sub_title,
-            'fr_Description' => is_null($request->fr_description) ? $slider->fr_Description : $request->fr_description,
-            'fr_Button_Text' => is_null($request->fr_btn_text) ? $slider->fr_Button_Text : $request->fr_btn_text,
-
-            'Thumbnail' => $thumbnail,
             'Background_Image' => $background_image
+            // 'en_Sub_Title' => is_null($request->en_sub_title) ? $slider->en_Sub_Title : $request->en_sub_title,
+            // 'en_Description' => is_null($request->en_description) ? $slider->en_Description : $request->en_description,
+            // 'en_Button_Text' => is_null($request->en_btn_text) ? $slider->en_Button_Text : $request->en_btn_text,
+
+            // 'fr_Title' => is_null($request->fr_title) ? $slider->fr_Title : $request->fr_title,
+            // 'fr_Sub_Title' => is_null($request->fr_sub_title) ? $slider->fr_Sub_Title : $request->fr_sub_title,
+            // 'fr_Description' => is_null($request->fr_description) ? $slider->fr_Description : $request->fr_description,
+            // 'fr_Button_Text' => is_null($request->fr_btn_text) ? $slider->fr_Button_Text : $request->fr_btn_text,
+
+            // 'Thumbnail' => $thumbnail,
         ]);
         if (!empty($update)) {
             return redirect()->route('admin.slider')->with('success', __('Successfully Update !'));

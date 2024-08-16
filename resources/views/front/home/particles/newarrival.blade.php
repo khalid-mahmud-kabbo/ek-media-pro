@@ -4,15 +4,11 @@
 
 
 <div class="col-md-3 deal-of-the-day-wrapper">
-
-
-
-
                 @foreach ($products as $item)
                 @if($item->ItemTag == 'Deal Of The Day')
 
                 <div class="deal-of-the-day p-4" style="width: 80%; height: 100%;">
-                    <h3 class="text-center" style="color: #EE3C22;">DEAL OF THE DAY</h3>
+                    <h3 class="text-center text-black">DEAL OF THE DAY</h3>
                     <div class="deal-container bg-white rounded mt-4">
                         <div class="product-card p-3 text-center">
 

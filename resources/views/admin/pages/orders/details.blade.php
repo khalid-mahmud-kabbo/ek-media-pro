@@ -131,7 +131,7 @@
                     </table>
                 </div>
                 <div class="card-footer">
-                    <small class="text-danger">{{ __('Developed By EK Softwares.') }}</small>
+                    <small class="text-danger">{{ __('ASR MART') }}</small>
                 </div>
             </div>
         </div>
@@ -140,5 +140,5 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-danger me-2" data-bs-dismiss="modal">{{ __('Close') }}</button>
     <a href="{{ route('admin.order.print', $order->id) }}" class="btn btn-info"
-        target="_blank">{{ __('Print') }}</a>
+        target="_blank">{{ __('Print Invoice    ') }}</a>
 </div>

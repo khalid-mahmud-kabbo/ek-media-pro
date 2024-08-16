@@ -13,9 +13,10 @@
     <div class="swiper mySwiper hero-slider">
         <div class="swiper-wrapper">
             @foreach ($sliders as $slider)
-            <div class="swiper-slide hero">
+            <a href="{{ $slider->en_Title}}" class="swiper-slide hero">
+
             <img class="slider-images" src="{{ asset(SliderImage() . $slider->Background_Image) }}" alt="">
-        </div>
+            </a>
             @endforeach
         </div>
         <div class="swiper-pagination"></div>

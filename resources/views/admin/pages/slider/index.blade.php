@@ -35,12 +35,12 @@
                     <table id="SliderTable" class="row-border data-table-filter table-style">
                         <thead>
                         <tr>
-                            <th>{{ __('Background Image')}}</th>
-                            <th>{{ __('Thumbnail')}}</th>
-                            <th>{{ __('Title')}}</th>
-                            <th>{{ __('Sub Title')}}</th>
+                            <th>{{ __('Slider Image')}}</th>
+                            {{-- <th>{{ __('Thumbnail')}}</th> --}}
+                            <th>{{ __('Product Link')}}</th>
+                            {{-- <th>{{ __('Sub Title')}}</th>
                             <th>{{ __('Description')}}</th>
-                            <th>{{ __('Button Text')}}</th>
+                            <th>{{ __('Button Text')}}</th> --}}
                             <th>{{ __('Action')}}</th>
                         </tr>
                         </thead>

@@ -30,23 +30,23 @@
                             <form enctype="multipart/form-data" method="POST" action="{{ route('admin.slider.update') }}">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-vertical__item bg-style">
                                             <div class="item-top mb-30">
                                                 <h2>{{ langString('en', false) . ':' }}</h2>
                                             </div>
                                             <input type="hidden" name="id" id="id" value="{{ $edit->id }}">
                                             <div class="input__group mb-25">
-                                                <label for="exampleInputEmail1">{{ __('Title') }}</label>
+                                                <label for="exampleInputEmail1">{{ __('Product Link') }}</label>
                                                 <input type="text" id="en_title" name="en_title"
                                                     value="{{ $edit->en_Title }}" placeholder="{{ __('Title') }}">
                                             </div>
-                                            <div class="input__group mb-25">
+                                            {{-- <div class="input__group mb-25">
                                                 <label for="exampleInputEmail1">{{ __('Sub Title') }}</label>
                                                 <input type="text" id="en_sub_title" name="en_sub_title"
                                                     value="{{ $edit->en_Sub_Title }}" placeholder="{{ __('Sub Title') }}">
-                                            </div>
-                                            <div class="input__group mb-25">
+                                            </div> --}}
+                                            {{-- <div class="input__group mb-25">
                                                 <label for="exampleInputEmail1">{{ __('Button Text') }}</label>
                                                 <input type="text" id="en_btn_text" name="en_btn_text"
                                                     value="{{ $edit->en_Button_Text }}"
@@ -61,9 +61,10 @@
                                                 <input type="file" class="putImage1" name="thumbnail" id="thumbnail">
                                                 <img class="admin_image"
                                                     src="{{ asset(SliderImage() . $edit->Thumbnail) }}" id="target1" />
-                                            </div>
+                                            </div> --}}
+
                                             <div class="input__group mb-25">
-                                                <label for="background_image">{{ __('BackGround Image') }}</label>
+                                                <label for="background_image">{{ __('Slider Image') }}</label>
                                                 <input type="file" class="putImage2" name="background_image"
                                                     id="background_image">
                                                 <img class="admin_image"
@@ -75,7 +76,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 d-none">
                                         <div class="form-vertical__item bg-style">
                                             <div class="item-top mb-30">
                                                 <h2>{{ langString('bn', false) . ':' }}</h2>
