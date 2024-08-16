@@ -142,6 +142,9 @@ class GeneralSettingsController extends Controller
             if (isset($request->popup_image)) {
                 Setting::where('slug', 'popup_image')->update(['value' => fileUpload($request->popup_image, IMG_ADVERTISE_PATH)]);
             }
+            if (isset($request->popup_link)) {
+                Setting::where('slug', 'popup_link')->update(['value' => $request->popup_link]);
+            }
             if (isset($request->menu_thumb)) {
                 Setting::where('slug', 'menu_thumb')->update(['value' => fileUpload($request->menu_thumb, IMG_ADVERTISE_PATH)]);
             }

@@ -77,12 +77,6 @@
                                                 <input type="text" class="form-control" id="country" name="country"
                                                     value="{{ $allsettings['country'] }}" required="">
                                             </div>
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('News Letter') }}</label>
-                                                <input type="text" class="form-control" id="news_letter"
-                                                    name="news_letter" value="{{ $allsettings['news_letter'] }}"
-                                                    required="">
-                                            </div>
                                             <div class="input__group mb-25 ">
                                                 <label for="default_currency">{{ __('Default Currency') }}</label>
                                                 <select name="default_currency" id="default_currency"
@@ -160,6 +154,19 @@
                                                 <img src="{{ asset(IMG_PRELOADER_PATH . $allsettings['preloader']) }}"
                                                     id="target4" alt="{{ __('Image') }}" class="admin_image mt-3" />
                                             </div>
+
+
+
+
+                                            <div class="input__group mb-25">
+                                                <label for="exampleInputEmail1">{{ __('Pop Up Product Link') }}</label>
+                                                <input type="text" class="form-control" name="popup_link"
+                                                    id="popup_link" value="{{ $allsettings['popup_link'] }}">
+                                            </div>
+
+
+
+
                                             <div class="input__group mb-25">
                                                 <label for="exampleInputEmail1">{{ __('Popup Image') }}</label>
                                                 <input type="file" class="form-control putImage6" name="popup_image"
