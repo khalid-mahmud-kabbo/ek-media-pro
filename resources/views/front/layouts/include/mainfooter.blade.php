@@ -139,7 +139,7 @@
         <div class="message-box" id="hidemessage" style="position: absolute; top: -13px; left: -4px;">
             <i class="fa-solid fa-xmark"></i>
         </div>
-        স্যার, কিভাবে সহযোগিতা করতে পারি?
+        {{ $allsettings['popupmessage'] }}
     </div>
     <a class="contact-links-main" style="width: 65px !important;" target="_blank" href="{{ $allsettings['news_letter_title'] }}">
         <img class="profile-image-contact" style="border-radius: 50%;" src="{{ asset(IMG_FOOTER_PATH . $allsettings['news_letter_img']) }}" alt="Support">

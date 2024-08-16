@@ -173,6 +173,9 @@
                                         </form>
                                     </div>
                                 </div>
+
+
+
                                 <div class="col-md-6">
                                     <div class="form-vertical__item bg-style">
                                         <div class="item-top mb-30">
@@ -187,6 +190,15 @@
                                                     name="news_letter_title"
                                                     value="{{ $allsettings['news_letter_title'] }}">
                                             </div>
+
+                                            <div class="input__group mb-25">
+                                                <label for="title">{{ __('Message') }}</label>
+                                                <input type="text" class="form-control" id="popupmessage"
+                                                    name="popupmessage"
+                                                    value="{{ $allsettings['popupmessage'] }}">
+                                            </div>
+
+
                                             <div class="input__group mb-25">
                                                 <label for="news_letter_status">{{ __('Status') }}</label>
                                                 <select name="news_letter_status" id="news_letter_status"
@@ -213,6 +225,11 @@
                                         </form>
                                     </div>
                                 </div>
+
+
+
+
+
                                 <div class="col-md-6">
                                     <div class="form-vertical__item bg-style">
                                         <div class="item-top mb-30">

@@ -48,6 +48,7 @@ class SettingsTableSeeder extends Seeder
         Setting::create(['slug' => 'theme', 'value' => 'one',]);
         Setting::create(['slug' => 'news_letter_img', 'value' => 'accepts-image.png',]);
         Setting::create(['slug' => 'news_letter_title', 'value' => 'Guarantee safe & secure checkout',]);
+        Setting::create(['slug' => 'popupmessage', 'value' => 'স্যার, কিভাবে সহযোগিতা করতে পারি?',]);
         Setting::create(['slug' => 'news_letter_status', 'value' => '1',]);
     }
 }

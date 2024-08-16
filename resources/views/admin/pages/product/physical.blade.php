@@ -227,6 +227,15 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
+
+                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
+                                                <label for="enddate">{{ __('Sale End Date (Optional)') }}</label>
+                                                <input type="date" class="form-control" id="enddate"
+                                                    name="enddate">
+                                                @error('enddate')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
                                         </div>
 
 

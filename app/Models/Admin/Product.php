@@ -17,6 +17,7 @@ class Product extends Model
         'en_Product_Slug',
         'fr_Product_Name',
         'fr_Product_Slug',
+        'enddate',
         'en_About',
         'fr_About',
         'ItemTag',

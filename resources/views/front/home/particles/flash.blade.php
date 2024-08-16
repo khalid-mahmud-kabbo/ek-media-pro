@@ -1,10 +1,37 @@
 <div class="brands-wrapper">
     <div class="brands">
         <div class="d-flex justify-content-between">
+            <div>
         <h2 class="text-black mb-4">Flash Sell</h2>
+        <div class="countdown-background">
+            <span class="cz-countdown d-flex justify-content-center align-items-center flash-deal-countdown" data-countdown="08/20/2024 23:59:00 ">
+                <span class="cz-countdown-days">
+                    <span class="cz-countdown-value">4</span>
+                    <span class="cz-countdown-text">Days</span>
+                </span>
+                <span class="cz-countdown-value p-1">:</span>
+                <span class="cz-countdown-hours">
+                    <span class="cz-countdown-value">23</span>
+                    <span class="cz-countdown-text">Hrs</span>
+                </span>
+                <span class="cz-countdown-value p-1">:</span>
+                <span class="cz-countdown-minutes">
+                    <span class="cz-countdown-value">33</span>
+                    <span class="cz-countdown-text">Min</span>
+                </span>
+                <span class="cz-countdown-value p-1">:</span>
+                <span class="cz-countdown-seconds">
+                    <span class="cz-countdown-value">55</span>
+                    <span class="cz-countdown-text">Sec</span>
+                </span>
+            </span>
+        </div>
+    </div>
+
+
         <a href="/product/all" class="text-black">See All</a>
     </div>
-        <div class="row">
+        <div class="row mt-4">
 
 
             @php

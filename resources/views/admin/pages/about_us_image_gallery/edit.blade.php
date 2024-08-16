@@ -33,6 +33,20 @@
                                         <form enctype="multipart/form-data" method="POST"
                                             action="{{ route('admin.image.gallery.update') }}">
                                             @csrf
+
+
+
+                                            <input type="hidden" name="id" value="{{ $edit->id }}">
+                                            <div class="input__group mb-25">
+                                                <label for="exampleInputEmail1">{{ __('Product Link') }}</label>
+                                                <input type="text" class="form-control putImage1" name="product_link"
+                                                    id="product_link">
+                                            </div>
+
+
+
+
+
                                             <input type="hidden" name="id" value="{{ $edit->id }}">
                                             <div class="input__group mb-25">
                                                 <label for="exampleInputEmail1">{{ __('Image Gallery Image') }}</label>
@@ -42,6 +56,12 @@
                                                 <img class="admin_image" src="{{ asset(ImageGallery() . $edit->Image) }}"
                                                     id="target1" />
                                             </div>
+
+
+
+
+
+
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Update') }}</button>
                                             </div>

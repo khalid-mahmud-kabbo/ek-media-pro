@@ -251,6 +251,7 @@ class ProductController extends Controller
             // 'fr_ShippingReturn' => $data['fr_shippingreturn'],
             // 'fr_AdditionalInformation' => $data['fr_additionalinformation'],
             'Quantity' => $data['qty'] ?? 0,
+            'enddate' => $data['enddate'],
             'ItemTag' => $data['item_teg'],
             'Primary_Image' => $data['primary_image'],
             'Image2' => $data['img_two'] ?? null,

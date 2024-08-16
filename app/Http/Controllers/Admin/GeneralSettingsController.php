@@ -114,6 +114,9 @@ class GeneralSettingsController extends Controller
             if (isset($request->news_letter_title)) {
                 Setting::where('slug', 'news_letter_title')->update(['value' => $request->news_letter_title]);
             }
+            if (isset($request->popupmessage)){
+                Setting::where('slug', 'popupmessage')->update(['value' => $request->popupmessage]);
+            }
             if (isset($request->news_letter_status)) {
                 Setting::where('slug', 'news_letter_status')->update(['value' => $request->news_letter_status]);
             }
