@@ -251,6 +251,10 @@
     display: none;
 }
 
+.new-arrivals{
+    display: none;
+}
+
 .for-mobile-footer h3{
     font-size: larger;
 }
@@ -375,6 +379,10 @@ margin-top: 2rem;
     margin-bottom: 2rem !important;
 }
 
+.new-arrivals{
+    display: none;
+}
+
 .deal-of-the-day{
     width: 100% !important;
 }
@@ -430,6 +438,10 @@ margin-top: 2rem;
     }
     .for-mobile-footer h3{
         font-size: larger;
+    }
+
+    .new-arrivals{
+        display: none;
     }
 
     .for-mobile-contact p{
