@@ -24,7 +24,7 @@
 <div class="main-content__area bg-img">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-8 col-md-10">
+            <div class="col-xl-5 col-lg-7 col-md-9">
                 <div class="authentication__item">
                     <div class="authentication__item__logo">
                         <a href="{{route('front')}}">
@@ -32,13 +32,13 @@
                         </a>
                     </div>
                     <div class="authentication__item__title mb-30">
-                        <h2>{{__('Sign In')}}</h2>
+                        <h2 class="text-white">{{__('Sign In')}}</h2>
                     </div>
                     <div class="authentication__item__content">
                         <form action="{{ route('login.post') }}" method="post">
                             @csrf
                             <div class="input__group mb-25">
-                                <label>{{__('Email Address')}}</label>
+                                <label class="text-white">{{__('Email Address')}}</label>
                                 <div class="input-overlay">
                                     <input type="text" name="email" id="email" value="{{ app()->environment('local') ? 'admin@gmail.com' : old('email') }}" placeholder="{{__('Enter email address')}}">
                                     <div class="overlay">
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="input__group mb-20">
-                                <label>{{__('Password')}}</label>
+                                <label class="text-white">{{__('Password')}}</label>
                                 <div class="input-overlay">
                                     <input type="password" name="password" id="pass" value="{{ app()->environment('local') ? '123456' : '' }}" placeholder="{{__('Enter password')}}">
                                     <div class="overlay">

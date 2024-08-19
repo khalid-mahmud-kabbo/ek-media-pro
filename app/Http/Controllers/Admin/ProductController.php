@@ -252,6 +252,7 @@ class ProductController extends Controller
             // 'fr_AdditionalInformation' => $data['fr_additionalinformation'],
             'Quantity' => $data['qty'] ?? 0,
             'enddate' => $data['enddate'],
+            'salename' => $data['salename'],
             'ItemTag' => $data['item_teg'],
             'Primary_Image' => $data['primary_image'],
             'Image2' => $data['img_two'] ?? null,

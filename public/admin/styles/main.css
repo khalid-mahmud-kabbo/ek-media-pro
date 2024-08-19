@@ -13788,16 +13788,20 @@ img {
 }
 
 .main-content__area.bg-img {
-  background-image: url("../images/background/bg-img.png");
+  background-image: url("../../admin/images/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
+.main-content__area .btn{
+    background-color: #228322 !important;
+}
+
 .authentication__item {
-  padding: 60px;
-  background: #FFFFFF;
-  border-radius: 12px;
+    padding: 60px;
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
 }
 
 @media screen and (max-width: 575px) {

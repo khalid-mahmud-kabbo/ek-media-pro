@@ -101,7 +101,7 @@
                                         {{-- additional info --}}
 
                                         <div class="row form-vertical__item bg-style">
-        <div class="header-title mb-4"><h5>General setup</h5></div>
+                                            <div class="header-title mb-4"><h5>General setup</h5></div>
                                             <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
                                                 <label for="exampleInputEmail1">{{ __('Brand Name') }}</label>
                                                 <select class="form-control" id="en_brand_name" name="en_brand_name">
@@ -127,8 +127,8 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
-                                                <label for="exampleInputEmail1">{{ __('Item Tag') }}</label>
+                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3 d-none">
+                                                <label for="exampleInputEmail1">{{ __('Prod Tag') }}</label>
                                                 <select class="form-control" id="item_teg" name="item_teg">
                                                     <option value="">{{ __('---Select item---') }}</option>
                                                     @foreach ($item_tags as $it)
@@ -140,10 +140,13 @@
                                                 @enderror
                                             </div>
 
-                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
+
+
+                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3 d-none">
                                                 <label for="select2Multiple">{{ __('Product Tag') }}</label>
                                                 <select class="select2-multiple form-control tag_two" name="product_tag[]"
                                                     multiple="multiple">
+                                                    <option value="">{{ __('---Select item---') }}</option>
                                                     @foreach ($tags as $tag)
                                                         <option value="{{ $tag->name }}">{{ $tag->name }}</option>
                                                     @endforeach
@@ -224,6 +227,15 @@
                                                 <input type="number" class="form-control" id="discount_price"
                                                     name="discount_price" value="{{ old('discount_price') }}" readonly>
                                                 @error('discount_price')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="input__group mb-25 col-md-6 col-lg-4 col-xl-3">
+                                                <label for="enddate">{{ __('Name of Sale (Optional)') }}</label>
+                                                <input type="text" placeholder="Name of Sale" class="form-control" id="salename"
+                                                    name="salename">
+                                                @error('salename')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
