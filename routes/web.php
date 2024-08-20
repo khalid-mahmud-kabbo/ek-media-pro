@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\SslCommerzPaymentController;
 
+
 //Route::redirect('/', '');
 Route::post('currency-price', [CartController::class, 'currencyPrice'])->name('currency_price');
 Route::get('currency-symbol', [CartController::class, 'currencySymbol'])->name('currency_symbol');
@@ -125,6 +126,16 @@ Route::group(['middleware' => ['is_user']], function () {
         Route::get('brand/{id}', [ProductController::class, 'BrandWiseProduct'])->name('brand.product');
         Route::get('brand/left/{id}', [ProductController::class, 'BrandWiseProductLeft'])->name('brand.product_left');
     });
+
+
+
+
+
+
+
+
+
+
 
     Route::get('terms/conditions', [ServiceCustomerController::class, 'termsConditions'])->name('terms.conditions');
     Route::get('privacy/policy', [ServiceCustomerController::class, 'privacyPolicy'])->name('privacy.policy');

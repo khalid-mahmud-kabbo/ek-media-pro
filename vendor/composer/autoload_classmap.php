@@ -165,6 +165,7 @@ return array(
     'App\\Models\\ItemTag' => $baseDir . '/app/Models/ItemTag.php',
     'App\\Models\\Language' => $baseDir . '/app/Models/Language.php',
     'App\\Models\\Menu' => $baseDir . '/app/Models/Menu.php',
+    'App\\Models\\Offer' => $baseDir . '/app/Models/Offer.php',
     'App\\Models\\Page' => $baseDir . '/app/Models/Page.php',
     'App\\Models\\PaymentPlatform' => $baseDir . '/app/Models/PaymentPlatform.php',
     'App\\Models\\ProductReview' => $baseDir . '/app/Models/ProductReview.php',

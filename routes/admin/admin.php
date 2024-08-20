@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\OfferController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SizeController;
@@ -166,6 +167,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin', 'en.loca
         Route::post('/update', [SizeController::class, 'productSizeUpdate'])->name('product.size.update')->middleware(['permission:product-create|product-edit', 'isDemo']);
         Route::get('/delete/{id}', [SizeController::class, 'productSizeDelete'])->name('product.size.delete')->middleware(['permission:product-create|product-edit', 'isDemo']);
     });
+
+    Route::group(['prefix' => 'offers'], function () {
+        Route::get('', [OfferController::class, 'index'])->name('offers.index');
+        Route::get('/create', [OfferController::class, 'create'])->name('offers.create');
+        Route::post('/create', [OfferController::class, 'store'])->name('offers.store');
+        Route::get('/edit/{id}', [OfferController::class, 'edit'])->name('offers.edit');
+        Route::post('/update', [OfferController::class, 'update'])->name('offers.update');
+        Route::get('/delete/{id}', [OfferController::class, 'destroy'])->name('offers.delete');
+    });
+
 
 
     Route::group(['prefix' => 'product-tag'], function () {

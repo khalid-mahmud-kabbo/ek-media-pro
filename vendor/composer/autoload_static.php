@@ -867,6 +867,7 @@ class ComposerStaticInit43df4f428adb637a578244f1cbf5a796
         'App\\Models\\ItemTag' => __DIR__ . '/../..' . '/app/Models/ItemTag.php',
         'App\\Models\\Language' => __DIR__ . '/../..' . '/app/Models/Language.php',
         'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
+        'App\\Models\\Offer' => __DIR__ . '/../..' . '/app/Models/Offer.php',
         'App\\Models\\Page' => __DIR__ . '/../..' . '/app/Models/Page.php',
         'App\\Models\\PaymentPlatform' => __DIR__ . '/../..' . '/app/Models/PaymentPlatform.php',
         'App\\Models\\ProductReview' => __DIR__ . '/../..' . '/app/Models/ProductReview.php',

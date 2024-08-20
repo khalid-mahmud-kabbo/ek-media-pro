@@ -103,6 +103,12 @@
                             <span>{{ __('Product Size') }}</span>
                         </a>
                     </li>
+                    <li class="{{ isset($submenu) && $submenu == 'offers' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.offers.index') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Offer Sections') }}</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         @endcanany
