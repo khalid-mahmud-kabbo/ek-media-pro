@@ -10,6 +10,7 @@ use App\Models\Admin\OrderDetails;
 use App\Models\Admin\Product;
 use App\Models\Admin\ProductTag;
 use App\Models\Admin\Size;
+use App\Models\Admin\Offer;
 use App\Models\ItemTag;
 use App\Models\ProductTagList;
 use Illuminate\Http\Request;
@@ -97,6 +98,7 @@ class ProductController extends Controller
         $data['product'] = Product::get();
         $data['category'] = Category::get();
         $data['tags'] = ProductTagList::get();
+        $data['offers'] = Offer::get();
         $data['item_tags'] = ItemTag::get();
         return view('admin.pages.product.create', $data);
     }
@@ -106,6 +108,7 @@ class ProductController extends Controller
         $data['product'] = Product::get();
         $data['category'] = Category::get();
         $data['tags'] = ProductTagList::get();
+        $data['offers'] = Offer::get();
         $data['item_tags'] = ItemTag::get();
         return view('admin.pages.product.physical', $data);
     }
@@ -251,8 +254,8 @@ class ProductController extends Controller
             // 'fr_ShippingReturn' => $data['fr_shippingreturn'],
             // 'fr_AdditionalInformation' => $data['fr_additionalinformation'],
             'Quantity' => $data['qty'] ?? 0,
-            'enddate' => $data['enddate'],
-            'salename' => $data['salename'],
+            // 'enddate' => $data['enddate'],
+            // 'salename' => $data['salename'],
             'ItemTag' => $data['item_teg'],
             'Primary_Image' => $data['primary_image'],
             'Image2' => $data['img_two'] ?? null,
