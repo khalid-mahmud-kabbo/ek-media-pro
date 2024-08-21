@@ -24,7 +24,7 @@ class AuthController extends Controller
         if ($user) {
             if ($user->status == INACTIVE) {
                 Auth::logout();
-                return  redirect()->route('login')->with('error', __('User is blocked by admin.'));
+                return  redirect()->route('admin.login')->with('error', __('User is blocked by admin.'));
             }
             if (Hash::check($request->password, $user->password)) {
                 if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'is_admin' => 1])) {
@@ -37,13 +37,13 @@ class AuthController extends Controller
                 }
             }
         }
-        return  redirect()->route('login')->with('error', __('Wrong Credential'));
+        return  redirect()->route('admin.login')->with('error', __('Wrong Credential'));
     }
     public function logout()
     {
         if (Auth::check()) {
             Auth::logout();
-            return redirect()->route('login');
+            return redirect()->route('admin.login');
         }
         return redirect()->back()->with('error', __('Something went wrong!'));
     }
