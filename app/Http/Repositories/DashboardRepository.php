@@ -6,9 +6,6 @@ use App\Models\Admin\Blog;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Category;
 use App\Models\Admin\Order;
-use App\Models\Admin\Product;
-use App\Models\Admin\Subscribe;
-use App\Models\ProductReview;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -127,10 +124,7 @@ class DashboardRepository
         return number_format($earnings, 2);
     }
 
-    public function getTotalItems()
-    {
-        return Product::count();
-    }
+
 
     public function getTotalUsers()
     {
@@ -177,20 +171,13 @@ class DashboardRepository
         return number_format($earnings, 2);
     }
 
-    public function getTotalReviews()
-    {
-        return ProductReview::count();
-    }
 
     public function getTotalBlogs()
     {
         return Blog::count();
     }
 
-    public function getTotalSubscribers()
-    {
-        return Subscribe::count();
-    }
+
 
     public function getTransactionPie()
     {

@@ -77,29 +77,8 @@
                                                 <input type="text" class="form-control" id="country" name="country"
                                                     value="{{ $allsettings['country'] }}" required="">
                                             </div>
-                                            <div class="input__group mb-25 ">
-                                                <label for="default_currency">{{ __('Default Currency') }}</label>
-                                                <select name="default_currency" id="default_currency"
-                                                    class="form-control">
-                                                    @foreach (currency_array() as $item)
-                                                        <option value="{{ $item->currency }}"
-                                                            {{ @$allsettings['default_currency'] == $item->currency ? 'selected' : '' }}>
-                                                            {{ $item->currency }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="default_language">{{ __('Default Language') }}</label>
-                                                <select name="default_language" id="default_language"
-                                                    class="form-control">
-                                                    @foreach (languageList() as $item)
-                                                        <option value="{{ $item->locale }}"
-                                                            {{ @$allsettings['default_language'] == $item->locale ? 'selected' : '' }}>
-                                                            {{ $item->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
+
+
                                             <div class="input__group mb-25">
                                                 <label for="title">{{ __('Estimating Delivery') }}</label>
                                                 <input type="text" class="form-control" id="estimating_delivery"
@@ -269,57 +248,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-vertical__item bg-style">
-                                        <div class="item-top mb-30">
-                                            <h2>{{ __('Social Login') }}</h2>
-                                        </div>
-                                        <form enctype="multipart/form-data" method="POST"
-                                            action="{{ route('admin.general.settings.update_social_login') }}">
-                                            @csrf
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Google Client ID') }}</label>
-                                                <input type="text" class="form-control" id="google_client_id"
-                                                    name="google_client_id" value="{{ env('GOOGLE_CLIENT_ID') }}"
-                                                    required="">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Google Client Secret') }}</label>
-                                                <input type="text" class="form-control" id="google_client_secret"
-                                                    name="google_client_secret" value="{{ env('GOOGLE_CLIENT_SECRET') }}"
-                                                    required="">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Google Callback URL') }}</label>
-                                                <input type="text" class="form-control" id="google_callback_url"
-                                                    name="google_callback_url" value="{{ env('GOOGLE_CALLBACK_URL') }}"
-                                                    required="">
-                                            </div>
 
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Facebook Client ID') }}</label>
-                                                <input type="text" class="form-control" id="facebook_client_id"
-                                                    name="facebook_client_id" value="{{ env('FACEBOOK_CLIENT_ID') }}"
-                                                    required="">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Facebook Client Secret') }}</label>
-                                                <input type="text" class="form-control" id="facebook_client_secret"
-                                                    name="facebook_client_secret"
-                                                    value="{{ env('FACEBOOK_CLIENT_SECRET') }}" required="">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Facebook Callback URL') }}</label>
-                                                <input type="text" class="form-control" id="facebook_callback_url"
-                                                    name="facebook_callback_url"
-                                                    value="{{ env('FACEBOOK_CALLBACK_URL') }}" required="">
-                                            </div>
-                                            <div class="input__button">
-                                                <button type="submit" class="btn btn-blue">{{ __('Update') }}</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="form-vertical__item bg-style">
                                         <div class="item-top mb-30">
@@ -369,33 +298,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-vertical__item bg-style">
-                                        <div class="item-top mb-30">
-                                            <h2>{{ __('Advertise') }}</h2>
-                                        </div>
-                                        <form enctype="multipart/form-data" method="POST"
-                                            action="{{ route('admin.general.settings.update_settings') }}">
-                                            @csrf
-                                            <div class="input__group mb-25">
-                                                <label for="exampleInputEmail1">{{ __('Menu Thumb') }}</label>
-                                                <input type="file" class="form-control putImage7" name="menu_thumb"
-                                                    id="menu_thumb">
-                                                <img src="{{ asset(IMG_ADVERTISE_PATH . $allsettings['menu_thumb']) }}"
-                                                    id="target7" alt="{{ __('Image') }}"
-                                                    class="admin_image mt-3 img-thumb-zai" />
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="exampleInputEmail1">{{ __('Menu Link') }}</label>
-                                                <input type="text" class="form-control" name="menu_link"
-                                                    id="menu_link" value="{{ $allsettings['menu_link'] }}">
-                                            </div>
-                                            <div class="input__button">
-                                                <button type="submit" class="btn btn-blue">{{ __('Update') }}</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

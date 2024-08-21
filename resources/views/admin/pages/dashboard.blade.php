@@ -27,7 +27,7 @@
                 <div class="item__left">
                     <h2>{{__('Total Sale')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{$totalProductSale}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -42,7 +42,7 @@
                 <div class="item__left">
                     <h2>{{__('Today Order')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $todayProductOrder }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -57,7 +57,7 @@
                 <div class="item__left">
                     <h2>{{\Carbon\Carbon::now()->format('F').__(' Sale')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{$totalCurrentMonthProductSale}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -72,7 +72,7 @@
                 <div class="item__left">
                     <h2>{{ __('Yearly Sale') }}</h2>
                     <div class="status__box__data">
-                        <h2>{{$totalLatYearProductSale}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -90,7 +90,7 @@
                 <div class="item__left">
                     <h2>{{__('Orders')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{$totalOrders}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -105,7 +105,7 @@
                 <div class="item__left">
                     <h2>{{__('Pending Orders')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $pendingOrders }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -120,7 +120,7 @@
                 <div class="item__left">
                     <h2>{{__(' Delivered Orders')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{$deliveredOrders}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -135,7 +135,7 @@
                 <div class="item__left">
                     <h2>{{ __('Returned Orders') }}</h2>
                     <div class="status__box__data">
-                        <h2>{{$returnedOrders}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -153,7 +153,7 @@
                 <div class="item__left">
                     <h2>{{__('Total Earning')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{__('৳').$totalEarning}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -168,7 +168,7 @@
                 <div class="item__left">
                     <h2>{{__('Today Earning')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ __('৳').$todayEarning }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -183,7 +183,7 @@
                 <div class="item__left">
                     <h2>{{\Carbon\Carbon::now()->format('F').__(' Earning')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ __('৳').$monthEarning }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -198,7 +198,7 @@
                 <div class="item__left">
                     <h2>{{ __('Yearly Earning') }}</h2>
                     <div class="status__box__data">
-                        <h2>{{__('৳').$yearEarning}}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -216,7 +216,7 @@
                 <div class="item__left">
                     <h2>{{__('Products')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $totalProducts }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -231,7 +231,7 @@
                 <div class="item__left">
                     <h2>{{__('Customers')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $totalUsers }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -246,7 +246,7 @@
                 <div class="item__left">
                     <h2>{{__('Categories')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $totalCategories }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -261,7 +261,7 @@
                 <div class="item__left">
                     <h2>{{ __('Brands') }}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $totalBrands }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -279,7 +279,7 @@
                 <div class="item__left">
                     <h2>{{__('Online Transactions')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ __('৳').$totalOnlineTransaction }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -294,7 +294,7 @@
                 <div class="item__left">
                     <h2>{{__('Paypal Transactions')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{  __('৳').$totalPaypalTransaction }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -309,7 +309,7 @@
                 <div class="item__left">
                     <h2>{{__('Stripe Transactions')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ __('৳').$totalStripeTransaction }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -324,7 +324,7 @@
                 <div class="item__left">
                     <h2>{{ __('Razorpay Transactions') }}</h2>
                     <div class="status__box__data">
-                        <h2>{{ __('৳').$totalRazorpayTransaction }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -341,7 +341,7 @@
                 <div class="item__left">
                     <h2>{{__('Bank Transactions')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ __('৳').$totalOnlineTransaction }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -356,7 +356,7 @@
                 <div class="item__left">
                     <h2>{{__('Reviews')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{  $getTotalReviews }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -371,7 +371,7 @@
                 <div class="item__left">
                     <h2>{{__('Blogs')}}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $getTotalBlogs }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -386,7 +386,7 @@
                 <div class="item__left">
                     <h2>{{ __('Subscribers') }}</h2>
                     <div class="status__box__data">
-                        <h2>{{ $getTotalSubscribers }}</h2>
+                        <h2>0</h2>
                     </div>
                 </div>
                 <div class="item__right">
@@ -451,13 +451,13 @@
 
     </div>
 
-    <div id="transaction_pie" data-dt='{!! json_encode($transactionPie) !!}'></div>
-    <div id="sales_ratio" data-dt='{!! json_encode($salesRatio) !!}'></div>
+    {{-- <div id="transaction_pie" data-dt='{!! json_encode($transactionPie) !!}'></div>
+    <div id="sales_ratio" data-dt='{!! json_encode($salesRatio) !!}'></div> --}}
 
     @push('post_scripts')
-        <script src="{{asset('backend/plugins/chart.min.js')}}"></script>
+        {{-- <script src="{{asset('backend/plugins/chart.min.js')}}"></script> --}}
         <script src="{{asset('backend/js/admin/dashboard.js')}}"></script>
-        <script>
+        {{-- <script>
             multipleLineChart = document.getElementById('multipleLineChart').getContext('2d'),
                 multipleLineChart2 = document.getElementById('multipleLineChart2').getContext('2d')
 
@@ -540,6 +540,6 @@
                     }
                 }
             });
-        </script>
+        </script> --}}
     @endpush
 @endsection
