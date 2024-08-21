@@ -235,7 +235,7 @@ CREATE TABLE `general_settings` (
 --
 
 INSERT INTO `general_settings` (`id`, `Title`, `Logo`, `Favicon`, `MetaDescription`, `MetaKeywords`, `MetaAuthor`, `created_at`, `updated_at`) VALUES
-(1, 'Zairito - Ecommerce', 'zairito.png', 'favicon.png', 'Zairito - Ecommerce', 'business,eCommerce, Ecommerce, ecommerce, shop, shopify, shopify ecommerce, creative, woocommerce, design, gallery, minimal, modern, html, html5, responsive', 'Zairito', '2024-05-01 05:18:07', '2024-05-01 05:18:07');
+(1, 'EK Softwares - Ecommerce', 'ekoftwares.png', 'favicon.png', 'EK Softwares - Ecommerce', 'business,eCommerce, Ecommerce, ecommerce, shop, shopify, shopify ecommerce, creative, woocommerce, design, gallery, minimal, modern, html, html5, responsive', 'EK Softwares', '2024-05-01 05:18:07', '2024-05-01 05:18:07');
 
 -- --------------------------------------------------------
 
@@ -264,10 +264,10 @@ CREATE TABLE `homepages` (
 INSERT INTO `homepages` (`id`, `Location`, `en_Title`, `en_Description_One`, `en_Description_Two`, `image`, `fr_Title`, `fr_Description_One`, `fr_Description_Two`, `created_at`, `updated_at`) VALUES
 (1, 'many_goods', 'Many Goods', 'Popular Categories', NULL, NULL, 'العديد من السلع', 'الفئات الشعبية', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (2, 'products', 'New Products', 'Products', NULL, NULL, 'منتجات جديدة', 'منتجات', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
-(3, 'about_us', 'About Us', 'The Story Of Borning <br /> Company Zairito', NULL, 'about-home.jpg', 'معلومات عنا', '<div>قصة بورنينج</div><div>شركة زايريتو</div>', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
+(3, 'about_us', 'About Us', 'The Story Of Borning <br /> Company EK Softwares', NULL, 'about-home.jpg', 'معلومات عنا', '<div>قصة بورنينج</div><div>شركة زايريتو</div>', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (4, 'popular_products', 'Popular Products', 'Trending Products', NULL, NULL, 'المنتجات الشعبية', 'تتجه المنتجات', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (5, 'blogspot', 'Blogspot', 'TNews From Our Blog', NULL, NULL, 'بلوغسبوت', 'أخبار من مدونتنا', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
-(6, 'image_gallery', 'image gallery', 'Image Gallery To Zairito For Making Better Online Shopping Experience', NULL, NULL, 'معرض الصور', 'معرض الصور لتقديم تجربة تسوق أفضل عبر الإنترنت', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
+(6, 'image_gallery', 'image gallery', 'Image Gallery To EK Softwares For Making Better Online Shopping Experience', NULL, NULL, 'معرض الصور', 'معرض الصور لتقديم تجربة تسوق أفضل عبر الإنترنت', NULL, '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (7, 'testimonial', 'Testimonial', 'What People Are <br />Saying About Oursalve', '<p>Praesent sapien massa, convallis a pellentesque nec, egestas\r\n                    Vivamus magna justo, lacinia eget consectetur sed</p>', NULL, 'شهادة', '<div>من هم الناس</div><div>نقول عن أنفسنا</div>', '<p>كتلة الحاضر حكيمة وليست من وادي القناص</p>', '2024-05-01 05:18:07', '2024-05-01 05:18:07');
 
 -- --------------------------------------------------------
@@ -664,7 +664,7 @@ INSERT INTO `settings` (`id`, `slug`, `value`, `created_at`, `updated_at`) VALUE
 (9, 'favicon', '66abd2548cfda1722536532.png', '2024-05-01 05:18:07', '2024-08-01 12:22:12'),
 (10, 'version', '1', '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (11, 'meta_author', 'ASR Mart', '2024-05-01 05:18:07', '2024-07-14 08:39:42'),
-(12, 'meta_description', 'Zairito - Ecommerce App', '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
+(12, 'meta_description', 'EK Softwares - Ecommerce App', '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (13, 'meta_keywords', 'business,eCommerce, Ecommerce, ecommerce, shop, shopify, shopify ecommerce, creative, woocommerce, design, gallery, minimal, modern, html, html5, responsive', '2024-05-01 05:18:07', '2024-05-01 05:18:07'),
 (14, 'call_us', '01704976505', '2024-05-01 05:18:07', '2024-08-21 03:36:38'),
 (15, 'email', 'support@eksoftwares.com', '2024-05-01 05:18:07', '2024-08-21 03:36:38'),

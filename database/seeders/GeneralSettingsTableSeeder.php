@@ -15,12 +15,12 @@ class GeneralSettingsTableSeeder extends Seeder
     public function run()
     {
         GeneralSettings::create([
-            'Title' => 'Zairito - Ecommerce',
-            'Logo' => 'zairito.png',
+            'Title' => 'EK Softwares',
+            'Logo' => 'ekoftwares.png',
             'Favicon' =>'favicon.png',
-            'MetaDescription' => 'Zairito - Ecommerce',
+            'MetaDescription' => 'EK Softwares',
             'MetaKeywords' => 'business,eCommerce, Ecommerce, ecommerce, shop, shopify, shopify ecommerce, creative, woocommerce, design, gallery, minimal, modern, html, html5, responsive',
-            'MetaAuthor'=> 'Zairito',
+            'MetaAuthor'=> 'EK Softwares',
         ]);
     }
 }
