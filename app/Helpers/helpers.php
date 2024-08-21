@@ -11,9 +11,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\Setting;
-use App\Models\Admin\Order;
 use App\Models\Menu;
-use App\Models\Admin\OrderDetails;
 
 if (!function_exists('fileUpload')) {
     function fileUpload($img, $path, $user_file_name = null, $width = null, $height = null, $defaultFileName = null)

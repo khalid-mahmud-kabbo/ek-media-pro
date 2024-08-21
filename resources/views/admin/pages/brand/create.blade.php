@@ -34,15 +34,11 @@
                                             action="{{ route('admin.brand.store') }}">
                                             @csrf
                                             <div class="input__group mb-25">
-                                                <label>{{ __('Brand Name ' . langString('en')) }}</label>
+                                                <label>{{ __('Brand Name ') }}</label>
                                                 <input type="text" id="en_brand_name" name="en_brand_name"
                                                     value="{{ old('en_brand_name') }}" placeholder="Name (English)">
                                             </div>
-                                            <div class="input__group mb-25">
-                                                <label>{{ __('Brand Name ' . langString('bn')) }}</label>
-                                                <input type="text" id="fr_brand_name" name="fr_brand_name"
-                                                    value="{{ old('fr_brand_name') }}" placeholder="Name (Bangla)">
-                                            </div>
+
                                             <div class="input__group mb-25">
                                                 <label>{{ __('Brand Image') }}</label>
                                                 <input type="file" class="putImage2" name="brand_image"

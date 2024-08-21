@@ -30,10 +30,10 @@
                             <form enctype="multipart/form-data" method="POST" action="{{ route('admin.blog.store') }}">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-vertical__item bg-style">
                                             <div class="item-top mb-30">
-                                                <h2>{{ langString('en', false) . ':' }}</h2>
+                                                <h2>{{ 'English' }}</h2>
                                             </div>
                                             <div class="input__group mb-25">
                                                 <label for="en_blog_title">{{ __('Blog Title') }}</label>
@@ -72,27 +72,6 @@
                                             </div>
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Add') }}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-vertical__item bg-style">
-                                            <div class="item-top mb-30">
-                                                <h2>{{ langString('bn', false) . ':' }}</h2>
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="fr_blog_title">{{ __('Blog Title') }}</label>
-                                                <input type="text" class="form-control" id="fr_blog_title"
-                                                    name="fr_blog_title" required="" value="{{ old('fr_blog_title') }}"
-                                                    placeholder="{{ __('Title') }}">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="fr_description_one">{{ __('Description One') }}</label>
-                                                <textarea name="fr_description_one" id="summernote3" class="" required=""></textarea>
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="fr_description_two">{{ __('Description Two') }}</label>
-                                                <textarea name="fr_description_two" id="summernote4" class=""></textarea>
                                             </div>
                                         </div>
                                     </div>

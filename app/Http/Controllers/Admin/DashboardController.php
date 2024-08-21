@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\DashboardRepository;
-use App\Models\Admin\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,20 +20,11 @@ class DashboardController extends Controller
         if (Auth::check()) {
             $days = "";
             $sales = "";
-            for ($i = 0; $i < 30; $i++) {
-                $days .= "'" . date("d M", strtotime('-' . $i . ' days')) . "',";
-                $sales .=  "'" . Order::where('Order_Status', '=', ORDER_DELIVERED)->whereDate('created_at', '=', date("Y-m-d", strtotime('-' . $i . ' days')))->count() . "',";
-            }
+
 
             $earning_days = "";
             $incomes = "";
-            for ($i = 0; $i < 30; $i++) {
-                $earning_days .= "'" . date("d M", strtotime('-' . $i . ' days')) . "',";
-                $incomes .= "'" . Order::where('Order_Status', '=', ORDER_DELIVERED)->whereDate('created_at', '=', date("Y-m-d", strtotime('-' . $i . ' days')))->sum('Grand_Total') . "',";
-            }
 
-            $data['transactionPie'] = $this->repository->getTransactionPie();
-            $data['salesRatio'] = $this->repository->getSalesRatio();
 
             $data['order_days'] = $days;
             $data['order_sales'] = $sales;
