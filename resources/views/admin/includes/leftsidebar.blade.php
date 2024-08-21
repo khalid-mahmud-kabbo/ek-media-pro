@@ -45,13 +45,43 @@
                 </ul>
             </li>
         @endcanany
+        @canany(['category-list', 'brand-list'])
+            <li class="{{ isset($menu) && $menu == 'catbad' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-list"></i>
+                    <span>{{ __('Category and Brand') }}</span>
+                </a>
+                <ul>
+                    @can('category-list')
+                        <li class="{{ isset($submenu) && $submenu == 'category' ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.category') }}">
+                                <i class="fa fa-circle"></i>
+                                <span>{{ __('Category') }}</span>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('brand-list')
+                        <li class="{{ isset($submenu) && $submenu == 'brand' ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.brand') }}">
+                                <i class="fa fa-circle"></i>
+                                <span>{{ __('Brand') }}</span>
+                            </a>
+                        </li>
+                    @endcan
+
+                </ul>
+            </li>
+        @endcanany
 
 
-
-
-
-
-
+        @canany(['blog-list'])
+            <li class="{{ isset($menu) && $menu == 'blog' ? 'mm-active' : '' }}">
+                <a href="{{ route('admin.blog') }}">
+                    <i class="fab fa-blogger-b"></i>
+                    <span>{{ __('Blog') }}</span>
+                </a>
+            </li>
+        @endcanany
 
 
         @canany(['cms-list'])
@@ -65,6 +95,12 @@
                         <a href="{{ route('admin.general.settings') }}">
                             <i class="fa fa-circle"></i>
                             <span>{{ __('General Settings') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'content_home' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.home.page.site.content') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Home Page') }}</span>
                         </a>
                     </li>
 
@@ -87,9 +123,27 @@
                         </a>
                     </li>
 
+                    <li class="{{ isset($submenu) && $submenu == 'blog' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.manage_seo', 'blog') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Blog') }}</span>
+                        </a>
+                    </li>
+
                 </ul>
             </li>
         @endcanany
+
+
+        @canany(['cms-list'])
+            <li class="{{ isset($menu) && $menu == 'sitemap' ? 'mm-active' : '' }}">
+                <a href="{{ route('admin.sitemap_list') }}">
+                    <i class="fa fa-sitemap"></i>
+                    <span>{{ __('Sitemaps') }}</span>
+                </a>
+            </li>
+        @endcanany
+
 
     </ul>
 </div>

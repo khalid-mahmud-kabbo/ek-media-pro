@@ -1,1 +1,1 @@
-<h1>Hello frontend</h1>
+<h2>Hello Frontend</h2>
