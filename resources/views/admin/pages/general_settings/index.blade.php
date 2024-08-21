@@ -79,18 +79,7 @@
                                             </div>
 
 
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Estimating Delivery') }}</label>
-                                                <input type="text" class="form-control" id="estimating_delivery"
-                                                    name="estimating_delivery"
-                                                    value="{{ $allsettings['estimating_delivery'] }}" required="">
-                                            </div>
-                                            <div class="input__group mb-25">
-                                                <label for="title">{{ __('Shipping Charge') }}</label>
-                                                <input type="number" class="form-control" id="shipping_charge"
-                                                    name="shipping_charge" value="{{ $allsettings['shipping_charge'] }}"
-                                                    required="">
-                                            </div>
+
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Update') }}</button>
                                             </div>
@@ -135,24 +124,6 @@
                                             </div>
 
 
-
-
-                                            <div class="input__group mb-25">
-                                                <label for="exampleInputEmail1">{{ __('Pop Up Product Link') }}</label>
-                                                <input type="text" class="form-control" name="popup_link"
-                                                    id="popup_link" value="{{ $allsettings['popup_link'] }}">
-                                            </div>
-
-
-
-
-                                            <div class="input__group mb-25">
-                                                <label for="exampleInputEmail1">{{ __('Popup Image') }}</label>
-                                                <input type="file" class="form-control putImage6" name="popup_image"
-                                                    id="popup_image">
-                                                <img src="{{ asset(IMG_ADVERTISE_PATH . $allsettings['popup_image']) }}"
-                                                    id="target6" alt="{{ __('Image') }}" class="admin_image mt-3" />
-                                            </div>
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Update') }}</button>
                                             </div>
@@ -162,7 +133,7 @@
 
 
 
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-vertical__item bg-style">
                                         <div class="item-top mb-30">
                                             <h2>{{ __('Support Contact') }}</h2>
@@ -210,7 +181,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> --}}
 
 
 
