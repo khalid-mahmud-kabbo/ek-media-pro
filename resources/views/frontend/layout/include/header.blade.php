@@ -33,7 +33,7 @@
                     <div class="head two">
 
                         @if (Auth::user())
-                         <a href="{{ route('user.profile') }}" target="_blank">
+                         <a href="{{ route('publisher.profile') }}" target="_blank">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>Dashboard</span>

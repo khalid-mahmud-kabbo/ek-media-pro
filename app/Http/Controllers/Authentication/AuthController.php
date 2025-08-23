@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserAuthRequest;
@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-    public function userSignIn()
+    public function SignIn()
     {
         if (Auth::check()) {
             if (auth()->user()->is_admin == 1) {
@@ -31,9 +30,9 @@ class AuthController extends Controller
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('frontend.frontview.pages.auth.sign_in', $data);
+        return view('frontend.pages.auth.sign_in', $data);
     }
-    public function userSignInPost(Request $request)
+    public function SignInPost(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
@@ -59,43 +58,22 @@ class AuthController extends Controller
         }
         return redirect()->back()->with('error', __('Credential Not Match'));
     }
-    public function userSignUp()
+
+    public function SignUp()
     {
         $seo = SeoSetting::where('slug', 'sign-up')->first();
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('frontend.frontview.pages.auth.sign_up', $data);
+        return view('frontend.pages.auth.sign_up', $data);
     }
 
-    public function loginModal(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-        $user = User::where('email', $request->email)->first();
-        if ($user) {
-            if (Hash::check($request->password, $user->password)) {
-                if ($user->status == INACTIVE) {
-                    return  redirect()->route('front')->with('error', __('User is blocked by admin.'));
-                }
-                if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                    if (Auth::user()->is_admin == 0) {
-                        return redirect()->back()->with('success', 'Login Successfully');
-                    } else {
-                        Auth::logout();
-                        return redirect()->back()->with('error', __('Something went wrong!'));
-                    }
-                }
-            }
-        }
-        return redirect()->back()->with('error', __('Wrong Credential'));
-    }
-    public function userSignUpPost(UserAuthRequest $request)
+
+    public function SignUpPost(UserAuthRequest $request)
     {
         $user = User::create([
             'name' => $request->name,
+            'phone' => $request->phone,
             'email' => $request->email,
             'password' => Hash::make($request->confirm_password),
         ]);
@@ -105,7 +83,7 @@ class AuthController extends Controller
             return redirect()->route('user.sign.up')->with('success', __('Wrong Credential !'));
         }
     }
-    public function userLogout()
+    public function Logout()
     {
         if (Auth::check()) {
             Auth::logout();
@@ -113,7 +91,7 @@ class AuthController extends Controller
         }
         return redirect()->back()->with('error', __('Something went wrong!'));
     }
-    public function userChangePassword(UserChangePasswordRequest $request)
+    public function ChangePassword(UserChangePasswordRequest $request)
     {
         $request->validate([
             'current_password' => 'required',
@@ -132,15 +110,15 @@ class AuthController extends Controller
         return redirect()->back()->with('success', __('Password change successfully!'));
     }
     //forget password
-    public function userForgetPasswordGet()
+    public function ForgetPasswordGet()
     {
         $seo = SeoSetting::where('slug', 'forget-password')->first();
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('frontend.frontview.pages.auth.forget_password', $data);
+        return view('front.auth.forget_password', $data);
     }
-    public function userForgetPasswordPost(Request $request)
+    public function ForgetPasswordPost(Request $request)
     {
         $request->validate([
             'email' => 'required|email|exists:users',
@@ -154,21 +132,21 @@ class AuthController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        Mail::send('frontend.frontview.pages.auth.mail_form', ['token' => $token], function ($message) use ($request) {
+        Mail::send('frontend.pages.auth.mail_form', ['token' => $token], function ($message) use ($request) {
             $message->to($request->email);
             $message->subject('Reset Password');
         });
 
         return back()->with('success', 'We have e-mailed your password reset link!');
     }
-    public function userShowResetPasswordForm($token)
+    public function ShowResetPasswordForm($token)
     {
         $seo = SeoSetting::where('slug', 'reset-password')->first();
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
         $data['token'] = $token;
-        return view('frontend.frontview.pages.auth.show_reset_form', $data);
+        return view('frontend.pages.auth.show_reset_form', $data);
     }
     public function submitResetPasswordForm(Request $request)
     {
@@ -199,70 +177,4 @@ class AuthController extends Controller
         return redirect()->back()->with('error', 'Your password not changed!');
     }
 
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    public function handleGoogleCallback()
-    {
-        try {
-            $user = Socialite::driver('google')->user();
-            $finduser = User::where('google_id', $user->id)->orWhere('email', $user->email)->first();
-
-            if ($finduser) {
-                if ($finduser->status == INACTIVE) {
-                    return  redirect()->route('front')->with('error', __('User is blocked by admin.'));
-                }
-                Auth::login($finduser);
-                return redirect()->route('front')->with('success', __('Login Successfully!'));
-            } else {
-                $newUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'image' => $user->avatar,
-                    'google_id' => $user->id,
-                    'password' => Hash::make('123456')
-                ]);
-                Auth::login($newUser);
-                return redirect()->route('front')->with('success', __('Login Successfully!'));
-            }
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', __('Something went wrong!'));
-        }
-    }
-
-    public function redirectToFacebook()
-    {
-        return Socialite::driver('facebook')->redirect();
-    }
-
-    public function handleFacebookCallback()
-    {
-        try {
-            $user = Socialite::driver('facebook')->user();
-
-            $finduser = User::where('facebook_id', $user->id)->first();
-
-            if ($finduser) {
-                if ($finduser->status == INACTIVE) {
-                    return  redirect()->route('front')->with('error', __('User is blocked by admin.'));
-                }
-                Auth::login($finduser);
-                return redirect()->route('front')->with('success', __('Login Successfully!'));
-            } else {
-                $newUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'image' => $user->avatar,
-                    'facebook_id' => $user->id,
-                    'password' => Hash::make('123456')
-                ]);
-                Auth::login($newUser);
-                return redirect()->route('front')->with('success', __('Login Successfully!'));
-            }
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', __('Something went wrong!'));
-        }
-    }
 }

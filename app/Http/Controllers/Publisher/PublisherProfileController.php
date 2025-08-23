@@ -8,27 +8,27 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserProfileController extends Controller
+class PublisherProfileController extends Controller
 {
-    public function userProfile()
+    public function publisherProfile()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
-        $data['title'] = __('User Panel');
-        $data['description'] = __('User Panel');
-        $data['keywords'] = __('User Panel');
-        return view('frontend.pages.user_profile.profile', $data);
+        $data['title'] = __('Publisher Panel');
+        $data['description'] = __('Publisher Panel');
+        $data['keywords'] = __('Publisher Panel');
+        return view('publisher.pages.profile.profile', $data);
     }
-    public function userProfileEdit()
+    public function publisherProfileEdit()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
-        $data['title'] = __('User Panel');
-        $data['description'] = __('User Panel');
-        $data['keywords'] = __('User Panel');
-        return view('frontend.pages.user_profile.profile_edit', $data);
+        $data['title'] = __('Publisher Panel');
+        $data['description'] = __('Publisher Panel');
+        $data['keywords'] = __('Publisher Panel');
+        return view('publisher.pages.profile.profile_edit', $data);
     }
-    public function userProfileUpdate(Request $request)
+    public function publisherProfileUpdate(Request $request)
     {
         $request->validate([
             'name' => 'required',

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('frontend.layouts.include.frontend.styles')
+@include('backend.layout.include.backend.styles')
 @stack('post_css')
 
 <body
     class="{{ session()->has('lang_dir') && session()->get('lang_dir') == 'rtl' ? 'direction-rtl' : 'direction-ltr' }}">
 
 <div class="main">
-    @include('frontend.layouts.include.frontend.header')
+    {{-- @include('frontend.layouts.include.header') --}}
 
     @yield('content')
 
-    @include('frontend.layouts.include.frontend.footer')
+    {{-- @include('frontend.layouts.include.footer') --}}
 </div>
-    @include('frontend.layouts.include.frontend.scripts')
+    @include('backend.layout.include.backend.scripts')
     @stack('post_script')
 
 </body>
