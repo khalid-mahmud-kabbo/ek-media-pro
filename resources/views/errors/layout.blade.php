@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('front.layouts.include.head')
+@include('frontend.layouts.include.styles')
 @stack('post_css')
 <body class="{{session()->has('lang_dir') && session()->get('lang_dir') == 'rtl' ? 'direction-rtl' : 'direction-ltr'}}">
 <!-- Preloader Area Start -->
@@ -14,7 +14,7 @@
 @yield('content')
 
 
-@include('front.layouts.include.script')
+@include('frontend.layouts.include.scripts')
 @stack('post_script')
 @include('sweetalert::alert')
 </body>

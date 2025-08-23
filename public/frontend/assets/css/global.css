@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    /* -----Colors----- */
+    --primary_color: #fff;
+    --secondary_color: #3f3b3b;
+    --accent_color: #0299de;
+    --accent_color_hover: #199fddd1;
+    --tacao_color: #eaab7e;
+    --light_turquoise_color: #90f2bd;
+    --dark_sky_color: #3b96f7;
+    --saffron_mango_color: #d0b13f;
+
+    /* -----Radius----- */
+    --radius_5: 5px;
+    --radius_10: 10px;
+    --radius_15: 15px;
+    --radius_20: 20px;
+    --radius_25: 25px;
+
+    /* -----Trans----- */
+    --trans_03: all 0.3s ease;
+    --trans_05: all 0.5s ease;
+    --trans_07: all 0.7s ease;
+    --trans_1: all 1s ease;
+}
+
+/* Global Styles */
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: auto;
+}
+
+/* Media Queries */
+
+/* Extra Small */
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Small Screen */
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}
+
+/* medium Screen */
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+}
+
+/* XLarge Screen */
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+/* XXlarge Screen */
+@media (min-width: 1400px) {
+    .container {
+        width: 1320px;
+    }
+}
+
+

@@ -17,7 +17,7 @@ class BlogController extends Controller
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('front.pages.blog.blog', $data);
+        return view('frontend.pages.blog.blog', $data);
     }
     public function blogDetails($id)
     {
@@ -27,6 +27,6 @@ class BlogController extends Controller
         $data['title'] = $blog->en_Title;
         $data['description'] = $blog->en_Title;
         $data['keywords'] = $blog->en_Title;
-        return view('front.pages.blog.blog_details', $data);
+        return view('frontend.pages.blog.blog_details', $data);
     }
 }

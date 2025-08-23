@@ -31,7 +31,7 @@ class AuthController extends Controller
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('front.auth.sign_in', $data);
+        return view('frontend.frontview.pages.auth.sign_in', $data);
     }
     public function userSignInPost(Request $request)
     {
@@ -65,7 +65,7 @@ class AuthController extends Controller
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('front.auth.sign_up', $data);
+        return view('frontend.frontview.pages.auth.sign_up', $data);
     }
 
     public function loginModal(Request $request)
@@ -138,7 +138,7 @@ class AuthController extends Controller
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('front.auth.forget_password', $data);
+        return view('frontend.frontview.pages.auth.forget_password', $data);
     }
     public function userForgetPasswordPost(Request $request)
     {
@@ -154,7 +154,7 @@ class AuthController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        Mail::send('front.auth.mail_form', ['token' => $token], function ($message) use ($request) {
+        Mail::send('frontend.frontview.pages.auth.mail_form', ['token' => $token], function ($message) use ($request) {
             $message->to($request->email);
             $message->subject('Reset Password');
         });
@@ -168,7 +168,7 @@ class AuthController extends Controller
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
         $data['token'] = $token;
-        return view('front.auth.show_reset_form', $data);
+        return view('frontend.frontview.pages.auth.show_reset_form', $data);
     }
     public function submitResetPasswordForm(Request $request)
     {

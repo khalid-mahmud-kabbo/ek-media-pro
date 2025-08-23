@@ -1,4 +1,4 @@
-@extends('admin.master', ['menu' => 'site_content', 'submenu' => 'content_about'])
+@extends('admin.frontend', ['menu' => 'site_content', 'submenu' => 'content_about'])
 @section('title', isset($title) ? $title : '')
 @section('content')
     <div id="table-url" data-url="{{ route('admin.about.page.site.content') }}"></div>

@@ -1,4 +1,4 @@
-@extends('admin.master', ['menu' => 'users', 'submenu' => 'customer_list'])
+@extends('admin.frontend', ['menu' => 'users', 'submenu' => 'customer_list'])
 @section('title', isset($title) ? $title : '')
 @section('content')
 
