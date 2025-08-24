@@ -854,7 +854,12 @@ img {
 
 .sidebar__menu li a span {
   margin-left: 13px;
+  font-size: larger;
 }
+
+.sidebar__menu img{
+    width: 25px !important;
+    }
 
 .sidebar__menu li a.active, .sidebar__menu li a:hover {
   background-color: #1B1F28;

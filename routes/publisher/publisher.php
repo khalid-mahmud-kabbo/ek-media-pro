@@ -22,15 +22,15 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::post('profile-update', [ProfileController::class, 'ProfileUpdate'])->name('publisher.profile.update');
     Route::get('account-settings', [AccountSettingsController::class, 'AccountSettings'])->name('publisher.account-settings');
     Route::get('conversion', [ConversionController::class, 'Conversion'])->name('publisher.conversion');
-    Route::get('documentation', [DocumentationController::class, 'Conversion'])->name('publisher.documentation');
+    Route::get('documentation', [DocumentationController::class, 'Documentation'])->name('publisher.documentation');
     Route::get('offer-gallery', [OfferGalleryController::class, 'OfferGallery'])->name('publisher.offer-gallery');
     Route::get('payments', [PaymentsController::class, 'Payments'])->name('publisher.payments');
     Route::get('placements', [PlacementsController::class, 'Placements'])->name('publisher.placements');
     Route::get('create-placement', [PlacementsController::class, 'CreatePlacement'])->name('publisher.create-placement');
-    Route::get('edit-placement', [PlacementsController::class, 'EditPlacement'])->name('publisher.create-placement');
+    Route::get('edit-placement', [PlacementsController::class, 'EditPlacement'])->name('publisher.edit-placement');
     Route::get('test-postback', [PlacementsController::class, 'TestPostback'])->name('publisher.test-postback');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
-    Route::get('reverse', [ReverseController::class, 'Reports'])->name('publisher.reverse');
+    Route::get('reverse', [ReverseController::class, 'Reverse'])->name('publisher.reverse');
 
 
 
