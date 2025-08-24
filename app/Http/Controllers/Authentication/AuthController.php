@@ -75,6 +75,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
+            'account_type' => $request->account_type,
             'password' => Hash::make($request->confirm_password),
         ]);
         if ($user) {

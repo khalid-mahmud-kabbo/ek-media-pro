@@ -20,13 +20,6 @@ use App\Http\Controllers\Admin\SitemapController;
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login')->middleware('guest');
 Route::post('/admin/login', [AuthController::class, 'LoginDashboard'])->name('login.post');
 
-Route::group(['prefix' => 'subscribe'], function () {
-    Route::post('/store', [SubscribeController::class, 'subscribeStore'])->name('admin.subscribe.store');
-    Route::get('/delete/{id}', [SubscribeController::class, 'subscribeDelete'])->name('admin.subscribe.delete');
-    Route::get('/list', [SubscribeController::class, 'index'])->name('admin.subscribe.index');
-    Route::post('promote', [SubscribeController::class, 'promote'])->name('admin.subscribe.promote')->middleware(['isDemo']);;
-});
-
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin', 'en.locale'], 'as' => 'admin.'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');

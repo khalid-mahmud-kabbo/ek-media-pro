@@ -1,4 +1,4 @@
-@extends('frontend.layouts.frontend')
+@extends('frontend.layout.master')
 @section('title', isset($title) ? $title : 'Home')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
@@ -27,7 +27,7 @@
                             <i class="far fa-user"></i>
                         </div>
                         <h1 class="text-center mb-4">{{ __('Register')}}</h1>
-                        <form class="login-form" action="{{route('user.sign.up.post')}}" method="post">
+                        <form class="login-form" action="{{route('sign.up.post')}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <input type="text" class="form-control rounded-left" placeholder="{{__('Name')}}" name="name" required="">
@@ -38,6 +38,17 @@
                             <div class="form-group">
                                 <input type="email" class="form-control rounded-left" placeholder="{{__('Email')}}" name="email" required="">
                             </div>
+
+
+                            <div class="form-group">
+                                <select class="form-control rounded-left" name="account_type" id="account_type">
+                                    <option value="publisher">{{__('Publisher')}}</option>
+                                    <option value="advertiser">{{__('Advertiser')}}</option>
+                                </select>
+                            </div>
+
+
+
                             <div class="form-group d-flex">
                                 <input type="password" class="form-control rounded-left" placeholder="{{__('Password')}}" name="password" required="">
                             </div>

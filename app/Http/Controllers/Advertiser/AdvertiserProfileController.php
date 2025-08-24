@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Authentication;
+namespace App\Http\Controllers\Advertiser;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AdvertiserProfileController extends Controller
 {
-    public function AdvertiserProfile()
+    public function advertiserProfile()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
@@ -19,7 +19,7 @@ class AdvertiserProfileController extends Controller
         $data['keywords'] = __('Advertiser Panel');
         return view('advertiser.pages.profile.profile', $data);
     }
-    public function AdvertiserProfileEdit()
+    public function advertiserProfileEdit()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
@@ -28,7 +28,7 @@ class AdvertiserProfileController extends Controller
         $data['keywords'] = __('Advertiser Panel');
         return view('advertiser.pages.profile.profile_edit', $data);
     }
-    public function AdvertiserProfileUpdate(Request $request)
+    public function advertiserProfileUpdate(Request $request)
     {
         $request->validate([
             'name' => 'required',

@@ -33,12 +33,23 @@
                     <div class="head two">
 
                         @if (Auth::user())
+
+                        @if (Auth::user()->account_type == 'publisher')
                          <a href="{{ route('publisher.profile') }}" target="_blank">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>Dashboard</span>
                         </button>
                         </a>
+
+                        @elseif (Auth::user()->account_type == 'advertiser')
+                        <a href="{{ route('advertiser.profile') }}" target="_blank">
+                        <button class="sign_up">
+                            <i class="fa-duotone fa-solid fa-user-plus"></i>
+                            <span>Dashboard</span>
+                        </button>
+                        </a>
+                        @endif
                         @else
                         <a href="{{ route('login') }}" target="_blank">
                         <button class="sign_in">
@@ -46,7 +57,7 @@
                             <span>sign in</span>
                         </button>
                         </a>
-                        <a href="{{ route('user.sign.up') }}" target="_blank">
+                        <a href="{{ route('sign.up') }}" target="_blank">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>sign up</span>

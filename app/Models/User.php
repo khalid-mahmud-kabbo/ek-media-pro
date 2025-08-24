@@ -28,6 +28,7 @@ class User extends Authenticatable
         'Number',
         'Gender',
         'DOB',
+        'account_type',
         'About',
         'password',
         'is_admin',
@@ -53,8 +54,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function billing()
-    {
-        return $this->belongsTo(Billing::class, 'User_Id');
-    }
+
 }

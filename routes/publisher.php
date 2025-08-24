@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\PublisherProfileController;
+use App\Http\Controllers\Publisher\PublisherProfileController;
 
 
 Route::group(['middleware' => ['is_user']], function () {
