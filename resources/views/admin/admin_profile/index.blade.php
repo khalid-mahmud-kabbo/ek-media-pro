@@ -1,4 +1,4 @@
-@extends('admin.frontend')
+@extends('admin.master')
 @section('title', __('Dashboard'))
 @section('content')
     <div class="row">

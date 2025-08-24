@@ -1,4 +1,4 @@
-@extends('admin.frontend', ['menu' => 'sitemap'])
+@extends('admin.master', ['menu' => 'sitemap'])
 @section('title', isset($title) ? $title : '')
 @section('content')
     <div class="row">

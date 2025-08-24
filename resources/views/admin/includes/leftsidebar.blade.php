@@ -45,34 +45,6 @@
                 </ul>
             </li>
         @endcanany
-        @canany(['category-list', 'brand-list'])
-            <li class="{{ isset($menu) && $menu == 'catbad' ? 'mm-active' : '' }}">
-                <a class="has-arrow" href="#">
-                    <i class="fas fa-list"></i>
-                    <span>{{ __('Category and Brand') }}</span>
-                </a>
-                <ul>
-                    @can('category-list')
-                        <li class="{{ isset($submenu) && $submenu == 'category' ? 'mm-active' : '' }}">
-                            <a href="{{ route('admin.category') }}">
-                                <i class="fa fa-circle"></i>
-                                <span>{{ __('Category') }}</span>
-                            </a>
-                        </li>
-                    @endcan
-                    @can('brand-list')
-                        <li class="{{ isset($submenu) && $submenu == 'brand' ? 'mm-active' : '' }}">
-                            <a href="{{ route('admin.brand') }}">
-                                <i class="fa fa-circle"></i>
-                                <span>{{ __('Brand') }}</span>
-                            </a>
-                        </li>
-                    @endcan
-
-                </ul>
-            </li>
-        @endcanany
-
 
         @canany(['blog-list'])
             <li class="{{ isset($menu) && $menu == 'blog' ? 'mm-active' : '' }}">
