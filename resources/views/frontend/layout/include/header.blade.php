@@ -35,7 +35,7 @@
                         @if (Auth::user())
 
                         @if (Auth::user()->account_type == 'publisher')
-                         <a href="{{ route('publisher.profile') }}" target="_blank">
+                         <a href="{{ route('publisher.dashboard') }}" target="_blank">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>Dashboard</span>
@@ -43,7 +43,7 @@
                         </a>
 
                         @elseif (Auth::user()->account_type == 'advertiser')
-                        <a href="{{ route('advertiser.profile') }}" target="_blank">
+                        <a href="{{ route('advertiser.dashboard') }}" target="_blank">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>Dashboard</span>

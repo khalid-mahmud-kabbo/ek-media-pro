@@ -8,9 +8,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PublisherProfileController extends Controller
+class ProfileController extends Controller
 {
-    public function publisherProfile()
+    public function Profile()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
@@ -19,7 +19,7 @@ class PublisherProfileController extends Controller
         $data['keywords'] = __('Publisher Panel');
         return view('publisher.pages.profile.profile', $data);
     }
-    public function publisherProfileEdit()
+    public function ProfileEdit()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
@@ -28,7 +28,7 @@ class PublisherProfileController extends Controller
         $data['keywords'] = __('Publisher Panel');
         return view('publisher.pages.profile.profile_edit', $data);
     }
-    public function publisherProfileUpdate(Request $request)
+    public function ProfileUpdate(Request $request)
     {
         $request->validate([
             'name' => 'required',

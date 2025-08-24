@@ -8,9 +8,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdvertiserProfileController extends Controller
+class ProfileController extends Controller
 {
-    public function advertiserProfile()
+    public function Profile()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
@@ -19,7 +19,7 @@ class AdvertiserProfileController extends Controller
         $data['keywords'] = __('Advertiser Panel');
         return view('advertiser.pages.profile.profile', $data);
     }
-    public function advertiserProfileEdit()
+    public function ProfileEdit()
     {
         $authId = Auth::user()->id;
         $data['user'] = User::where('id', $authId)->first();
@@ -28,7 +28,7 @@ class AdvertiserProfileController extends Controller
         $data['keywords'] = __('Advertiser Panel');
         return view('advertiser.pages.profile.profile_edit', $data);
     }
-    public function advertiserProfileUpdate(Request $request)
+    public function ProfileUpdate(Request $request)
     {
         $request->validate([
             'name' => 'required',
