@@ -1,4 +1,4 @@
-@extends('publisher.layout.master')
+@extends('publisher.layout.master', ['menu' => 'reverse'])
 @section('title', isset($title) ? $title : 'Publisher Reverse')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')

@@ -40,7 +40,7 @@
                     <li class="{{ isset($submenu) && $submenu == 'create_placement' ? 'mm-active' : '' }}">
                         <a href="{{ route('publisher.create-placement') }}">
                             <i class="fa fa-circle"></i>
-                            <span>{{ __('Create Placements') }}</span>
+                            <span>{{ __('Create Placement') }}</span>
                         </a>
                     </li>
                 </ul>

@@ -1,5 +1,5 @@
-@extends('publisher.layout.master')
-@section('title', isset($title) ? $title : 'Publisher Documentation')
+@extends('publisher.layout.master', ['menu' => 'payments'])
+@section('title', isset($title) ? $title : 'Publisher Payments')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
 
@@ -11,14 +11,14 @@
             <div class="breadcrumb__content">
                 <div class="breadcrumb__content__left">
                     <div class="breadcrumb__title">
-                        <h2>{{__('Documentation')}}</h2>
+                        <h2>{{__('Payments')}}</h2>
                     </div>
                 </div>
                 <div class="breadcrumb__content__right">
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('publisher.dashboard')}}">{{__('Publisher')}}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{__('Documentation')}}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{__('Payments')}}</li>
                         </ul>
                     </nav>
                 </div>
@@ -29,7 +29,7 @@
         <div class="col-md-12">
             <div class="customers__area bg-style mb-30">
 
-                <h1>Publisher Documentation</h1>
+                <h1>Publisher Payments</h1>
 
             </div>
         </div>

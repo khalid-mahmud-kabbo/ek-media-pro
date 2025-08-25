@@ -1,4 +1,4 @@
-@extends('publisher.layout.master')
+@extends('publisher.layout.master', ['menu' => 'offer-gallery'])
 @section('title', isset($title) ? $title : 'Publisher Offer Gallery')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')

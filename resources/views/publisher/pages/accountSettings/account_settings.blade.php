@@ -1,4 +1,4 @@
-@extends('publisher.layout.master')
+@extends('publisher.layout.master', ['menu' => 'account-settings'])
 @section('title', isset($title) ? $title : 'Publisher Account Settings')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')

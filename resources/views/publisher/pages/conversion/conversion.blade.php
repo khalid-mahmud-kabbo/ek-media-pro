@@ -1,4 +1,4 @@
-@extends('publisher.layout.master')
+@extends('publisher.layout.master', ['menu' => 'conversion'])
 @section('title', isset($title) ? $title : 'Publisher Conversion')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
