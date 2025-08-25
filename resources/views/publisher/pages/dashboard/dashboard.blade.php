@@ -6,7 +6,16 @@
             <div class="breadcrumb__content">
                 <div class="breadcrumb__content__left">
                     <div class="breadcrumb__title">
-                        <h2>{{__('Publisher Dashboard')}}</h2>
+                       <div class="mb-6">
+    <h2 class="text-3xl font-extrabold text-gray-900">
+        👋 {{ __('Hi') }}, <span class="text-indigo-600">{{ Auth::user()->name }}</span>!
+    </h2>
+    <p class="mt-2 text-lg text-gray-600">
+        {{ __('Welcome to your Publisher Dashboard. Let’s manage and grow together!') }}
+    </p>
+</div>
+
+
                     </div>
                 </div>
                 <div class="breadcrumb__content__right">
@@ -32,7 +41,7 @@
                 </div>
                 <div class="item__right">
                     <div class="status__box__img">
-                        <i class="fas fa-chart-bar fa-2x"></i>
+                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
                     </div>
                 </div>
             </div>
@@ -47,7 +56,7 @@
                 </div>
                 <div class="item__right">
                     <div class="status__box__img">
-                        <i class="fas fa-chart-bar fa-2x text-success"></i>
+                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
                     </div>
                 </div>
             </div>
@@ -94,7 +103,7 @@
                 </div>
                 <div class="item__right">
                     <div class="status__box__img">
-                        <i class="fas fa-chart-bar fa-2x text-success"></i>
+                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
                     </div>
                 </div>
             </div>
@@ -110,7 +119,7 @@
                 </div>
                 <div class="item__right">
                     <div class="status__box__img">
-                        <i class="fas fa-chart-bar fa-2x text-success"></i>
+                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
                     </div>
                 </div>
             </div>
@@ -126,7 +135,7 @@
                 </div>
                 <div class="item__right">
                     <div class="status__box__img">
-                        <i class="fas fa-chart-bar fa-2x text-success"></i>
+                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
                     </div>
                 </div>
             </div>
@@ -142,7 +151,7 @@
                 </div>
                 <div class="item__right">
                     <div class="status__box__img">
-                        <i class="fas fa-chart-bar fa-2x text-success"></i>
+                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
                     </div>
                 </div>
             </div>

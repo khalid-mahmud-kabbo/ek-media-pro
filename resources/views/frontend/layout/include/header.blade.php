@@ -2,7 +2,7 @@
                 <div class="container">
                     <div class="head one" >
                         <a href="#home">
-                            <img src="{{ asset('assets/images/logo.png')}}" alt="logo" class="logo" />
+                            <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="logo" class="logo" />
                         </a>
                         <ul class="nav_list ">
                             <li class="nav_item">
