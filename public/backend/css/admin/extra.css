@@ -23,6 +23,10 @@
     display: block;
 }
 
+.input__group input{
+    background-color: #001831;
+}
+
 /* Extra CSS Start Start*/
 table .btn-group-sm>.btn, .btn-sm {
     margin-right: 7px;
@@ -140,7 +144,7 @@ footer.sticky-footer {
 
 .screen{
     width: 100%;
-    padding-top: 100%; 
+    padding-top: 100%;
     margin: auto;
     background-size: 100% auto;
     cursor: pointer;

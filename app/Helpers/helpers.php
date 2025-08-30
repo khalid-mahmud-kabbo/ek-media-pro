@@ -77,6 +77,14 @@ if (!function_exists('template_settings')) {
         return 'uploaded_files/template_settings/';
     }
 }
+
+if (!function_exists('upload_currency_logo')) {
+    function upload_currency_logo()
+    {
+        return 'uploaded_files/currency_logo/';
+    }
+}
+
 if (!function_exists('AdminProfilePicture')) {
     function AdminProfilePicture()
     {
@@ -105,37 +113,8 @@ if (!function_exists('BlogImage')) {
         return 'uploaded_files/blog/';
     }
 }
-if (!function_exists('Category')) {
-    function Category()
-    {
-        return Category::where('en_Description', null)->orWhere('Category_Icon', null)->get();
-    }
-}
-if (!function_exists('Category_Des_Icon')) {
-    function Category_Des_Icon()
-    {
-        return Category::where('en_Description', '!=', null)->orWhere('Category_Icon', '!=', null)->get();
-    }
-}
-if (!function_exists('BrandImage')) {
-    function BrandImage()
-    {
-        return 'uploaded_files/brand/';
-    }
-}
-if (!function_exists('Brnad')) {
-    function Brnad()
-    {
-        return Brand::get();
-    }
-}
 
-if (!function_exists('siteContentHomePage')) {
-    function siteContentHomePage($location)
-    {
-        return Homepage::where('Location', $location)->first();
-    }
-}
+
 
 if (!function_exists('aboutUsPage')) {
     function aboutUsPage()
