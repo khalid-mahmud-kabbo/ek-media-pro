@@ -5,13 +5,13 @@
 
 @section('content')
 
-    {{-- <div id="table-url" data-url="{{ route('admin.blog') }}"></div> --}}
+    <div id="table-url" data-url="{{ route('publisher.placements') }}"></div>
     <div class="row">
         <div class="col-md-12">
             <div class="breadcrumb__content">
                 <div class="breadcrumb__content__left">
                     <div class="breadcrumb__title">
-                        <h2>{{__('Placements')}}</h2>
+                        <h2>{{__('Publisher Placements')}}</h2>
                     </div>
                 </div>
                 <div class="breadcrumb__content__right">
@@ -28,14 +28,26 @@
     <div class="row">
         <div class="col-md-12">
             <div class="customers__area bg-style mb-30">
-
-                <h1>Publisher Placements</h1>
-
+<table id="PlacementsTable" class="row-border data-table-filter table-style">
+                        <thead>
+                        <tr>
+                            <th>{{ __('App Name')}}</th>
+                            <th>{{ __('API Key')}}</th>
+                            <th>{{ __('Payout Rate')}}</th>
+                            <th>{{ __('Status')}}</th>
+                            <th>{{ __('Action')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
             </div>
+
         </div>
     </div>
+
     <!--Row-->
-    {{-- @push('post_scripts')
-        <script src="{{asset('backend/js/admin/datatables/blog.js')}}"></script>
-    @endpush --}}
+    @push('post_scripts')
+        <script src="{{asset('backend/js/publisher/datatables/placements.js')}}"></script>
+    @endpush
 @endsection

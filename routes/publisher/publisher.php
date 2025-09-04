@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::post('store-placement', [PlacementsController::class, 'StorePlacement'])->name('publisher.store-placement');
     Route::get('edit-placement', [PlacementsController::class, 'EditPlacement'])->name('publisher.edit-placement');
     Route::get('test-postback', [PlacementsController::class, 'TestPostback'])->name('publisher.test-postback');
+    Route::get('placement/{appId}', [PlacementsController::class, 'Placement'])->name('publisher.placement');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
     Route::get('reverse', [ReverseController::class, 'Reverse'])->name('publisher.reverse');
 

@@ -512,11 +512,11 @@ img {
 }
 
 .table-style thead th:first-child {
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 0;
 }
 
 .table-style thead th:last-child {
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 10px 0px 0;
 }
 
 .table-style tbody td {

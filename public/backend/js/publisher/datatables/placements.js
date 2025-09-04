@@ -1,26 +1,26 @@
 (function($) {
     "use strict";
     $(document).ready(function () {
-        $('#ContactUsTable').DataTable({
+        $('#PlacementsTable').DataTable({
             processing: true,
             serverSide: true,
             ajax: $('#table-url').data("url"),
             columns: [
                 {
-                    data: 'Name',
-                    name: 'Name'
+                    data: 'AppName',
+                    name: 'AppName'
                 },
                 {
-                    data: 'Email',
-                    name: 'Email'
+                    data: 'APIKey',
+                    name: 'APIKey'
                 },
                 {
-                    data: 'ContactNumber',
-                    name: 'ContactNumber'
+                    data: 'PayoutRate',
+                    name: 'PayoutRate'
                 },
                 {
-                    data: 'Message',
-                    name: 'Message'
+                    data: 'Status',
+                    name: 'Status'
                 },
                 {
                     data: 'action',
