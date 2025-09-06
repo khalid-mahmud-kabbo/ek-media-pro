@@ -18897,3 +18897,23 @@ blockquote.right span::before {
   margin-bottom: 250px;
 }
 /*# sourceMappingURL=main.css.map */
+
+
+.the-payment-term-box{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: 2px solid #ffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+
+.the-payment-term-box i{
+    font-size: xx-large;
+}
+
+.the-payment-term-box p{
+    margin-bottom: 0;
+}

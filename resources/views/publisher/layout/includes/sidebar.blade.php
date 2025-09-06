@@ -74,6 +74,7 @@
             </a>
         </li>
 
+
         <li class="{{ isset($menu) && $menu == 'account-settings' ? 'mm-active' : '' }}">
             <a href="{{ route('publisher.account-settings') }}">
                 <img src="{{ asset('admin/images/icons/sidebar/user.svg') }}" alt="icon">
