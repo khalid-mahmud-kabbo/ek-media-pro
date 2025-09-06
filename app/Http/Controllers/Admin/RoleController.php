@@ -64,6 +64,15 @@ class RoleController extends Controller
         return view('admin.pages.roles.edit',$data);
     }
 
+/*************  ✨ Windsurf Command ⭐  *************/
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+/*******  5f07078f-fdf1-4fbd-821e-19fd2af73ad3  *******/
     public function updateRole(Request $request, $id)
     {
         if($id == 1) {

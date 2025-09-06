@@ -35,7 +35,7 @@
                     </div>
                     <div class="details">
                     <h6>How does net 30 work?</h6>
-                    <p>For example, if your earnings are over $ 25 for August you will be paid August earnings on October 7st.</p>
+                    <p>For example, if your earnings are over $25 for January you will be paid January earnings on March 7st.</p>
                     </div>
             </div>
 
@@ -49,41 +49,36 @@
 
                                     <div class="form-vertical__item bg-style">
                                         <h4 class="mb-25">Edit / Set Payment Method</h4>
-                                        <form enctype="multipart/form-data" method="POST" action="{{ route('publisher.store-placement') }}">
+                                        <form enctype="multipart/form-data" method="POST" action="{{ route('publisher.payment-update', auth()->user()->id) }}">
                                             @csrf
 
 
 
                                             <div class="row">
-<div class="col-md-6">
-    <div class="input__group mb-25">
-        <label>{{ __('Payment Method') }} <span class="text-danger">*</span></label>
-        <select id="payment_method" name="payment_method" class="form-control">
-            <option value="">{{ __('Select Payment Method') }}</option>
-            {{-- @foreach($placements as $placement) --}}
-                <option value="">
-                    Payoneer
-                </option>
-                <option value="">
-                    Payoneer
-                </option>
-                <option value="">
-                    Payoneer
-                </option>
-            {{-- @endforeach --}}
-        </select>
+    <div class="col-md-6">
+        <div class="input__group mb-25">
+            <label>{{ __('Payment Method') }} <span class="text-danger">*</span></label>
+            <select id="payment_method_id" name="payment_method_id" class="form-control">
+                <option value="">{{ __('Select Payment Method') }}</option>
+                <option value="1" {{ isset($paymentMethod) && $paymentMethod->payment_method_id == 1 ? 'selected' : '' }}>Payoneer</option>
+                <option value="2" {{ isset($paymentMethod) && $paymentMethod->payment_method_id == 2 ? 'selected' : '' }}>PayPal</option>
+                <option value="3" {{ isset($paymentMethod) && $paymentMethod->payment_method_id == 3 ? 'selected' : '' }}>Bank</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="input__group mb-25">
+            <label>{{ __('Payment Details') }} <span class="text-danger">*</span></label>
+            <input type="text" id="payment_address" name="payment_address"
+                   value="{{ isset($paymentMethod) ? $paymentMethod->payment_address : '' }}"
+                   placeholder="Payment Details">
+        </div>
     </div>
 </div>
 
 
-                                            <div class="col-md-6">
-                                            <div class="input__group mb-25">
-                                                <label>{{ __('Payment Details') }} <span class="text-danger">*</span></label>
-                                                <input type="url" id="payment_details" name="payment_details" placeholder="Payment Details">
-                                            </div>
-                                            </div>
 
-                                            </div>
 
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">{{ __('Set Payment Method') }}</button>

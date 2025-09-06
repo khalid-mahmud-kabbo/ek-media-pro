@@ -11,6 +11,7 @@ use App\Http\Controllers\Publisher\PaymentsController;
 use App\Http\Controllers\Publisher\PlacementsController;
 use App\Http\Controllers\Publisher\ReportsController;
 use App\Http\Controllers\Publisher\ReverseController;
+use App\Http\Controllers\Publisher\PaymentProfileController;
 
 
 Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
@@ -34,6 +35,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('delete/{appId}', [PlacementsController::class, 'delete'])->name('publisher.delete');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
     Route::get('reverse', [ReverseController::class, 'Reverse'])->name('publisher.reverse');
+    Route::post('payment/{pubId}', [PaymentProfileController::class, 'UpdatePaymentMethod'])->name('publisher.payment-update');
 
 
 
