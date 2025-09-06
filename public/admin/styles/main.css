@@ -9214,8 +9214,22 @@ img {
 }
 
 .status.active {
-  background-color: #E1FAE1;
-  color: #4CBF4C;
+  background-color: #E1FAE1 !important;
+  color: #4CBF4C !important;
+}
+
+.status.rejected {
+  background-color: #c6131b !important;
+  color: #ffff !important;
+}
+
+.status.pending {
+  background-color: #3396D3 !important;
+  color: #ffff !important;
+}
+
+.swal2-popup{
+    background-color: #112242 !important;
 }
 
 .status.blocked {
@@ -17361,14 +17375,14 @@ blockquote.right span::before {
 }
 
 .btn.btn-blue {
-  background-color: #4D88FF;
+  background-color: #133684;
   color: #ffffff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .btn.btn-blue:hover {
-  background-color: #34579e;
+  background-color: #133684;
   color: #ffffff;
 }
 

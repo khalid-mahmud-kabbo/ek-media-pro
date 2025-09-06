@@ -48,7 +48,7 @@ class AuthController extends Controller
             if (Hash::check($request->password, $user->password)) {
                 if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
                     if (Auth::user()->is_admin == 0) {
-                        return redirect()->route('front');
+                        return redirect()->route('publisher.dashboard');
                     } else {
                         Auth::logout();
                         return redirect()->back()->with('error', __('Something went wrong!'));

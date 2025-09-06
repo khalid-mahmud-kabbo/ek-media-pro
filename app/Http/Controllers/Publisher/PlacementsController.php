@@ -25,9 +25,9 @@ class PlacementsController extends Controller
                     $btn = $btn . '<a href="' . route('publisher.placement', $data->app_id) . '" class="btn-action"><i class="fa-solid fa-eye"></i></a>';
 
                     if ($data->is_active == 'active') {
-                        $btn = $btn . '<a href="' . route('publisher.placements') . '" class="btn-action"><i class="fa-solid fa-pen-to-square"></i></a>';
+                        $btn = $btn . '<a href="' . route('publisher.edit-placement', $data->app_id) . '" class="btn-action"><i class="fa-solid fa-pen-to-square"></i></a>';
                     }
-                    $btn = $btn . '<a href="' . route('publisher.placements') . '" class="btn-action delete"><i class="fas fa-trash-alt"></i></a>';
+                    $btn = $btn . '<a href="' . route('publisher.delete', $data->app_id) . '" class="btn-action delete"><i class="fas fa-trash-alt"></i></a>';
                     $btn = $btn . '</div>';
                     return $btn;
                 })
@@ -71,15 +71,6 @@ class PlacementsController extends Controller
         return view('publisher.pages.placement.create_placement', $data);
     }
 
-
-    public function Placement($appId)
-    {
-        $data['placement'] = Placements::find($appId);
-        $data['title'] = __('View Placement');
-        $data['description'] = __('View Placement');
-        $data['keywords'] = __('View Placement');
-        return view('publisher.pages.placement.view_placement', $data);
-    }
 
 
 public function StorePlacement(Request $request)
@@ -153,10 +144,10 @@ public function StorePlacement(Request $request)
     }
 
 
-    public function delete($id)
+    public function delete($appId)
     {
 
-        $delete = Placements::Where('id', $id);
+        $delete = Placements::Where('app_id', $appId);
         if ($delete) {
             $delete->delete();
             return redirect()->route('publisher.placements')->with('success', __('Successfully Deleted !'));
@@ -164,12 +155,18 @@ public function StorePlacement(Request $request)
         return redirect()->route('publisher.placements')->with('error', __('Does Not Delete!'));
     }
 
-    public function details($id)
-    {
-        $placement = Placements::findOrFail($id);
-        $data['placement'] = $placement;
-        return view('publisher.pages.placement.view_placement', $data);
+public function Placement($appId)
+{
+    $placement = Placements::where('app_id', $appId)->first(); // record fetch
+
+    if (!$placement) {
+        abort(404, 'Placement not found');
     }
+
+    return view('publisher.pages.placement.view_placement', [
+        'placement' => $placement
+    ]);
+}
 
 
 

@@ -128,7 +128,7 @@
 
 
                                             <div class="input__button">
-                                                <button type="submit" class="btn btn-blue">{{ __('Submit') }}</button>
+                                                <button type="submit" class="btn btn-blue">{{ __('Create Placement') }}</button>
                                             </div>
                                         </form>
                                     </div>
