@@ -107,11 +107,10 @@ public function StorePlacement(Request $request)
 }
 
 
-    public function EditPlacement()
+    public function EditPlacement($appId)
     {
+        $data['edit'] = Placements::where('app_id', $appId)->first();
         $data['title'] = __('Publisher Placements');
-        $data['description'] = __('Publisher Placements');
-        $data['keywords'] = __('Publisher Placements');
         return view('publisher.pages.placement.edit_placement', $data);
     }
 
@@ -119,8 +118,8 @@ public function StorePlacement(Request $request)
 
      public function UpdatePlacement(Request $request)
     {
-        $id = $request->id;
-        $placement = Placements::whereId($id)->first();
+        $appId = $request->app_id;
+        $placement = Placements::where('app_id', $appId)->first();
 
         if (($request->currency_logo)) {
             $currency_logo = fileUpload($request['currency_logo'], upload_currency_logo());

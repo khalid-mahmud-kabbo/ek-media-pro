@@ -27,17 +27,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('offer-gallery', [OfferGalleryController::class, 'OfferGallery'])->name('publisher.offer-gallery');
     Route::get('payments', [PaymentsController::class, 'Payments'])->name('publisher.payments');
     Route::get('placements', [PlacementsController::class, 'Placements'])->name('publisher.placements');
-    Route::get('create', [PlacementsController::class, 'CreatePlacement'])->name('publisher.create-placement');
-    Route::post('store', [PlacementsController::class, 'StorePlacement'])->name('publisher.store-placement');
-    Route::get('edit/{appId}', [PlacementsController::class, 'EditPlacement'])->name('publisher.edit-placement');
-    Route::get('test-postback', [PlacementsController::class, 'TestPostback'])->name('publisher.test-postback');
+    Route::get('placement/create', [PlacementsController::class, 'CreatePlacement'])->name('publisher.create-placement');
+    Route::post('placement/store', [PlacementsController::class, 'StorePlacement'])->name('publisher.store-placement');
+    Route::get('placement/edit/{appId}', [PlacementsController::class, 'EditPlacement'])->name('publisher.edit-placement');
+    Route::post('placement/update', [PlacementsController::class, 'UpdatePlacement'])->name('publisher.update-placement');
+    Route::get('placement/test-postback', [PlacementsController::class, 'TestPostback'])->name('publisher.test-postback');
     Route::get('placement/{appId}', [PlacementsController::class, 'Placement'])->name('publisher.placement');
-    Route::get('delete/{appId}', [PlacementsController::class, 'delete'])->name('publisher.delete');
+    Route::get('placement/delete/{appId}', [PlacementsController::class, 'delete'])->name('publisher.delete');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
     Route::get('reverse', [ReverseController::class, 'Reverse'])->name('publisher.reverse');
     Route::post('payment/{pubId}', [PaymentProfileController::class, 'UpdatePaymentMethod'])->name('publisher.payment-update');
-
-
 
 
 });

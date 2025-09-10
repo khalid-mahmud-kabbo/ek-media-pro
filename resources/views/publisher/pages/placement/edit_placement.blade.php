@@ -4,8 +4,6 @@
 @section('keywords', isset($keywords) ? $keywords : '')
 
 @section('content')
-
-    {{-- <div id="table-url" data-url="{{ route('admin.blog') }}"></div> --}}
     <div class="row">
         <div class="col-md-12">
             <div class="breadcrumb__content">
@@ -29,13 +27,117 @@
         <div class="col-md-12">
             <div class="customers__area bg-style mb-30">
 
-                <h1>Publisher Edit Placement</h1>
+                <div class="gallery__content">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-vertical__item bg-style">
+                                        <form enctype="multipart/form-data" method="POST" action="{{ route('publisher.update-placement') }}">
+                                            @csrf
+
+                                             <input type="hidden" name="app_id" value="{{ $edit->app_id }}">
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('Placement Name') }} <span class="text-danger">*</span></label>
+                                                <input type="text" id="app_name" name="app_name" value="{{ $edit->app_name }}">
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('App URL') }} <span class="text-danger">*</span></label>
+                                                <input type="url" id="app_url" name="app_url" value="{{ $edit->app_url }}">
+                                            </div>
+                                            </div>
+
+                                            </div>
+
+
+                                            <div class="row">
+
+                                            <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('Postback URL') }} <span class="text-danger">*</span></label>
+                                                <input type="url" id="postback_url" name="postback_url" value="{{ $edit->postback_url }}">
+                                            </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('Postback Password (Optional)') }}</label>
+                                                <input type="text" id="postback_password" name="postback_password" value="{{ $edit->postback_password }}">
+                                            </div>
+                                            </div>
+
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('Payout Rate') }} <span class="text-danger">*</span></label>
+                                                <input type="number" id="payout_rate" name="payout_rate" value="{{ $edit->payout_rate }}">
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('Currency Name') }} <span class="text-danger">*</span></label>
+                                                <input type="text" id="currency_name" name="currency_name" value="{{ $edit->currency_name }}">
+                                            </div>
+                                            </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                               <div class="col-md-6">
+                                            <div class="input__group mb-25">
+                                                <label>{{ __('Currency Logo') }}</label>
+                                                <input type="file" class="putImage3 mb-10" name="currency_logo" id="currency_logo" value="{{ $edit->currency_logo }}">
+                                                <img src="" id="target3" />
+                                            </div>
+                                            </div>
+
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="input__button">
+                                                <button type="submit" class="btn btn-blue">{{ __('Update Placement') }}</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
-    <!--Row-->
-    {{-- @push('post_scripts')
-        <script src="{{asset('backend/js/admin/datatables/blog.js')}}"></script>
-    @endpush --}}
 @endsection
