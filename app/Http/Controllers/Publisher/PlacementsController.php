@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Http;
 
 class PlacementsController extends Controller
 {
@@ -21,9 +22,8 @@ class PlacementsController extends Controller
             return DataTables::of($data)
                 ->addColumn('action', function ($data) {
                     $btn = '<div class="action__buttons">';
-
                     $btn = $btn . '<a href="' . route('publisher.placement', $data->app_id) . '" class="btn-action"><i class="fa-solid fa-eye"></i></a>';
-
+                    $btn = $btn . '<a href="' . route('publisher.test-postback', $data->app_id) . '" class="btn-action"><i class="fa-solid fa-square-arrow-up-right"></i></a>';
                     if ($data->is_active == 'active') {
                         $btn = $btn . '<a href="' . route('publisher.edit-placement', $data->app_id) . '" class="btn-action"><i class="fa-solid fa-pen-to-square"></i></a>';
                     }
@@ -166,6 +166,62 @@ public function Placement($appId)
         'placement' => $placement
     ]);
 }
+
+
+public function TestPostback($appId)
+{
+    $placement = Placements::where('app_id', $appId)->first();
+
+    if (!$placement) {
+        abort(404, 'Placement not found');
+    }
+
+    return view('publisher.pages.placement.test_postback', [
+        'placement' => $placement
+    ]);
+}
+
+
+
+
+public function SendTestPostback(Request $request)
+{
+    $appId = $request->app_id;
+    $placement = Placements::where('app_id', $appId)->first();
+
+    if (!$placement) {
+        return back()->with('error', __('Placement not found!'));
+    }
+
+
+
+    $postback_url = $placement->postback_url;
+    $url = str_replace(
+        ['{offer_name}', '{user_id}', '{payout}', '{points}', '{conversion_ip}', '{offer_id}'],
+        [
+            'Test Offer',
+            $request->user_id,
+            $request->payout,
+            '100',
+            $request->conversion_ip ?? request()->ip(),
+            $request->offer_id
+        ],
+        $postback_url
+    );
+
+    try {
+        $response = Http::get($url);
+
+        return redirect()->route('publisher.test-postback', $appId)
+            ->with('success', __('Successfully sent test postback!'))
+            ->with('postback_response', $response->body());
+
+    } catch (\Exception $e) {
+        return redirect()->route('publisher.test-postback', $appId)
+            ->with('error', __('Failed to send postback: ') . $e->getMessage());
+    }
+}
+
 
 
 

@@ -31,7 +31,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::post('placement/store', [PlacementsController::class, 'StorePlacement'])->name('publisher.store-placement');
     Route::get('placement/edit/{appId}', [PlacementsController::class, 'EditPlacement'])->name('publisher.edit-placement');
     Route::post('placement/update', [PlacementsController::class, 'UpdatePlacement'])->name('publisher.update-placement');
-    Route::get('placement/test-postback', [PlacementsController::class, 'TestPostback'])->name('publisher.test-postback');
+    Route::get('placement/test-postback/{appId}', [PlacementsController::class, 'TestPostback'])->name('publisher.test-postback');
+    Route::post('placement/send-test-postback', [PlacementsController::class, 'SendTestPostback'])->name('publisher.send-test-postback');
     Route::get('placement/{appId}', [PlacementsController::class, 'Placement'])->name('publisher.placement');
     Route::get('placement/delete/{appId}', [PlacementsController::class, 'delete'])->name('publisher.delete');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
