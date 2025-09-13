@@ -193,9 +193,8 @@ public function SendTestPostback(Request $request)
         return back()->with('error', __('Placement not found!'));
     }
 
-
-
     $postback_url = $placement->postback_url;
+
     $url = str_replace(
         ['{offer_name}', '{user_id}', '{payout}', '{points}', '{conversion_ip}', '{offer_id}'],
         [
@@ -211,16 +210,28 @@ public function SendTestPostback(Request $request)
 
     try {
         $response = Http::get($url);
+        $body = trim($response->body());
 
-        return redirect()->route('publisher.test-postback', $appId)
-            ->with('success', __('Successfully sent test postback!'))
-            ->with('postback_response', $response->body());
+        if ($body === "1") {
+            return redirect()->route('publisher.test-postback', $appId)
+                ->with('success', __('Postback sent successfully✅!'))
+                ->with('postback_response', $body);
+        } elseif ($body === "0") {
+            return redirect()->route('publisher.test-postback', $appId)
+                ->with('error', __('Postback failed❌!'))
+                ->with('postback_response', $body);
+        } else {
+            return redirect()->route('publisher.test-postback', $appId)
+                ->with('error', __('Unexpected server response!'))
+                ->with('postback_response', $body);
+        }
 
     } catch (\Exception $e) {
         return redirect()->route('publisher.test-postback', $appId)
             ->with('error', __('Failed to send postback: ') . $e->getMessage());
     }
 }
+
 
 
 

@@ -7,7 +7,6 @@ use App\Http\Controllers\Publisher\AccountSettingsController;
 use App\Http\Controllers\Publisher\ConversionController;
 use App\Http\Controllers\Publisher\DocumentationController;
 use App\Http\Controllers\Publisher\OfferGalleryController;
-use App\Http\Controllers\Publisher\PaymentsController;
 use App\Http\Controllers\Publisher\PlacementsController;
 use App\Http\Controllers\Publisher\ReportsController;
 use App\Http\Controllers\Publisher\ReverseController;
@@ -25,7 +24,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('conversion', [ConversionController::class, 'Conversion'])->name('publisher.conversion');
     Route::get('documentation', [DocumentationController::class, 'Documentation'])->name('publisher.documentation');
     Route::get('offer-gallery', [OfferGalleryController::class, 'OfferGallery'])->name('publisher.offer-gallery');
-    Route::get('payments', [PaymentsController::class, 'Payments'])->name('publisher.payments');
+    Route::get('payments', [PaymentProfileController::class, 'Payments'])->name('publisher.payments');
     Route::get('placements', [PlacementsController::class, 'Placements'])->name('publisher.placements');
     Route::get('placement/create', [PlacementsController::class, 'CreatePlacement'])->name('publisher.create-placement');
     Route::post('placement/store', [PlacementsController::class, 'StorePlacement'])->name('publisher.store-placement');

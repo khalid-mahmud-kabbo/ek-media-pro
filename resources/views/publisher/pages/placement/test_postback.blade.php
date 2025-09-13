@@ -43,22 +43,13 @@
 {{-- Success Message --}}
 @if(session('success'))
     <div class="alert alert-success mt-3">
-        <strong>{{ session('success') }}</strong>
+        <strong class="text-success">{{ session('success') }}</strong>
     </div>
 @endif
 
-{{-- Error Message --}}
 @if(session('error'))
     <div class="alert alert-danger mt-3">
-        <strong>{{ session('error') }}</strong>
-    </div>
-@endif
-
-{{-- Postback Response --}}
-@if(session('postback_response'))
-    <div class="alert alert-info mt-3">
-        <strong>Postback Response:</strong> <br>
-        <pre>{{ session('postback_response') }}</pre>
+        <strong class="text-danger">{{ session('error') }}</strong>
     </div>
 @endif
 

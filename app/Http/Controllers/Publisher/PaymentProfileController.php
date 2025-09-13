@@ -11,6 +11,21 @@ use Illuminate\Support\Facades\Auth;
 class PaymentProfileController extends Controller
 {
 
+
+      public function Payments()
+    {
+
+         $pub_id = Auth::user()->id;
+    $paymentMethod = PaymentProfile::where('pub_id', $pub_id)->first();
+
+        $data['paymentMethod'] = $paymentMethod;
+        $data['title'] = __('Publisher Payments');
+        $data['description'] = __('Publisher Payments');
+        $data['keywords'] = __('Publisher Payments');
+        return view('publisher.pages.payments.payments', $data);
+    }
+
+
     public function UpdatePaymentMethod(Request $request, $pubId)
 {
     $pub_id = Auth::user()->id;
