@@ -17,6 +17,233 @@
                 <span>{{ __('Dashboard') }}</span>
             </a>
         </li>
+
+
+
+         <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Offers') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Create Offer') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Fetch Offers') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Offer Providers') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Offers List') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Advertiser') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Create Advertiser') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Advertiser List') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Advertiser Reports') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Publisher') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Create Publisher') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Publisher List') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Publisher Reports') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+            <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Finance') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Deposits') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Withdrawals') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Reports') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Publisher Reports') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Advertiser Reports') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Offer Reports') }}</span>
+                        </a>
+                    </li>
+
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Deposit Reports') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Withdrawal Reports') }}</span>
+                        </a>
+                    </li>
+
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Credit Reports') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Chargeback Reports') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
+
+             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Support') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Live Chat') }}</span>
+                        </a>
+                    </li>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Tickets') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Staff') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Admin List') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
+                <a class="has-arrow" href="#">
+                    <i class="fas fa-user"></i>
+                    <span>{{ __('Manage Website') }}</span>
+                </a>
+                <ul>
+                    <li class="{{ isset($submenu) && $submenu == 'admin_list' ? 'mm-active' : '' }}">
+                        <a href="{{ route('admin.admin_list') }}">
+                            <i class="fa fa-circle"></i>
+                            <span>{{ __('Admin List') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
         @canany(['user-list'])
             <li class="{{ isset($menu) && $menu == 'admins' ? 'mm-active' : '' }}">
                 <a class="has-arrow" href="#">

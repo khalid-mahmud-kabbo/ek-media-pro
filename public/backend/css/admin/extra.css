@@ -35,6 +35,11 @@ th, td, select, .dataTables_filter input{
     background-color: #001831 !important;
 }
 
+
+.offer-track-url{
+    word-wrap: break-word;
+}
+
 .dropdown-item:focus, .dropdown-item:hover{
     background-color: #062f5b !important;
 }

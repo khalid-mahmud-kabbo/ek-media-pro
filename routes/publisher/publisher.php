@@ -10,7 +10,7 @@ use App\Http\Controllers\Publisher\OfferGalleryController;
 use App\Http\Controllers\Publisher\PlacementsController;
 use App\Http\Controllers\Publisher\ReportsController;
 use App\Http\Controllers\Publisher\ReverseController;
-use App\Http\Controllers\Publisher\PaymentProfileController;
+use App\Http\Controllers\Publisher\PaymentController;
 
 
 Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
@@ -24,7 +24,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('conversion', [ConversionController::class, 'Conversion'])->name('publisher.conversion');
     Route::get('documentation', [DocumentationController::class, 'Documentation'])->name('publisher.documentation');
     Route::get('offer-gallery', [OfferGalleryController::class, 'OfferGallery'])->name('publisher.offer-gallery');
-    Route::get('payments', [PaymentProfileController::class, 'Payments'])->name('publisher.payments');
+    Route::get('view-offer/{offerId}', [OfferGalleryController::class, 'offer'])->name('publisher.view-offer');
     Route::get('placements', [PlacementsController::class, 'Placements'])->name('publisher.placements');
     Route::get('placement/create', [PlacementsController::class, 'CreatePlacement'])->name('publisher.create-placement');
     Route::post('placement/store', [PlacementsController::class, 'StorePlacement'])->name('publisher.store-placement');
@@ -36,7 +36,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('placement/delete/{appId}', [PlacementsController::class, 'delete'])->name('publisher.delete');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
     Route::get('reverse', [ReverseController::class, 'Reverse'])->name('publisher.reverse');
-    Route::post('payment/{pubId}', [PaymentProfileController::class, 'UpdatePaymentMethod'])->name('publisher.payment-update');
+    Route::get('payments', [PaymentController::class, 'Payments'])->name('publisher.payments');
+    Route::post('payment/{pubId}', [PaymentController::class, 'UpdatePaymentMethod'])->name('publisher.payment-update');
 
 
 });

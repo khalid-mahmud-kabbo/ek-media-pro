@@ -5,6 +5,7 @@ namespace App\Models\Publisher;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\PaymentMethod;
 
 class PublisherPayment extends Model
 {
@@ -25,5 +26,10 @@ class PublisherPayment extends Model
     public function publisher()
     {
         return $this->belongsTo(User::class, 'pub_id', 'id');
+    }
+
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class, 'payment_method_id', 'id');
     }
 }

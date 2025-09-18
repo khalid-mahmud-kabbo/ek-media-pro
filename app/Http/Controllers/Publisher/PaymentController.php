@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Http;
 
-class PaymentProfileController extends Controller
+class PaymentController extends Controller
 {
 
 
@@ -22,7 +22,7 @@ class PaymentProfileController extends Controller
             $data = PublisherPayment::query()->with('publisher')->where('pub_id', Auth::id())->orderByDesc('id')->get();
             return DataTables::of($data)
                 ->editColumn('PaymentMethod', function ($data) {
-                    return $data->payment_method_id;
+                    return $data->paymentMethod->name;
                 })
                 ->editColumn('PaymentInfo', function ($data) {
                     return $data->payment_address;
@@ -45,7 +45,7 @@ class PaymentProfileController extends Controller
                         return '<span class="status pending">' . $active . '</span>';
                     }
                 })
-                ->rawColumns(['action', 'AppName', 'APIKey', 'PayoutRate', 'Status'])
+                ->rawColumns(['action', 'PaymentMethod', 'PaymentInfo', 'Amount', 'ViewDetails', 'Status'])
                 ->addIndexColumn()
                 ->make(true);
         }
@@ -57,17 +57,6 @@ class PaymentProfileController extends Controller
         return view('publisher.pages.payments.payments', $data);
     }
 
-
-
-    //   public function Payments()
-    // {
-
-
-    //     $data['title'] = __('Publisher Payments');
-    //     $data['description'] = __('Publisher Payments');
-    //     $data['keywords'] = __('Publisher Payments');
-    //     return view('publisher.pages.payments.payments', $data);
-    // }
 
 
     public function UpdatePaymentMethod(Request $request, $pubId)
