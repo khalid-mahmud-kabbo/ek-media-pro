@@ -27,8 +27,19 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+
+
+
             <div class="customers__area bg-style mb-30">
+
+               <div class="item-title">
+                    <div class="col-xs-6">
+                        <a href="{{route('publisher.create-placement')}}" class="btn btn-md btn-blue">{{ __('Create Placement')}}</a>
+                    </div>
+                </div>
+
 <table id="PlacementsTable" class="row-border data-table-filter table-style">
+
                         <thead>
                         <tr>
                             <th>{{ __('App Name')}}</th>

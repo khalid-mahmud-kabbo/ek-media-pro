@@ -31,6 +31,14 @@ th, td, select, .dataTables_filter input{
     background-color: #001831 !important;
 }
 
+.modal-content, .dropdown-menu{
+    background-color: #001831 !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: #062f5b !important;
+}
+
 h1, h2, h3, h4, h5, h6, p, div, span, a{
     color: #ffff !important;
 }
