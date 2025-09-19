@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Authentication\AuthController;
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\IframeController;
 use App\Http\Controllers\Frontend\BlogCommentController;
 
 
@@ -33,3 +34,8 @@ Route::group(['middleware' => ['is_user']], function () {
 
 
 });
+
+
+
+Route::get('/iframe', [IframeController::class, 'index'])->name('iframe');
+Route::get('/offer-history', [IframeController::class, 'history'])->name('history');
