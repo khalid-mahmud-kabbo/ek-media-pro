@@ -3,72 +3,78 @@
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
 @section('content')
-    <!-- breadcrumb area start here  -->
-    <div class="breadcrumb-area">
-        <div class="container">
-            <div class="breadcrumb-wrap text-center">
-                <h2 class="page-title">{{ __('Sign Up')}}</h2>
-                <ul class="breadcrumb-pages">
-                    <li class="page-item"><a class="page-item-link" href="{{route('front')}}">{{ __('Home')}}</a></li>
-                    <li class="page-item">{{ __('Sign Up')}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb area end here  -->
-
-    <!-- about us area start here  -->
-    <div class="sign-in-page sign-up-page section">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-lg-5">
-                    <div class="login-wrap">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <i class="far fa-user"></i>
-                        </div>
-                        <h1 class="text-center mb-4">{{ __('Register')}}</h1>
-                        <form class="login-form" action="{{route('sign.up.post')}}" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <input type="text" class="form-control rounded-left" placeholder="{{__('Name')}}" name="name" required="">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control rounded-left" placeholder="{{__('Phone Number')}}" name="phone" required="">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control rounded-left" placeholder="{{__('Email')}}" name="email" required="">
-                            </div>
 
 
-                            <div class="form-group">
-                                <select class="form-control rounded-left" name="account_type" id="account_type">
+<div id="main-wrapper">
+    <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-4 auth-card">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <a href="/" class="text-nowrap logo-img text-center d-block mb-5 w-100">
+                                <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="Logo-light" style="width: 200px" />
+                            </a>
+                            <div class="position-relative text-center my-4">
+                                <p class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">Welcome to EK Profithub 👋</p>
+                                <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
+                            </div>
+                            <form action="{{route('sign.up.post')}}" method="post">
+                                @csrf
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" placeholder="{{__('Name')}}" name="name" required="" />
+                                    <label><i class="ti ti-user me-2 fs-4"></i>Full Name</label>
+                                </div>
+
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" placeholder="{{__('Phone Number')}}" name="phone" required="" />
+                                    <label><i class="ti ti-user me-2 fs-4"></i>Phone Number</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control"  placeholder="{{__('Email')}}" name="email" required="" />
+                                    <label><i class="ti ti-user me-2 fs-4"></i>Email</label>
+                                </div>
+
+
+
+                                <div class="form-floating mb-3">
+                                     <select class="form-control" name="account_type" id="account_type">
                                     <option value="publisher">{{__('Publisher')}}</option>
                                     <option value="advertiser">{{__('Advertiser')}}</option>
                                 </select>
-                            </div>
+                                    <label><i class="ti ti-user me-2 fs-4"></i>Account Type</label>
+                                </div>
 
 
 
-                            <div class="form-group d-flex">
-                                <input type="password" class="form-control rounded-left" placeholder="{{__('Password')}}" name="password" required="">
-                            </div>
-                            <div class="form-group d-flex">
-                                <input type="password" class="form-control rounded-left" placeholder="{{__('Confirm Password')}}" name="confirm_password" required="">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary rounded submit px-3 primary-btn auth-btn">{{ __('Register')}}</button>
-                            </div>
 
-                            <hr>
 
-                            <div class="already-have-account">
-                               {{ __('Already have an account?')}}<a href="{{route('login')}}" class="forget-password-link">{{ __('Login')}}</a>
-                            </div>
-                        </form>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" name="password" value="{{ env('APP_DEMO') == true ? '123456' : '' }}" placeholder="Password" required />
+                                    <label><i class="ti ti-lock me-2 fs-4"></i>Password</label>
+                                </div>
+
+
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control"  placeholder="{{__('Confirm Password')}}" name="confirm_password" required="" />
+                                    <label><i class="ti ti-lock me-2 fs-4"></i>Confirm Password</label>
+                                </div>
+
+
+                                <button type="submit" name="signin" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</button>
+                                <div class="d-flex align-items-center justify-content-center">
+                    <p class="fs-3 mb-0 fw-medium">{{ __('Already have an account?')}}</p>
+                    <a class="text-primary fw-medium ms-2" href="{{route('login')}}">{{ __('Sign Up')}}</a>
+                  </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- about us area end here  -->
+    </div>
+
 @endsection

@@ -232,60 +232,7 @@
                         </a>
                     </div>
                 </div>
-                <br id="contact">
-                <br>
-                <div class="container">
-                    <div class="contact-form-container">
-                       <h2>Contact Us</h2>
-                       <form method="post">
-                           <div class="form-group">
-                               <label for="name">Name</label>
-                               <input type="text" id="name" placeholder="Name" required>
-                           </div>
-                           <div class="form-group">
-                               <label for="email">Email</label>
-                               <input type="email" id="email" id="email" placeholder="Email" required>
-                           </div>
-                           <div class="form-group">
-                               <label for="subject">Website / App</label>
-                               <input type="url" id="url" placeholder="url" required>
-                           </div>
-                           <div class="form-group">
-                               <label for="message">Message</label>
-                               <textarea id="message" rows="5" placeholder="Message" required></textarea>
-                           </div>
-                           <button type="button" class="card_btn" id="send">Send Message <iconify-icon icon="ic:baseline-check" width="15" height="15"  style="color: #fff"></iconify-icon></button>
-                       </form>
-                    </div>
-                    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                        $("#send").click(function(){
-                            var message = $("#message").val();
-                            url = $("#url").val();
-                            name = $("#name").val();
-                            email = $("#email").val();
-                            $.ajax({
-                                type: "POST",
-                                url: "contact.php",
-                                data: {send: 1, email:email, url:url, name:name, message:message, },
-                                success:function(data){
-                                    if(data == 1){
-                                        Swal.fire({
-                                           title: "Success!",
-                                           text: "Your message has been sent successfully. We will contact you soon!",
-                                           icon: "success"
-                                        });
-                                    }else{
-                                        Swal.fire({
-                                           title: "Oops!",
-                                           text: "Please enter all fields!",
-                                           icon: "error"
-                                        });
-                                    }
-                                }
-                            });
-                        });
-                    </script>
-                </div>
+
             </section>
 
         @endsection

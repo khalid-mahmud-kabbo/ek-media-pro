@@ -3,75 +3,46 @@
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
 @section('content')
-    <!-- breadcrumb area start here  -->
-    <div class="breadcrumb-area">
-        <div class="container">
-            <div class="breadcrumb-wrap text-center">
-                <h2 class="page-title">{{ __('Sign In') }}</h2>
-                <ul class="breadcrumb-pages">
-                    <li class="page-item"><a class="page-item-link" href="{{ route('front') }}">{{ __('Home') }}</a></li>
-                    <li class="page-item">{{ __('Sign In') }}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb area end here  -->
 
-    <!-- about us area start here  -->
-    <div class="sign-in-page section">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-lg-5">
-                    <div class="login-wrap">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <i class="far fa-user"></i>
-                        </div>
-                        <h1 class="text-center mb-4">{{ __('Login') }}</h1>
-                        <form class="login-form" method="post" action="{{ route('sign.in.post') }}">
-                            @csrf
-                            <div class="form-group">
-                                <input type="email" class="form-control rounded-left" placeholder="{{ __('Email') }}"
+<div id="main-wrapper">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-4 auth-card">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <a href="/" class="text-nowrap logo-img text-center d-block mb-5 w-100">
+                                <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="Logo-light" style="width: 200px" />
+                            </a>
+                            <div class="position-relative text-center my-4">
+                                <p class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">Welcome to EK Profithub 👋</p>
+                                <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
+                            </div>
+                            <form method="post" action="{{ route('sign.in.post') }}">
+                                @csrf
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" placeholder="{{ __('Email') }}"
                                     name="email" value="{{ env('APP_DEMO') == true ? 'user1@gmail.com' : old('email') }}"
-                                    required="">
-                                @error('email')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control rounded-left" placeholder="{{ __('Password') }}"
-                                    name="password" value="{{ env('APP_DEMO') == true ? '123456' : '' }}" required="">
-                                @error('password')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <button type="submit"
-                                    class="form-control btn btn-primary rounded submit px-3 primary-btn auth-btn">{{ __('Login') }}</button>
-                            </div>
-
-                            <hr>
-                            <div class="remember-box form-group d-md-flex justify-content-between mb-0">
-                                <div>
-                                    <label class="checkbox-wrap">{{ __('Remember Me') }}
-                                        <input type="checkbox" name="remember">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    required="" />
+                                    <label><i class="ti ti-user me-2 fs-4"></i>Username or Email</label>
                                 </div>
-                                <div class="text-md-end text-lg-end">
-                                    <a href="{{ route('forget.password.get') }}"
-                                        class="forget-password-link">{{ __('Forget Password') }}?</a>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" name="password" value="{{ env('APP_DEMO') == true ? '123456' : '' }}" placeholder="Password" required />
+                                    <label><i class="ti ti-lock me-2 fs-4"></i>Password</label>
                                 </div>
-                            </div>
-
-                            <div class="already-have-account">
-                                {{ __('Dont have an account?') }}<a href="{{ route('sign.up') }}"
-                                    class="forget-password-link">{{ __('Register') }}</a>
-                            </div>
-                        </form>
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <a class="text-primary fw-medium" href="{{ route('forget.password.get') }}">Forgot Password ?</a>
+                  </div>
+                                <button type="submit" name="signin" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</button>
+                                <div class="d-flex align-items-center justify-content-center">
+                    <p class="fs-3 mb-0 fw-medium">New to EK Profithub?</p>
+                    <a class="text-primary fw-medium ms-2" href="{{ route('sign.up') }}">Create an account</a>
+                  </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- about us area end here  -->
+
 @endsection

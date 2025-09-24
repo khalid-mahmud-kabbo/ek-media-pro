@@ -8,15 +8,19 @@
     font-family: "Inter", sans-serif;
 }
 
+body{
+    background-color: #040404;
+}
+
 :root {
     /* -----Colors----- */
-    --primary_color: #fff;
-    --secondary_color: #3f3b3b;
-    --accent_color: #0299de;
-    --accent_color_hover: #199fddd1;
+    --primary_color: #ffff;
+    --secondary_color: #ffff;
+    --accent_color: #e4d3d3;
+    --accent_color_hover: #e4d3d3;
     --tacao_color: #eaab7e;
     --light_turquoise_color: #90f2bd;
-    --dark_sky_color: #3b96f7;
+    --dark_sky_color: #e4d3d3;
     --saffron_mango_color: #d0b13f;
 
     /* -----Radius----- */

@@ -15,7 +15,8 @@ header {
 }
 
 header.bg {
-    background: #c9e8f6;
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
 }
 
 header .container {
@@ -288,11 +289,9 @@ header .container .icons > i:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #0299de, #fff, #eaab7e);
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
     z-index: -1;
-    border-bottom-right-radius: 200px;
-    border-bottom-left-radius: 200px;
-    opacity: 0.3;
 }
 
 @media (max-width: 576px) {
@@ -341,8 +340,6 @@ header .container .icons > i:hover {
     font-size: 40px;
     font-weight: 700;
     color: var(--secondary_color);
-    color: transparent;
-    background: linear-gradient(to right, #262121, #0044bb);
     background-clip: text;
     text-transform: capitalize;
     margin-bottom: 10px;
@@ -523,7 +520,7 @@ header .container .icons > i:hover {
     align-items: flex-start;
     justify-content: center;
     gap: 5px;
-    background: #e4e6e6;
+    background: #7b0606;
     padding: 10px;
     border-radius: var(--radius_10);
 }
@@ -546,6 +543,8 @@ header .container .icons > i:hover {
     padding-top: 80px;
     padding-bottom: 50px;
     text-align: center;
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
 }
 
 .about .container {
@@ -805,6 +804,11 @@ header .container .icons > i:hover {
     position: relative;
 }
 
+a{
+    text-decoration: none;
+}
+
+
 .steps::before {
     content: "";
     position: absolute;
@@ -812,15 +816,8 @@ header .container .icons > i:hover {
     left: 0;
     width: 100%;
     height: calc(100% + 100px);
-    background: var(--accent_color);
-    background: linear-gradient(
-        to bottom,
-        var(--accent_color),
-        #fff,
-        var(--accent_color)
-    );
-    opacity: 0.15;
-    border-radius: 100px;
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
     z-index: -1;
 }
 
@@ -1067,11 +1064,13 @@ header .container .icons > i:hover {
 }
 
 .fast_cards .container .card:first-child {
-    background: var(--dark_sky_color);
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
 }
 
 .fast_cards .container .card:last-child {
-    background: #fc9c0e;
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
 }
 
 .fast_cards .container .card .title {
@@ -1122,6 +1121,7 @@ header .container .icons > i:hover {
     padding-right: 20px;
     transition: var(--trans_05);
     gap: 5px;
+    background-color: #7b0606;
 }
 
 .fast_cards .container .card .card_btn:hover {
@@ -1149,6 +1149,7 @@ header .container .icons > i:hover {
 
 footer {
     position: relative;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
 }
 
 footer::before {
@@ -1158,11 +1159,9 @@ footer::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, var(--accent_color), transparent);
+    background: #112242;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
     z-index: -1;
-    border-top-right-radius: 100px;
-    border-top-left-radius: 100px;
-    opacity: 0.2;
 }
 
 footer .container {
@@ -1327,7 +1326,6 @@ footer .container .foot_cont .foot_links .list .list_item {
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
-    text-decoration: underline;
     transition: var(--trans_05);
 }
 
