@@ -45,12 +45,12 @@
                     <h3 class="about_subtitle">
                         Concentrating solely on success to accelerate your growth.
                     </h3>
-                    <center><p style="font-size: 28px; font-weight: 400px; padding: 10px">Publishers <span style="font-weight: bold; color: #00a8ff">Tools.</span></p></center>
+                    <center><p style="font-size: 28px; font-weight: 400px; padding: 10px">Publishers <span style="font-weight: bold; color: #7b0606">Tools.</span></p></center>
                     <div class="user">
 
                         <div class="user_props">
                             <div class="user_prop">
-                                <iconify-icon icon="mdi:iframe-brackets-outline" width="48" height="48"  style="color: #00a8ff"></iconify-icon>
+                                <iconify-icon icon="mdi:iframe-brackets-outline" width="48" height="48"  style="color: #7b0606"></iconify-icon>
                                 <div class="prop_txt">
                                     <h3 class="prop_title">
                                         iFrame
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="user_prop">
-                                <iconify-icon icon="mdi:api" width="48" height="48"  style="color: #00a8ff"></iconify-icon>
+                                <iconify-icon icon="mdi:api" width="48" height="48"  style="color: #7b0606"></iconify-icon>
                                 <div class="prop_txt">
                                     <h3 class="prop_title">
                                         Offers API
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="user_prop">
-                                <iconify-icon icon="ri:link" width="48" height="48"  style="color: #00a8ff"></iconify-icon>
+                                <iconify-icon icon="ri:link" width="48" height="48"  style="color: #7b0606"></iconify-icon>
                                 <div class="prop_txt">
                                     <h3 class="prop_title">
                                         Offerwall Link

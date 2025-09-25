@@ -1,12 +1,12 @@
  <header>
                 <div class="container">
                     <div class="head one" >
-                        <a href="#home">
+                        <a href="/">
                             <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="logo" class="logo" />
                         </a>
                         <ul class="nav_list ">
                             <li class="nav_item">
-                                <a href="#about-us" class="nav_link">
+                                <a href="/" class="nav_link">
                                     About
                                 </a>
                             </li>
@@ -16,7 +16,7 @@
                                 </a>
                             </li>
                             <li class="nav_item">
-                                <a href="#contact" class="nav_link">
+                                <a href="#" class="nav_link">
                                     Contact
                                 </a>
                             </li>
@@ -35,7 +35,7 @@
                         @if (Auth::user())
 
                         @if (Auth::user()->account_type == 'publisher')
-                         <a href="{{ route('publisher.dashboard') }}" target="_blank">
+                         <a href="{{ route('publisher.dashboard') }}">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>Dashboard</span>
@@ -43,7 +43,7 @@
                         </a>
 
                         @elseif (Auth::user()->account_type == 'advertiser')
-                        <a href="{{ route('advertiser.dashboard') }}" target="_blank">
+                        <a href="{{ route('advertiser.dashboard') }}">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>Dashboard</span>
@@ -51,13 +51,13 @@
                         </a>
                         @endif
                         @else
-                        <a href="{{ route('login') }}" target="_blank">
+                        <a href="{{ route('login') }}">
                         <button class="sign_in">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             <span>sign in</span>
                         </button>
                         </a>
-                        <a href="{{ route('sign.up') }}" target="_blank">
+                        <a href="{{ route('sign.up') }}">
                         <button class="sign_up">
                             <i class="fa-duotone fa-solid fa-user-plus"></i>
                             <span>sign up</span>
@@ -67,7 +67,7 @@
 
                     </div>
                     <div class="icons">
-                        <iconify-icon class="menu" icon="hugeicons:menu-03" width="34" height="34"  style="color: #01a8ff"></iconify-icon>
+                        <i class="fa-solid fa-bars"></i>
                     </div>
                 </div>
             </header>

@@ -10,7 +10,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: transparent;
+    background: linear-gradient(126deg,rgba(17, 34, 66, 1) 0%, rgba(17, 34, 66, 1) 58%, rgba(168, 27, 27, 1) 100%);
     z-index: 999;
 }
 
@@ -182,6 +182,15 @@ header .container .head .nav_link:hover > i {
     }
 }
 
+.btn{
+    background: linear-gradient(to right, #7b0606, #1e2020) !important;
+    border: none !important;
+}
+
+.bg-fixer{
+    background-color: #7b0606 !important;
+}
+
 header .container .head .sign_up {
     display: flex;
     align-items: center;
@@ -194,7 +203,7 @@ header .container .head .sign_up {
     border: none;
     border-radius: var(--radius_10);
     color: #fff;
-    background-color: #00a8ff;
+    background-color: #212529;
     text-transform: capitalize;
     transition: var(--trans_05);
     cursor: pointer;
@@ -294,12 +303,6 @@ header .container .icons > i:hover {
     z-index: -1;
 }
 
-@media (max-width: 576px) {
-    .home::before {
-        border-bottom-right-radius: 100px;
-        border-bottom-left-radius: 100px;
-    }
-}
 
 .home .container {
     min-height: 100vh;
@@ -400,7 +403,7 @@ header .container .icons > i:hover {
     text-transform: capitalize;
     border-radius: 6px;
     color: var(--primary_color);
-    background: linear-gradient(to right, #00a8ff, #0299de);
+    background: linear-gradient(to right, #7b0606, #1e2020);
     cursor: pointer;
 }
 
@@ -410,7 +413,7 @@ header .container .icons > i:hover {
 
 .home .container .home_txt .main_btn:hover {
     transform: scale(0.98);
-    background: linear-gradient(to right, #0299de, #0298de);
+    background: linear-gradient(to right, #1e2020, #0298de);
 }
 
 .home .container .home_txt .icons {
@@ -647,8 +650,8 @@ header .container .icons > i:hover {
 }
 
 .about .container .app::before {
-    background: #00a8ff;
-    background: linear-gradient(to bottom, #00a8ff, transparent);
+    background: #7b0606;
+    background: linear-gradient(to bottom, #7b0606, transparent);
 }
 
 .about .container .user .user_props,
@@ -681,7 +684,7 @@ header .container .icons > i:hover {
     font-weight: 700;
     color: var(--secondary_color);
     color: transparent;
-    background: linear-gradient(to right, #262121, #00a8ff);
+    background: linear-gradient(to right, #262121, #7b0606);
     background-clip: text;
     text-transform: capitalize;
     margin-bottom: -15px;
@@ -927,7 +930,7 @@ a{
     padding: 2px;
     border-radius: 100px;
     color: #fff;
-    background: #00a8ff;
+    background: #7b0606;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
@@ -1048,6 +1051,11 @@ a{
     border-radius: var(--radius_20);
     text-align: center;
 }
+
+.auth .container .card {
+    height: unset !important;
+}
+
 
 
 @media (max-width: 992px) {
@@ -1443,7 +1451,65 @@ button[type="submit"]:hover {
 
 
 
+.text-wrap {
+    background: #f75959;
+    background: -moz-linear-gradient(-45deg, #f75959 0%, #f35587 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #f75959), color-stop(100%, #f35587));
+    background: -webkit-linear-gradient(-45deg, #f75959 0%, #f35587 100%);
+    background: -o-linear-gradient(-45deg, #f75959 0%, #f35587 100%);
+    background: -ms-linear-gradient(-45deg, #f75959 0%, #f35587 100%);
+    background: -webkit-linear-gradient(315deg, #f75959 0%, #f35587 100%);
+    background: -o-linear-gradient(315deg, #f75959 0%, #f35587 100%);
+    background: linear-gradient(135deg, #f75959 0%, #f35587 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f75959', endColorstr='#f35587', GradientType=1 );
+    color: #fff;
+}
 
+.text-wrap .text h2 {
+    font-weight: 900;
+    color: #fff;
+}
+
+.btn.btn-white.btn-outline-white {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.btn.btn-white {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.login-wrap {
+    position: relative;
+    background: #fff;
+}
 
 
 

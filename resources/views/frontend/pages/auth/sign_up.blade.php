@@ -1,40 +1,32 @@
 @extends('frontend.layout.master')
-@section('title', isset($title) ? $title : 'Home')
+@section('title', isset($title) ? $title : 'Sign Up')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
 @section('content')
 
-
-<div id="main-wrapper">
-    <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100 d-flex align-items-center justify-content-center">
-        <div class="d-flex align-items-center justify-content-center w-100">
-            <div class="row justify-content-center w-100">
-                <div class="col-md-8 col-lg-6 col-xxl-4 auth-card">
-                    <div class="card mb-0">
-                        <div class="card-body">
-                            <a href="/" class="text-nowrap logo-img text-center d-block mb-5 w-100">
+<section class="fast_cards auth">
+                <div class="container">
+                    <div class="card one" data-aos="flip-up">
+                       <a class="text-nowrap logo-img text-center d-block w-100 mb-4">
                                 <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="Logo-light" style="width: 200px" />
                             </a>
-                            <div class="position-relative text-center my-4">
-                                <p class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">Welcome to EK Profithub 👋</p>
-                                <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
-                            </div>
-                            <form action="{{route('sign.up.post')}}" method="post">
+
+
+                            <h3 class="text-center text-white">Sign Up</h3>
+                            <p class="text-center text-white">{{__('Hello! Welcome to EK Profithub 👋')}}</p>
+
+
+                        <form action="{{route('sign.up.post')}}" method="post" class="w-100 py-4 px-5">
                                 @csrf
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" placeholder="{{__('Name')}}" name="name" required="" />
-                                    <label><i class="ti ti-user me-2 fs-4"></i>Full Name</label>
+                                    <label><i class="fa-regular fa-user"></i> Full Name</label>
                                 </div>
 
-
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" placeholder="{{__('Phone Number')}}" name="phone" required="" />
-                                    <label><i class="ti ti-user me-2 fs-4"></i>Phone Number</label>
-                                </div>
 
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control"  placeholder="{{__('Email')}}" name="email" required="" />
-                                    <label><i class="ti ti-user me-2 fs-4"></i>Email</label>
+                                    <label><i class="fa-regular fa-envelope"></i> Email</label>
                                 </div>
 
 
@@ -44,7 +36,7 @@
                                     <option value="publisher">{{__('Publisher')}}</option>
                                     <option value="advertiser">{{__('Advertiser')}}</option>
                                 </select>
-                                    <label><i class="ti ti-user me-2 fs-4"></i>Account Type</label>
+                                    <label><i class="fa-solid fa-i-cursor"></i> Account Type</label>
                                 </div>
 
 
@@ -53,28 +45,38 @@
 
                                 <div class="form-floating mb-3">
                                     <input type="password" class="form-control" name="password" value="{{ env('APP_DEMO') == true ? '123456' : '' }}" placeholder="Password" required />
-                                    <label><i class="ti ti-lock me-2 fs-4"></i>Password</label>
+                                    <label><i class="fa-solid fa-key"></i> Password</label>
                                 </div>
 
 
                                 <div class="form-floating mb-3">
                                     <input type="password" class="form-control"  placeholder="{{__('Confirm Password')}}" name="confirm_password" required="" />
-                                    <label><i class="ti ti-lock me-2 fs-4"></i>Confirm Password</label>
+                                    <label><i class="fa-solid fa-key"></i> Confirm Password</label>
                                 </div>
 
 
-                                <button type="submit" name="signin" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</button>
+                                <button type="submit" name="signin" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign Up</button>
                                 <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-3 mb-0 fw-medium">{{ __('Already have an account?')}}</p>
-                    <a class="text-primary fw-medium ms-2" href="{{route('login')}}">{{ __('Sign Up')}}</a>
+                    <p class="fs-3 mb-0 text-white fw-medium">{{ __('Already have an account?')}}</p>
+                    <a class="text-primary fw-medium ms-2" href="{{route('login')}}">{{ __('Sign In')}}</a>
                   </div>
                             </form>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @endsection
