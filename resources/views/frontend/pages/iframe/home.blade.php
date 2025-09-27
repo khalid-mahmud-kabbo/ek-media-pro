@@ -128,5 +128,24 @@
 
 
 
+
+        <div class="modal fade" id="OfferHistoryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ __('Earning History') }}</h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Description</h6>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 @endsection
 

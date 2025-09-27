@@ -11,7 +11,7 @@
 
             <div class="col-lg-4">
                 <div class="d-flex justify-content-between">
-                    <a href="" class="icon-boxer">
+                    <a href="" class="icon-boxer active">
                         <i class="fa-solid fa-globe"></i>
                     </a>
                     <a href="" class="icon-boxer">
@@ -29,7 +29,7 @@
             <div class="col-lg-4">
 
                     <div class="col-xs-6" style="float: right">
-                        <a href="" class="btn btn-md btn-blue">{{ __('Earning History')}}</a>
+                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#OfferHistoryModal" class="btn btn-md btn-blue" >{{ __('Earning History')}}</a>
                     </div>
 
             </div>

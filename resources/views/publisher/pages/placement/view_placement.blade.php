@@ -82,7 +82,7 @@
                                                  <div class="input__group mb-25">
                 <label>{{ __('Iframe Url') }}</label>
                <input type="text"
-    value="{{ env('IFRAME_URL') }}/{{ $placement->currency_name }}?api_key={{ $placement->is_active == 'active' ?$placement->api_key : 'YOUR_API_KEY' }}&pub_id={{ $placement->pub_id }}&app_id={{ $placement->is_active == 'active' ?$placement->app_id : 'YOUR_APP_ID' }}&user_id={{ env('POSTBACK_PARAMITER') }}"
+    value="{{ env('IFRAME_URL') }}?api_key={{ $placement->is_active == 'active' ?$placement->api_key : 'YOUR_API_KEY' }}&pub_id={{ $placement->pub_id }}&app_id={{ $placement->is_active == 'active' ?$placement->app_id : 'YOUR_APP_ID' }}&user_id={{ env('POSTBACK_PARAMITER') }}"
     readonly>
 
 

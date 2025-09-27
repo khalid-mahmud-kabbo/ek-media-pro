@@ -35,7 +35,4 @@ Route::group(['middleware' => ['is_user']], function () {
 
 });
 
-
-
-Route::get('/iframe', [IframeController::class, 'index'])->name('iframe');
-Route::get('/offer-history', [IframeController::class, 'history'])->name('history');
+Route::get('/live-offers', [IframeController::class, 'index'])->name('iframe');

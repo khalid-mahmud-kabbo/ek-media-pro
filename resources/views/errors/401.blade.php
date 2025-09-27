@@ -1,34 +1,18 @@
 @extends('errors.layout')
-@section('title', __('Error'))
+@section('title', __('401 Unauthorized'))
 @section('content')
-    <!-- breadcrumb area start here  -->
-    <div class="breadcrumb-area">
-        <div class="container">
-            <div class="breadcrumb-wrap text-center">
-                <h2 class="page-title">{{__('Error')}}</h2>
-                <ul class="breadcrumb-pages">
-                    <li class="page-item"><a class="page-item-link" href="{{route('front')}}">{{__('Home')}}</a></li>
-                    <li class="page-item">{{__('Error')}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb area end here  -->
 
-    <!-- Error Page area start here  -->
-    <div class="error-page-area section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="fw-bold">{{__('ERROR 401 UNAUTHORIZED')}}</h1>
-                    <p>
-                        {{__('You are unauthorized permission to access this page. Click on the button below
-                        to do something, Thanks!')}}
-                    </p>
-                    <a href="{{route('front')}}" class="primary-btn">{{__('Back to Home')}}</a>
-                </div>
-            </div>
+<div class="flex items-center justify-center h-screen">
+    <div class="flex flex-col items-center justify-center max-w-lg">
+        <div class="mb-4">
+            <h1 class="text-5xl font-extrabold text-blue-600">401</h1>
         </div>
+        <h3 class="mb-3 text-2xl font-bold text-center text-gray-700">
+            Unauthorized.
+        </h3>
+        <p class="text-sm text-center text-gray-600">
+            {{__('You are unauthorized permission to access this page. Click on the button below to do something, Thanks!')}}
+        </p>
     </div>
-    <!-- Error Page area end here  -->
+</div>
 @endsection
