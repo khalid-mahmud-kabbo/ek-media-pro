@@ -11,19 +11,21 @@
 
             <div class="col-lg-4">
                 <div class="d-flex justify-content-between">
-                    <a href="" class="icon-boxer active">
-                        <i class="fa-solid fa-globe"></i>
-                    </a>
-                    <a href="" class="icon-boxer">
-                        <i class="fa-brands fa-android"></i>
-                    </a>
-                    <a href="" class="icon-boxer">
-                        <i class="fa-brands fa-apple"></i>
-                    </a>
-                    <a href="" class="icon-boxer">
-                        <i class="fa-brands fa-windows"></i>
-                    </a>
-                </div>
+    <a href="{{ request()->fullUrlWithQuery(['filter' => 'all']) }}" class="icon-boxer {{ request('filter') == 'all' ? 'active' : '' }}">
+        <i class="fa-solid fa-globe"></i>
+    </a>
+    <a href="{{ request()->fullUrlWithQuery(['filter' => 'android']) }}" class="icon-boxer {{ request('filter') == 'android' ? 'active' : '' }}">
+        <i class="fa-brands fa-android"></i>
+    </a>
+    <a href="{{ request()->fullUrlWithQuery(['filter' => 'ios']) }}" class="icon-boxer {{ request('filter') == 'ios' ? 'active' : '' }}">
+        <i class="fa-brands fa-apple"></i>
+    </a>
+    <a href="{{ request()->fullUrlWithQuery(['filter' => 'windows']) }}" class="icon-boxer {{ request('filter') == 'windows' ? 'active' : '' }}">
+        <i class="fa-brands fa-windows"></i>
+    </a>
+</div>
+
+
             </div>
 
             <div class="col-lg-4">

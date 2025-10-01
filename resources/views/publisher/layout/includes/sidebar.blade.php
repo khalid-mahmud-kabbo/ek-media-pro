@@ -26,25 +26,13 @@
 
 
         <li class="{{ isset($menu) && $menu == 'placements' ? 'mm-active' : '' }}">
-                <a class="has-arrow" href="#">
-                    <img src="{{ asset('admin/images/icons/sidebar/app.svg') }}" alt="icon">
-                    <span>{{ __('App/Placements') }}</span>
-                </a>
-                <ul>
-                    <li class="{{ isset($submenu) && $submenu == 'my_placements' ? 'mm-active' : '' }}">
-                        <a href="{{ route('publisher.placements') }}">
-                            <i class="fa fa-circle"></i>
-                            <span>{{ __('My Placements') }}</span>
-                        </a>
-                    </li>
-                    <li class="{{ isset($submenu) && $submenu == 'create_placement' ? 'mm-active' : '' }}">
-                        <a href="{{ route('publisher.create-placement') }}">
-                            <i class="fa fa-circle"></i>
-                            <span>{{ __('Create Placement') }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            <a href="{{ route('publisher.placements') }}">
+                <img src="{{ asset('admin/images/icons/sidebar/app.svg') }}" alt="icon">
+                <span>{{ __('App/Placements') }}</span>
+            </a>
+        </li>
+
+
 
         <li class="{{ isset($menu) && $menu == 'conversion' ? 'mm-active' : '' }}">
             <a href="{{ route('publisher.conversion') }}">

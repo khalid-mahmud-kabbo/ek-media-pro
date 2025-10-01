@@ -1,9 +1,11 @@
 @extends('frontend.layout.iframe')
-@section('Iframe')
+@section('description', isset($description) ? $description : '')
+@section('keywords', isset($keywords) ? $keywords : '')
 
 @section('content')
 
 <div class="container">
+    <div id="offers-container">
 
 
 <div class="row g-3">
@@ -124,6 +126,7 @@
 
 
 
+        </div>
         </div>
 
 

@@ -36,3 +36,4 @@ Route::group(['middleware' => ['is_user']], function () {
 });
 
 Route::get('/live-offers', [IframeController::class, 'index'])->name('iframe');
+Route::get('/live-offers/filter', [IframeController::class, 'filter']);

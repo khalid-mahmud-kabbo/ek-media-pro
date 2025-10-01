@@ -43,14 +43,14 @@
                                                 <div class="col-md-6">
                                             <div class="input__group mb-25">
                                                 <label>{{ __('Placement Name') }} <span class="text-danger">*</span></label>
-                                                <input type="text" id="app_name" name="app_name" value="{{ $edit->app_name }}">
+                                                <input type="text" id="app_name" name="app_name" value="{{ $edit->app_name }}" readonly>
                                             </div>
                                             </div>
 
                                             <div class="col-md-6">
                                             <div class="input__group mb-25">
                                                 <label>{{ __('App URL') }} <span class="text-danger">*</span></label>
-                                                <input type="url" id="app_url" name="app_url" value="{{ $edit->app_url }}">
+                                                <input type="url" id="app_url" name="app_url" value="{{ $edit->app_url }}" readonly>
                                             </div>
                                             </div>
 
