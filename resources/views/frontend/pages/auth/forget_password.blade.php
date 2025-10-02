@@ -1,46 +1,33 @@
 @extends('frontend.layout.master')
-@section('title', isset($title) ? $title : 'Home')
+@section('title', isset($title) ? $title : 'Forget Password')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')
 @section('content')
-    <!-- breadcrumb area start here  -->
-    <div class="breadcrumb-area">
-        <div class="container">
-            <div class="breadcrumb-wrap text-center">
-                <h2 class="page-title">{{ __('Forget Password')}}</h2>
-                <ul class="breadcrumb-pages">
-                    <li class="page-item"><a class="page-item-link" href="{{route('front')}}">{{ __('Home')}}</a></li>
-                    <li class="page-item">{{ __('Forget Password')}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb area end here  -->
+    <section class="fast_cards auth">
+                <div class="container">
+                    <div class="card one" data-aos="flip-up">
+                        <a class="text-nowrap logo-img text-center d-block w-100 mb-4">
+                                <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="Logo-light" style="width: 200px" />
+                            </a>
 
-    <!-- about us area start here  -->
-    <div class="sign-in-page section">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-lg-5">
-                    <div class="login-wrap">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <i class="far fa-user"></i>
-                        </div>
-                        <h1 class="text-center mb-4">{{ __('Forget Password')}}</h1>
-                        <form class="login-form" method="post" action="{{route('forget.password.post')}}">
-                            @csrf
-                            <div class="form-group">
-                                <input type="email" class="form-control rounded-left" placeholder="{{__('Email')}}" name="email" required="">
-                            </div>
 
-                            <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary rounded submit px-3 primary-btn auth-btn">{{ __('Reset Password')}}</button>
-                            </div>
-                        </form>
+                            <h3 class="text-center text-white">Forget Password</h3>
+                            <p class="text-center text-white">{{__('Please enter your valid email for reset password')}}</p>
+
+
+
+<form method="post" action="{{route('forget.password.post')}}" class="w-100  py-4 px-5">
+                                @csrf
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Your Verified Email" required="" />
+                                    <label><i class="fa-regular fa-envelope"></i> Email</label>
+                                </div>
+
+                                <button type="submit" name="verify" class="btn btn-primary w-100 py-8 mb-4 rounded-2">{{ __('Reset Password')}}</button>
+
+                            </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- about us area end here  -->
+
+            </section>
 @endsection

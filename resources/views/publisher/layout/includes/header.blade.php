@@ -18,7 +18,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="{{route('admin.profile')}}">
+                                        <a class="dropdown-item" href="{{route('publisher.account-settings')}}">
                                             <img src="{{asset('admin/images/icons/user.svg')}}" alt="icon">
                                             <span>{{__('Profile')}}</span>
                                         </a>

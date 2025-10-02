@@ -23,6 +23,11 @@ Route::group(['middleware' => ['is_user']], function () {
         Route::post('forget-password', [AuthController::class, 'ForgetPasswordPost'])->name('forget.password.post');
         Route::get('reset-password/{token}', [AuthController::class, 'ShowResetPasswordForm'])->name('reset.password.get');
         Route::post('reset-password', [AuthController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+        Route::post('/toggle-2fa', [AuthController::class, 'toggle2FA'])->name('toggle.2fa');
+        Route::post('/verify-disable-2fa', [AuthController::class, 'verifyDisable2FA'])->name('verify.disable.2fa');
+        Route::get('/2fa-verify', [AuthController::class, 'show2FAVerify'])->name('login.2fa.verify');
+        Route::post('/2fa-verify', [AuthController::class, 'verify2FA'])->name('login.2fa.verify.post');
+
     });
 
 

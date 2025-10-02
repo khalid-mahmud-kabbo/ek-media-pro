@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\Send2FACode;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -32,32 +34,45 @@ class AuthController extends Controller
         $data['keywords'] = $seo->keywords;
         return view('frontend.pages.auth.sign_in', $data);
     }
+
+
     public function SignInPost(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
 
-        $user = User::where('email', $request->email)->where('is_admin', 0)->first(); //check user
+    $user = User::where('email', $request->email)->where('is_admin', 0)->first();
 
-        if ($user) {
-            if ($user->status == INACTIVE) {
-                return  redirect()->route('front')->with('error', __('User is blocked by admin.'));
-            }
-            if (Hash::check($request->password, $user->password)) {
-                if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                    if (Auth::user()->is_admin == 0) {
-                        return redirect()->route('publisher.dashboard');
-                    } else {
-                        Auth::logout();
-                        return redirect()->back()->with('error', __('Something went wrong!'));
-                    }
-                }
-            }
+    if ($user) {
+        if ($user->status == INACTIVE) {
+            return redirect()->route('front')->with('error', __('User is blocked by admin.'));
         }
-        return redirect()->back()->with('error', __('Credential Not Match'));
+
+        if (Hash::check($request->password, $user->password)) {
+
+            if ($user->f2_status == 'enabled') {
+                $token = rand(100000, 999999);
+                $user->login_2fa_token = $token;
+                $user->save();
+
+                Mail::to($user->email)->send(new Send2FACode($token, 'Login Verification Code'));
+
+                Session::put('2fa_user_id', $user->id);
+
+                return redirect()->route('login.2fa.verify')
+                                 ->with('info', 'A verification code has been sent to your email.');
+            }
+
+            Auth::login($user);
+
+            return redirect()->route('publisher.dashboard');
+        }
     }
+
+    return redirect()->back()->with('error', __('Credential Not Match'));
+}
 
     public function SignUp()
     {
@@ -110,6 +125,9 @@ class AuthController extends Controller
         $user->save();
         return redirect()->back()->with('success', __('Password change successfully!'));
     }
+
+
+
     //forget password
     public function ForgetPasswordGet()
     {
@@ -117,7 +135,7 @@ class AuthController extends Controller
         $data['title'] = $seo->title;
         $data['description'] = $seo->description;
         $data['keywords'] = $seo->keywords;
-        return view('front.auth.forget_password', $data);
+        return view('frontend.pages.auth.forget_password', $data);
     }
     public function ForgetPasswordPost(Request $request)
     {
@@ -177,5 +195,90 @@ class AuthController extends Controller
         }
         return redirect()->back()->with('error', 'Your password not changed!');
     }
+
+
+    public function toggle2FA(Request $request)
+{
+
+    /** @var User $user */
+
+    $user = Auth::user();
+
+    if ($user->f2_status == 'disabled') {
+        $user->f2_status = 'enabled';
+        $user->save();
+
+        return redirect()->back()->with('success', 'Two-Factor Authentication enabled.');
+    } else {
+        $token = rand(100000, 999999);
+        $user->disable_2fa_token = $token;
+        $user->save();
+
+        Mail::to($user->email)->send(new Send2FACode($token, 'Disable 2FA Verification'));
+
+        return redirect()->back()->with('info', 'A verification code has been sent to your email to disable 2FA.');
+    }
+    }
+
+
+    public function verifyDisable2FA(Request $request)
+{
+
+    $request->validate([
+        'code' => 'required|numeric',
+    ]);
+
+    /** @var User $user */
+
+    $user = Auth::user();
+
+    if ($user->disable_2fa_token == $request->code) {
+        $user->f2_status = 'disabled';
+        $user->disable_2fa_token = null;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Two-Factor Authentication disabled.');
+    } else {
+        return redirect()->back()->with('error', 'Invalid verification code.');
+    }
+}
+
+
+
+public function show2FAVerify()
+{
+    return view('frontend.pages.auth.2fa-verify'); // create this blade
+}
+
+public function verify2FA(Request $request)
+{
+    $request->validate([
+        'code' => 'required|numeric',
+    ]);
+
+    $userId = Session::get('2fa_user_id');
+
+    if (!$userId) {
+        return redirect()->route('front')->with('error', 'Session expired.');
+    }
+
+    $user = User::find($userId);
+
+    if ($user && $user->login_2fa_token == $request->code) {
+        // Login user
+        Auth::login($user);
+
+        // Clear token and session
+        $user->login_2fa_token = null;
+        $user->save();
+        Session::forget('2fa_user_id');
+
+        return redirect()->route('publisher.dashboard');
+    }
+
+    return redirect()->back()->with('error', 'Invalid verification code.');
+}
+
+
 
 }

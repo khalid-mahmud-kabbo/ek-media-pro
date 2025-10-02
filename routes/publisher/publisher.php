@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('profile-edit', [ProfileController::class, 'ProfileEdit'])->name('publisher.profile.edit');
     Route::post('profile-update', [ProfileController::class, 'ProfileUpdate'])->name('publisher.profile.update');
     Route::get('account-settings', [AccountSettingsController::class, 'AccountSettings'])->name('publisher.account-settings');
+    Route::post('update-account-settings', [AccountSettingsController::class, 'UpdateAccountSettings'])->name('publisher.update-account-settings');
     Route::get('conversion', [ConversionController::class, 'Conversion'])->name('publisher.conversion');
     Route::get('documentation', [DocumentationController::class, 'Documentation'])->name('publisher.documentation');
     Route::get('offer-gallery', [OfferGalleryController::class, 'OfferGallery'])->name('publisher.offer-gallery');
