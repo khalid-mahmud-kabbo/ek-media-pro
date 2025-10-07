@@ -111,6 +111,24 @@
                                     <div class="form-vertical__item bg-style">
                                         <h4 class="mb-25">Payments / History</h4>
 
+
+
+
+                                        <div class="row mb-3">
+    <div class="col-md-3">
+        <label>From Date</label>
+        <input type="date" id="from_date" class="form-control">
+    </div>
+    <div class="col-md-3">
+        <label>To Date</label>
+        <input type="date" id="to_date" class="form-control">
+    </div>
+    <div class="col-md-3 d-flex align-items-end">
+        <button id="filter" class="btn btn-primary me-2">Filter</button>
+        <button id="reset" class="btn btn-secondary">Reset</button>
+    </div>
+</div>
+
 <div id="table-url" data-url="{{ route('publisher.payments') }}"></div>
 
 <table id="PaymentsTable" class="row-border data-table-filter table-style">

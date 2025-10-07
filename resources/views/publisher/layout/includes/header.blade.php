@@ -8,7 +8,6 @@
                         <button class="sidebar-toggler">
                             <img src="{{asset('admin/images/icons/header/bars.svg')}}" alt="">
                         </button>
-                        <a href="{{route('front')}}" target="_blank" class="btn btn-primary text-white">{{__('Visit Your Site')}}</a>
                     </div>
                     <div class="header__navbar__right">
                         <ul class="header__menu">
