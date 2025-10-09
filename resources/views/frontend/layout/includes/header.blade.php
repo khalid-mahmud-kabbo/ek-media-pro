@@ -4,30 +4,6 @@
                         <a href="/">
                             <img src="{{ asset(IMG_LOGO_PATH . $allsettings['footer_logo']) }}" alt="logo" class="logo" />
                         </a>
-                        <ul class="nav_list ">
-                            <li class="nav_item">
-                                <a href="/" class="nav_link">
-                                    About
-                                </a>
-                            </li>
-                            <li class="nav_item">
-                                <a target="_blank" href="#" class="nav_link">
-                                    Documentation
-                                </a>
-                            </li>
-                            <li class="nav_item">
-                                <a href="#" class="nav_link">
-                                    Contact
-                                </a>
-                            </li>
-
-                            <li class="nav_item phone">
-                                <a href="{{ route('login') }}" class="nav_link">
-                                    sign in
-                                    <i class="fa-solid fa-angle-down"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
 
                     <div class="head two">
