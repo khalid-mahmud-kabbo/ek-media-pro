@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <div id="table-url" data-url="{{ route('publisher.placements') }}"></div>
+    <div id="table-url" data-url="{{ route('publisher.reverse') }}"></div>
     <div class="row">
         <div class="col-md-12">
             <div class="breadcrumb__content">
@@ -57,7 +57,7 @@
 </div>
 
 
-<table id="ConversionsTable" class="row-border data-table-filter table-style">
+<table id="ReversesTable" class="row-border data-table-filter table-style">
 
                         <thead>
                         <tr>
@@ -89,7 +89,7 @@
     </div>
 
     <!--Row-->
-    {{-- @push('post_scripts')
-        <script src="{{asset('backend/js/publisher/datatables/placements.js')}}"></script>
-    @endpush --}}
+    @push('post_scripts')
+        <script src="{{asset('backend/js/publisher/datatables/reverses.js')}}"></script>
+    @endpush
 @endsection

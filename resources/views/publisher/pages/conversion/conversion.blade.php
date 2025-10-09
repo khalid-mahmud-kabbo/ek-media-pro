@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <div id="table-url" data-url="{{ route('publisher.placements') }}"></div>
+    <div id="table-url" data-url="{{ route('publisher.conversion') }}"></div>
     <div class="row">
         <div class="col-md-12">
             <div class="breadcrumb__content">
@@ -93,7 +93,7 @@
     </div>
 
     <!--Row-->
-    {{-- @push('post_scripts')
-        <script src="{{asset('backend/js/publisher/datatables/placements.js')}}"></script>
-    @endpush --}}
+    @push('post_scripts')
+        <script src="{{asset('backend/js/publisher/datatables/conversions.js')}}"></script>
+    @endpush
 @endsection

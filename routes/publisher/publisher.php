@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::post('profile-update', [ProfileController::class, 'ProfileUpdate'])->name('publisher.profile.update');
     Route::get('account-settings', [AccountSettingsController::class, 'AccountSettings'])->name('publisher.account-settings');
     Route::post('update-account-settings', [AccountSettingsController::class, 'UpdateAccountSettings'])->name('publisher.update-account-settings');
-    Route::get('conversion', [ConversionController::class, 'Conversion'])->name('publisher.conversion');
+    Route::get('conversions', [ConversionController::class, 'Conversions'])->name('publisher.conversion');
     Route::get('documentation', [DocumentationController::class, 'Documentation'])->name('publisher.documentation');
     Route::get('offer-gallery', [OfferGalleryController::class, 'OfferGallery'])->name('publisher.offer-gallery');
     Route::get('view-offer/{offerId}', [OfferGalleryController::class, 'offer'])->name('publisher.view-offer');
@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'publisher'], function () {
     Route::get('placement/{appId}', [PlacementsController::class, 'Placement'])->name('publisher.placement');
     Route::get('placement/delete/{appId}', [PlacementsController::class, 'delete'])->name('publisher.delete');
     Route::get('reports', [ReportsController::class, 'Reports'])->name('publisher.reports');
-    Route::get('reverse', [ReverseController::class, 'Reverse'])->name('publisher.reverse');
+    Route::get('reverses', [ReverseController::class, 'Reverses'])->name('publisher.reverse');
     Route::get('payments', [PaymentController::class, 'Payments'])->name('publisher.payments');
     Route::post('payment/{pubId}', [PaymentController::class, 'UpdatePaymentMethod'])->name('publisher.payment-update');
 
