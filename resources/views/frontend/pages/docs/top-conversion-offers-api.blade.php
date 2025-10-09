@@ -1,19 +1,10 @@
 @extends('frontend.layout.docs')
-@section('title', isset($title) ? $title : 'Home')
-@section('description', isset($description) ? $description : '')
-@section('keywords', isset($keywords) ? $keywords : '')
+@section('title', 'Top Conversion Offers Documentation')
 
+
+@section('content')
 <div class="row">
                 <div class="col-md-12">
-                        <style>
-        .body-text {
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 30px;
-            font-weight: 500;
-            color: rgb(31, 85, 90);
-        }
-    </style>
 
     <div class="card body-text">
         <div class="card-header card-header-info card-header-text">
@@ -22,15 +13,8 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="alert alert-info">
-                If you would like to check API response using your App credentials, you can check&nbsp;
-                <a href="https://publisher.notik.me/pub/api-docs#endpoints-GETapi-v2-get-top-converting-offers"
-                   target="_blank">
-                    <strong><u>our documentation here</u>.</strong>
-                </a>
-            </div>
             <p>If you would like us to notify you whenever an offer is completed, set up a
-                <a href="https://publisher.notik.me/v1/postback-documentation" target="_blank">
+                <a href="{{ route('documentation.postback-integration') }}" target="_blank">
                     Server Postback
                 </a>
             </p>
@@ -78,7 +62,7 @@
                     <div class="form-group">
                         <input type="text" id="api-key" class="form-control"
                                style="padding: 0 10px;"
-                               value="https://notik.me/api/v2/get-top-converting-offers?api_key={api_key}&amp;pub_id={pub_id}&amp;app_id={app_id}"
+                               value="{{ env('APP_URL') }}/api/v2/get-top-converting-offers?api_key={api_key}&amp;pub_id={pub_id}&amp;app_id={app_id}"
                                readonly>
                     </div>
                 </div>
@@ -137,7 +121,7 @@
                     class="text-rose">You can make up to 3 API requests per hour</span>.<br>
                 # The API response provides offer details similar to the "All Offers" API, but without pagination. For
                 details about the response structure, please see the <a
-                    href="https://publisher.notik.me/v2/api-all-offers-documentation" target="_blank"><u>"All Offers
+                    href="{{ route('documentation.all-offers-api') }}" target="_blank"><u>"All Offers
                         API documentation"</u></a>.<br>
             </p>
         </div>

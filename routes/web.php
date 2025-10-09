@@ -6,6 +6,7 @@ use App\Http\Controllers\Authentication\AuthController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\IframeController;
 use App\Http\Controllers\Frontend\BlogCommentController;
+use App\Http\Controllers\Frontend\DocumentationController;
 
 
 Route::group(['middleware' => ['is_user']], function () {
@@ -42,3 +43,14 @@ Route::group(['middleware' => ['is_user']], function () {
 
 Route::get('/live-offers', [IframeController::class, 'index'])->name('iframe');
 Route::get('/live-offers/filter', [IframeController::class, 'filter']);
+
+ Route::group(['prefix' => 'documentation/'], function () {
+Route::get('/all-offers-api', [DocumentationController::class, 'allOffersApi'])->name('documentation.all-offers-api');
+Route::get('/filtered-offers-api', [DocumentationController::class, 'filteredOffersApi'])->name('documentation.filtered-offers-api');
+Route::get('/postback-intrigation', [DocumentationController::class, 'postbackDetails'])->name('documentation.postback-integration');
+Route::get('/iframe-intrigation', [DocumentationController::class, 'iframeDetails'])->name('documentation.iframe-integration');
+Route::get('/top-conversion-offers-api', [DocumentationController::class, 'topConversionOffersApi'])->name('documentation.top-conversion-offers-api');
+Route::get('/user-based-offers-api', [DocumentationController::class, 'userBasedOffers'])->name('documentation.user-based-offers-api');
+
+
+});

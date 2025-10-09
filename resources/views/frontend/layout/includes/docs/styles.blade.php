@@ -17,6 +17,16 @@
           rel="stylesheet"/>
 
         <style>
+
+            .body-text {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 500;
+            color: rgb(31, 85, 90);
+        }
+
+
         .jssocials-share {
             margin: 20px;
         }

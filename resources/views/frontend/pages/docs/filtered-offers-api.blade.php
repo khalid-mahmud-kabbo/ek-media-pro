@@ -1,34 +1,18 @@
 @extends('frontend.layout.docs')
-@section('title', isset($title) ? $title : 'Home')
-@section('description', isset($description) ? $description : '')
-@section('keywords', isset($keywords) ? $keywords : '')
+@section('title', 'Filtered Offers API Documentation')
 
+
+@section('content')
 <div class="row">
                 <div class="col-md-12">
-                        <style>
-        .body-text {
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 30px;
-            font-weight: 500;
-            color: rgb(31, 85, 90);
-        }
-    </style>
 
     <div class="card body-text">
-        <div class="alert alert-info">
-            If you would like to check API response using your App credentials, you can check&nbsp;
-            <a href="https://publisher.notik.me/pub/api-docs#endpoints-GETapi-v1-get-offers-filtered"
-               target="_blank">
-                <strong><u>our documentation here</u>.</strong>
-            </a>
-        </div>
         <div class="card-header card-header-info card-header-text">
             <div class="card-text"><h4 class="card-title"><strong>Filtered Offers API Documentation</strong></h4></div>
         </div>
         <div class="card-body">
             <p>If you would like us to notify you whenever an offer is completed, set up a
-                <a href="https://publisher.notik.me/v1/postback-documentation" target="_blank">
+                <a href="{{ route('documentation.postback-integration') }}" target="_blank">
                     Server Postback
                 </a>
             </p>
@@ -46,7 +30,7 @@
                     <div class="form-group">
                         <input type="text" id="api-key" class="form-control"
                                style="padding: 0 10px;"
-                               value="https://notik.me/api/v1/get-offers/filtered?api_key={api_key}&amp;pub_id={pub_id}&amp;app_id={app_id}&amp;user_id={user_id}&amp;s1={s1}&amp;device_name={device_name}&amp;device_type={device_type}&amp;device_os={device_os}&amp;os_version={os_version}&amp;browser_name={browser_name}&amp;browser_version={browser_version}&amp;country_code={country_code}&amp;user_agent={user_agent}&amp;ip={ip}"
+                               value="{{ env('APP_URL') }}/api/v1/get-offers/filtered?api_key={api_key}&amp;pub_id={pub_id}&amp;app_id={app_id}&amp;user_id={user_id}&amp;s1={s1}&amp;device_name={device_name}&amp;device_type={device_type}&amp;device_os={device_os}&amp;os_version={os_version}&amp;browser_name={browser_name}&amp;browser_version={browser_version}&amp;country_code={country_code}&amp;user_agent={user_agent}&amp;ip={ip}"
                                readonly>
                     </div>
                 </div>
@@ -208,7 +192,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <img src="https://publisher.notik.me/img/filteredOffersSuccessResponse.jpg" alt="response-200"
+                        <img src="{{ asset('assets/images/filteredOffersSuccessResponse.jpg') }}" alt="response-200"
                              style="width: 100%;">
                     </div>
                 </div>

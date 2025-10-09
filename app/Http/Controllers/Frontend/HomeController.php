@@ -22,8 +22,6 @@ class HomeController extends Controller
             $data['description'] = $seo->description;
             $data['keywords'] = $seo->keywords;
             return view('frontend.pages.index', $data);
-        } else {
-            return redirect()->to('/install');
         }
     }
 

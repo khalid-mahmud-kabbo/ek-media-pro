@@ -1,8 +1,8 @@
 @extends('frontend.layout.docs')
-@section('title', isset($title) ? $title : 'Home')
-@section('description', isset($description) ? $description : '')
-@section('keywords', isset($keywords) ? $keywords : '')
+@section('title', 'Iframe Documentation')
 
+
+@section('content')
  <div class="row">
                 <div class="col-md-12">
                         <style>
@@ -21,7 +21,7 @@
         </div>
         <div class="card-body">
             <p>If you would like us to notify you whenever an offer is completed, set up a
-                <a href="https://publisher.notik.me/v1/postback-documentation" target="_blank">
+                <a href="{{ route('documentation.postback-integration') }}" target="_blank">
                     Server Postback
                 </a>
             </p>
@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <input type="text" id="iframe-link" class="form-control"
                                style="padding: 0 10px;"
-                               value="<iframe src='https://notik.me/coins?api_key={YOUR_API_KEY}&amp;pub_id={YOUR_PUB_ID}&amp;app_id={YOUR_APP_ID}&amp;user_id={YOUR_UNIQUE_USER_ID}' style='height: 100vh; width: 100%; margin: 0; padding: 0; border: 0;'></iframe>"
+                               value="<iframe src='{{ env('APP_URL') }}/live-offers?api_key={YOUR_API_KEY}&amp;pub_id={YOUR_PUB_ID}&amp;app_id={YOUR_APP_ID}&amp;user_id={YOUR_UNIQUE_USER_ID}' style='height: 100vh; width: 100%; margin: 0; padding: 0; border: 0;'></iframe>"
                                readonly>
                     </div>
                 </div>

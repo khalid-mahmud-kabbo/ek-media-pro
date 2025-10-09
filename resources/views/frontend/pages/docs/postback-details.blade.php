@@ -1,19 +1,10 @@
 @extends('frontend.layout.docs')
-@section('title', isset($title) ? $title : 'Home')
-@section('description', isset($description) ? $description : '')
-@section('keywords', isset($keywords) ? $keywords : '')
+@section('title', 'Postback Documentation')
 
+
+@section('content')
 <div class="row">
                 <div class="col-md-12">
-                        <style>
-        .body-text {
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 30px;
-            font-weight: 500;
-            color: rgb(31, 85, 90);
-        }
-    </style>
 
     <div class="card body-text">
         <div class="card-header card-header-info card-header-text">

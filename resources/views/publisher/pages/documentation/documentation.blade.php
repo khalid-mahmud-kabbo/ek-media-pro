@@ -41,7 +41,7 @@
 
 
 
-                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                <a href="{{ route('documentation.all-offers-api') }}" target="_blank" class="link-box">
                     <div class="icon">
                         <i class="fa fa-link"></i>
                     </div>
@@ -52,7 +52,7 @@
                 </a>
 
 
-                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                <a href="{{ route('documentation.filtered-offers-api') }}" target="_blank" class="link-box">
                     <div class="icon">
                         <i class="fa fa-link"></i>
                     </div>
@@ -63,7 +63,7 @@
                 </a>
 
 
-                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                <a href="{{ route('documentation.user-based-offers-api') }}" target="_blank" class="link-box">
                     <div class="icon">
                         <i class="fa fa-link"></i>
                     </div>
@@ -74,7 +74,7 @@
                 </a>
 
 
-                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                <a href="{{ route('documentation.top-conversion-offers-api') }}" target="_blank" class="link-box">
                     <div class="icon">
                         <i class="fa fa-link"></i>
                     </div>
@@ -85,7 +85,7 @@
                 </a>
 
 
-                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                <a href="{{ route('documentation.iframe-integration') }}" target="_blank" class="link-box">
                     <div class="icon">
                         <i class="fa fa-link"></i>
                     </div>
@@ -96,7 +96,7 @@
                 </a>
 
 
-                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                <a href="{{ route('documentation.postback-integration') }}" target="_blank" class="link-box">
                     <div class="icon">
                         <i class="fa fa-link"></i>
                     </div>
