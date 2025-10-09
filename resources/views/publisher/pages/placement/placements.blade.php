@@ -34,7 +34,7 @@
 
                <div class="item-title">
                     <div class="col-xs-6">
-                        <a href="{{route('publisher.create-placement')}}" class="btn btn-md btn-blue">{{ __('Create Placement')}}</a>
+                        <a href="{{route('publisher.create-placement')}}" class="btn btn-md btn-blue">{{ __('Add Placement')}}</a>
                     </div>
                 </div>
 

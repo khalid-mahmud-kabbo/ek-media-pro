@@ -4,8 +4,6 @@
 @section('keywords', isset($keywords) ? $keywords : '')
 
 @section('content')
-
-    {{-- <div id="table-url" data-url="{{ route('admin.blog') }}"></div> --}}
     <div class="row">
         <div class="col-md-12">
             <div class="breadcrumb__content">
@@ -29,14 +27,101 @@
         <div class="col-md-12">
             <div class="customers__area bg-style mb-30">
 
-                <h1>Publisher Documentation</h1>
+                <h4 class="mb-20">Publisher Documentation</h4>
+                <p class="mb-30">{{__('You can find all the documentation links below and all necessary credentials in the individual App Details page from App Details menu.')}}</p>
+
+
+
+
+
+                 <div class="customers__area bg-style mb-30">
+
+                <h5 class="mb-20">Documentation Links</h5>
+
+
+
+
+                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                    <div class="icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="details">
+                        <h6>API Documentation = All Offers</h6>
+                        <p>All offers api for publishers <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </div>
+                </a>
+
+
+                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                    <div class="icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="details">
+                        <h6>API Documentation = Filtered Offers</h6>
+                        <p>Filtered offers api for publishers, with params <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </div>
+                </a>
+
+
+                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                    <div class="icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="details">
+                        <h6>API Documentation = User Based Surveys</h6>
+                        <p>All Surveys based on user data api for publishers <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </div>
+                </a>
+
+
+                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                    <div class="icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="details">
+                        <h6>API Documentation = Top Converting Offers</h6>
+                        <p>Top trending offers api for publishers <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </div>
+                </a>
+
+
+                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                    <div class="icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="details">
+                        <h6>Iframe Documentation</h6>
+                        <p>Iframe Integration document for publishers <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </div>
+                </a>
+
+
+                <a href="{{ route('publisher.documentation') }}" target="_blank" class="link-box">
+                    <div class="icon">
+                        <i class="fa fa-link"></i>
+                    </div>
+                    <div class="details">
+                        <h6>Postback Documentation</h6>
+                        <p>Documentation to implement Postbacks in Publishers <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </div>
+                </a>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
 
             </div>
         </div>
     </div>
-    <!--Row-->
-    {{-- @push('post_scripts')
-        <script src="{{asset('backend/js/admin/datatables/blog.js')}}"></script>
-    @endpush --}}
 @endsection
 

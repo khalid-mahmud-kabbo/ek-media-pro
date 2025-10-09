@@ -13,7 +13,7 @@
                         <h2 class="subtitle">
                             Integrate engaging and effortless rewarded surveys into your app or website now and tap into the future of monetization.
                         </h2>
-                        <a href=""><button class="main_btn">get started</button></a>
+                        <a href="{{ route('sign.up') }}"><button class="main_btn">get started</button></a>
                     </div>
                     <div class="home_img" data-aos="flip-left">
                         <img src="{{ asset('assets/images/landing-image.svg')}}" alt="image" />

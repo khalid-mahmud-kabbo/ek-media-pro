@@ -188,3 +188,61 @@ footer.sticky-footer {
     }
 }
 /* Home Varient Change CSS End */
+
+
+
+
+.link-box{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: 0.5 all ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.link-box:hover {
+    background-color: #000;
+    border-color: #fff;
+}
+
+
+.link-box:active{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: 0.5 all ease-in-out;
+    margin-bottom: 1rem;
+    background-color: #000;
+    border-color: #fff;
+}
+
+
+.link-box:focus{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: 0.5 all ease-in-out;
+    margin-bottom: 1rem;
+    background-color: #000;
+    border-color: #fff;
+}
+
+
+
+.details p{
+    margin-bottom: 0;
+    font-size: small;
+    font-weight: 300;
+}
