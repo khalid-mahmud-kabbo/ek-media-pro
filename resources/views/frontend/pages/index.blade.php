@@ -212,7 +212,7 @@
                         <p class="desc">
                             Explore cutting-edge tools and resources designed for developers to streamline your workflow and turn your creative ideas into reality
                         </p>
-                        <a target="_blank" href="https://docs.upwall.net/">
+                        <a target="_blank" href="{{ route('documentation.all-offers-api') }}">
                             <button class="card_btn">
                             documentation
                             <i class="fa-solid fa-angle-down"></i>
@@ -224,7 +224,7 @@
                         <p class="desc">
                             Amplify your brand, attract new users, and unlock your product's global potential! With access to millions of active users across thousands of apps and websites, you can effortlessly acquire new users for unmatched growth and visibility.
                         </p>
-                        <a href="/cdn-cgi/l/email-protection#bddcd9cbd8cfc9d4ced8cfcefdc8cdcadcd1d193d3d8c9">
+                        <a href="admin@ekprofithub.com">
                         <button class="card_btn">
                             launch campaign
                             <i class="fa-solid fa-angle-down"></i>
