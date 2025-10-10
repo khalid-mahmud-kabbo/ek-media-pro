@@ -29,6 +29,7 @@ class User extends Authenticatable
         'post_code',
         'account_type',
         'f2_status',
+        'f2_verification_token',
         'login_2fa_token',
         'password',
         'is_admin',

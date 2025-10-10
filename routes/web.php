@@ -13,7 +13,7 @@ Route::group(['middleware' => ['is_user']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('front');
 
 
- Route::group(['prefix' => 'auth/'], function () {
+ Route::group(['prefix' => 'authx/'], function () {
         Route::get('sign-in', [AuthController::class, 'SignIn'])->name('login');
         Route::post('sign-in', [AuthController::class, 'SignInPost'])->name('sign.in.post');
         Route::get('sign-up', [AuthController::class, 'SignUp'])->name('sign.up');
@@ -24,10 +24,10 @@ Route::group(['middleware' => ['is_user']], function () {
         Route::post('forget-password', [AuthController::class, 'ForgetPasswordPost'])->name('forget.password.post');
         Route::get('reset-password/{token}', [AuthController::class, 'ShowResetPasswordForm'])->name('reset.password.get');
         Route::post('reset-password', [AuthController::class, 'submitResetPasswordForm'])->name('reset.password.post');
-        Route::post('/toggle-2fa', [AuthController::class, 'toggle2FA'])->name('toggle.2fa');
-        Route::post('/verify-disable-2fa', [AuthController::class, 'verifyDisable2FA'])->name('verify.disable.2fa');
-        Route::get('/2fa-verify', [AuthController::class, 'show2FAVerify'])->name('login.2fa.verify');
-        Route::post('/2fa-verify', [AuthController::class, 'verify2FA'])->name('login.2fa.verify.post');
+        Route::post('toggle-2fa', [AuthController::class, 'toggle2FA'])->name('toggle.2fa');
+        Route::get('verify-2fa/{token}', [AuthController::class, 'verifyEnable2FA'])->name('verify.2fa');
+        Route::get('fa-verify', [AuthController::class, 'show2FAVerify'])->name('login.2fa.verify');
+        Route::post('2fa-verify', [AuthController::class, 'verify2FA'])->name('login.2fa.verify.post');
 
     });
 
@@ -45,12 +45,12 @@ Route::get('/live-offers', [IframeController::class, 'index'])->name('iframe');
 Route::get('/live-offers/filter', [IframeController::class, 'filter']);
 
  Route::group(['prefix' => 'documentation/'], function () {
-Route::get('/all-offers-api', [DocumentationController::class, 'allOffersApi'])->name('documentation.all-offers-api');
-Route::get('/filtered-offers-api', [DocumentationController::class, 'filteredOffersApi'])->name('documentation.filtered-offers-api');
-Route::get('/postback-intrigation', [DocumentationController::class, 'postbackDetails'])->name('documentation.postback-integration');
-Route::get('/iframe-intrigation', [DocumentationController::class, 'iframeDetails'])->name('documentation.iframe-integration');
-Route::get('/top-conversion-offers-api', [DocumentationController::class, 'topConversionOffersApi'])->name('documentation.top-conversion-offers-api');
-Route::get('/user-based-offers-api', [DocumentationController::class, 'userBasedOffers'])->name('documentation.user-based-offers-api');
+Route::get('all-offers-api', [DocumentationController::class, 'allOffersApi'])->name('documentation.all-offers-api');
+Route::get('filtered-offers-api', [DocumentationController::class, 'filteredOffersApi'])->name('documentation.filtered-offers-api');
+Route::get('postback-intrigation', [DocumentationController::class, 'postbackDetails'])->name('documentation.postback-integration');
+Route::get('iframe-intrigation', [DocumentationController::class, 'iframeDetails'])->name('documentation.iframe-integration');
+Route::get('top-conversion-offers-api', [DocumentationController::class, 'topConversionOffersApi'])->name('documentation.top-conversion-offers-api');
+Route::get('user-based-offers-api', [DocumentationController::class, 'userBasedOffers'])->name('documentation.user-based-offers-api');
 
 
 });

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Send2FACode;
+use App\Mail\Send2FAVerificationLink;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 
@@ -197,57 +198,51 @@ class AuthController extends Controller
     }
 
 
-    public function toggle2FA(Request $request)
+   public function toggle2FA(Request $request)
 {
-
     /** @var User $user */
-
     $user = Auth::user();
 
     if ($user->f2_status == 'disabled') {
-        $user->f2_status = 'enabled';
+        $token = Str::random(64);
+        $user->f2_verification_token = $token;
         $user->save();
 
-        return redirect()->back()->with('success', 'Two-Factor Authentication enabled.');
+        $verificationUrl = url("/authx/verify-2fa/{$token}");
+        Mail::to($user->email)->send(new Send2FAVerificationLink($verificationUrl));
+
+        return redirect()->back()->with('info', 'A verification link has been sent to your email to enable 2FA.');
     } else {
-        $token = rand(100000, 999999);
-        $user->disable_2fa_token = $token;
-        $user->save();
-
-        Mail::to($user->email)->send(new Send2FACode($token, 'Disable 2FA Verification'));
-
-        return redirect()->back()->with('info', 'A verification code has been sent to your email to disable 2FA.');
-    }
-    }
-
-
-    public function verifyDisable2FA(Request $request)
-{
-
-    $request->validate([
-        'code' => 'required|numeric',
-    ]);
-
-    /** @var User $user */
-
-    $user = Auth::user();
-
-    if ($user->disable_2fa_token == $request->code) {
         $user->f2_status = 'disabled';
-        $user->disable_2fa_token = null;
+        $user->f2_verification_token = null;
         $user->save();
 
         return redirect()->back()->with('success', 'Two-Factor Authentication disabled.');
-    } else {
-        return redirect()->back()->with('error', 'Invalid verification code.');
     }
 }
+
+
+public function verifyEnable2FA($token)
+{
+    $user = \App\Models\User::where('f2_verification_token', $token)->first();
+
+    if (!$user) {
+        return redirect('/')->with('error', 'Invalid or expired verification link.');
+    }
+
+    $user->f2_status = 'enabled';
+    $user->f2_verification_token = null;
+    $user->save();
+
+    return redirect()->route('publisher.account-settings')->with('success', 'Two-Factor Authentication successfully verified and enabled.');
+}
+
 
 
 
 public function show2FAVerify()
 {
-    return view('frontend.pages.auth.2fa-verify'); // create this blade
+    return view('frontend.pages.auth.2fa-verify');
 }
 
 public function verify2FA(Request $request)
@@ -265,10 +260,7 @@ public function verify2FA(Request $request)
     $user = User::find($userId);
 
     if ($user && $user->login_2fa_token == $request->code) {
-        // Login user
         Auth::login($user);
-
-        // Clear token and session
         $user->login_2fa_token = null;
         $user->save();
         Session::forget('2fa_user_id');

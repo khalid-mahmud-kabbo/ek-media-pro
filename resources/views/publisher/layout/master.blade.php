@@ -7,7 +7,6 @@
     <div class="main-content">
         @include('publisher.layout.includes.header')
         <div class="page-content-wrap">
-            <!-- Container Fluid-->
             <div class="page-content">
                 <div class="container-fluid">
                     @yield('content')
@@ -19,7 +18,6 @@
     </div>
     @include('publisher.layout.includes.logout_modal')
     @include('publisher.layout.includes.scripts')
-    @include('sweetalert::alert')
     <script>
         toastr.options = {
             "closeButton": false,

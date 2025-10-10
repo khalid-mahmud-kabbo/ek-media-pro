@@ -30,7 +30,9 @@
         <div class="col-md-12">
             <div class="customers__area bg-style mb-30">
 
-                <div class="the-payment-term-box">
+                <div class="the-payment-term-box justify-content-between">
+
+                    <div class="d-flex gap-3">
                     <div class="icon-of">
                         <i class="fa-solid fa-user-shield"></i>
                     </div>
@@ -38,7 +40,7 @@
                     <h6>Secure Your Account</h6>
                     <p>Two-factor authentication adds an extra layer of security to your account. To log in, in addition you'll need to provide a 6 digit code.</p>
                     </div>
-
+</div>
 
                     <div class="input__button">
                                                <form action="{{ route('toggle.2fa') }}" method="POST">
@@ -47,14 +49,6 @@
         {{ Auth::user()->f2_status == 'enabled' ? 'Disable 2FA' : 'Enable 2FA' }}
     </button>
 </form>
-
-@if(session('info'))
-    <form action="{{ route('verify.disable.2fa') }}" method="POST">
-        @csrf
-        <input type="text" name="code" placeholder="Enter email code">
-        <button type="submit" class="btn btn-red">Verify & Disable</button>
-    </form>
-@endif
 
                                             </div>
 
