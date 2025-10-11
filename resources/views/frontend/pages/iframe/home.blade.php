@@ -27,7 +27,7 @@
      </div>
         <div class="row" style="text-align: center; border-bottom: 2px solid #133684; padding: 5px; border-top: 2px solid #133684;">
           <div class="col-4" role="presentation" style=" text-align: center;">
-          <button style="width: 100%" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-blue">Short <img src="{{ asset('assets/images/filter.svg') }}" style="width: 20px"></button>
+          <button style="width: 100%" class="btn btn-blue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Short <img src="{{ asset('assets/images/filter.svg') }}" style="width: 20px"></button>
               <div class="dropdown-menu">
                 <a class="dropdown-item offerSort" href="javascript:void(0)" id="low"><i class="fa fa-sort-amount-up"></i> Low to High</a>
                 <hr>
@@ -35,8 +35,8 @@
               </div>
           </div>
           <div class="col-4" role="presentation" style=" text-align: center;">
-          <button style="width: 100%" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-blue">Search <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="#fff" d="M4 4a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2zm-1 8a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m0 7a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m7-5a5 5 0 1 1 9.172 2.757l1.535 1.536a1 1 0 0 1-1.414 1.414l-1.536-1.535A5 5 0 0 1 10 14m5-3a3 3 0 1 0 0 6a3 3 0 0 0 0-6"/></g></svg></button>
-              <div class="dropdown-menu border-info" style="width: 96%; text-align: center; padding: 2px; margin-top: -10px">
+          <button style="width: 100%" class="btn btn-blue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Search <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="#fff" d="M4 4a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2zm-1 8a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m0 7a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m7-5a5 5 0 1 1 9.172 2.757l1.535 1.536a1 1 0 0 1-1.414 1.414l-1.536-1.535A5 5 0 0 1 10 14m5-3a3 3 0 1 0 0 6a3 3 0 0 0 0-6"/></g></svg></button>
+              <div class="dropdown-menu border-info" style="width: 65%; text-align: center; padding: 0; margin-top: -10px">
                 <input type="search" placeholder="Search..." class="form-control" id="search-input" onkeyup="search()">
               </div>
           </div>

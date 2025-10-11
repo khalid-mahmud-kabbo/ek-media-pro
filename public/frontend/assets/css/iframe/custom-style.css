@@ -102,6 +102,21 @@
 }
 
 
+.dropdown-toggle::after {
+    content: "" !important;
+}
+
+
+.dropdown-menu.show {
+    background: #001831;
+}
+
+
+
+.dropdown-item{
+    color: #fff;
+}
+
 .btn-close{
     color: #fff;
 }

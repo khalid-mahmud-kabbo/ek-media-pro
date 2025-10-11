@@ -2195,23 +2195,6 @@ progress {
 	color: var(--ar-gray-600)
 }
 
-.form-control {
-	display: block;
-	width: 100%;
-	padding: .625rem 1rem;
-	font-size: calc(var(--ar-body-font-size) * 0.875);
-	font-weight: 400;
-	line-height: 1.4;
-	color: var(--ar-body-color);
-	background-color: #fff;
-	background-clip: padding-box;
-	border: var(--ar-border-width) solid #fff;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border-radius: 5px;
-	transition: border-color .15s ease-in-out
-}
 
 @media(prefers-reduced-motion: reduce) {
 	.form-control {
@@ -2228,9 +2211,6 @@ progress {
 }
 
 .form-control:focus {
-	color: var(--ar-body-color);
-	background-color: #fff;
-	border: var(--ar-border-width) solid #fff;
 	outline: 0;
 	box-shadow: unset
 }
