@@ -1,0 +1,106 @@
+  .btn-outline-primary,
+  .btn-primary {
+    --ar-btn-border-color: #3b96f7;
+    --ar-btn-disabled-border-color: #3b96f7
+  }
+
+  :root {
+    --ar-primary: #3b96f7;
+    --ar-primary-rgb: 37, 107, 222;
+    --ar-body-font-family: "Inter", sans-serif;
+    --ar-root-font-size: 1rem;
+    --ar-body-font-size: 1rem;
+    --ar-border-width: 1px;
+    --ar-border-radius: 0.6rem;
+    --ar-link-color: #3b96f7;
+    --ar-link-hover-color: #41a5ff
+  }
+
+  .btn-primary {
+    --ar-btn-bg: #3b96f7;
+    --ar-btn-hover-bg: #41a5ff;
+    --ar-btn-hover-border-color: #41a5ff;
+    --ar-btn-active-bg: #41a5ff;
+    --ar-btn-active-border-color: #41a5ff;
+    --ar-btn-disabled-bg: #3b96f7
+  }
+
+  .btn-outline-primary {
+    --ar-btn-color: #3b96f7;
+    --ar-btn-hover-bg: #3b96f7;
+    --ar-btn-hover-border-color: #3b96f7;
+    --ar-btn-active-bg: #3b96f7;
+    --ar-btn-active-border-color: #3b96f7;
+    --ar-btn-disabled-color: #3b96f7
+  }
+  td , th{
+    border: 1px solid #000;
+    padding: 5px;
+  }
+  th{
+     text-align: center;
+  }
+  .gradient_home:before {
+    background-image: url(https://revlum.com/dir/images/bg.svg);
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1
+  }
+
+  .round-button {
+    background-color: #fff;
+    margin: .3rem;
+    height: 2.5rem !important
+  }
+
+  .round-button.active {
+    background-color: #edf2fa
+  }
+
+  .round-button.inactive {
+    background-color: #fff
+  }
+
+  .main_Wallet_index {
+    background-color: #00000000 !important
+  }
+
+  .round-button.active {
+    background-color: transparent !important;
+  }
+
+  .round-button {
+    background-color: transparent !important;
+  }
+
+  .search-area {
+    max-width: 400px;
+    min-width: 250px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: -15px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+  .shadow-dark {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  *{
+      padding: 0px;
+      margin: 0px;
+  }
+  .main{
+      max-width: 700px;
+      min-width: none;
+      width: 100%;
+
+  }

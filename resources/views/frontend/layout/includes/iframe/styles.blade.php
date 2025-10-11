@@ -13,6 +13,8 @@
     <!-- All CSS files included here -->
     <link rel="stylesheet" href="{{ asset('admin/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}">
+    {{--
+    <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}">
     <link href="{{ asset('admin/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/vendor/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('backend/vendor/select2/css/select2.min.css') }}">
@@ -24,6 +26,16 @@
     <link rel="stylesheet" href="{{ asset('admin/css/summernote-lite.min.css') }}">
     <link href="{{ asset('backend/css/admin/extra.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/toastr.min.css') }}"> --}}
+
+
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe/theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe/wall.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe/loader.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe/custom-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/iframe/offerwall.css') }}">
+
+
     @stack('post_styles')
 </head>
