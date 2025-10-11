@@ -64,8 +64,10 @@
 
             @foreach ($offers as $offer)
 
+                <div class="offer-item target col-span-2 lg:col-span-4 sm:col-span-1 search-block campaign-block" data-name="{{ strtolower($offer->name) }}" data-payout="{{ $offer->payout }}">
 
-            <div class="target col-span-2 lg:col-span-4  sm:col-span-1 search-block campaign-block" id="parent">
+
+
 	    <div class="local-offers dark col-span-2 sm:col-span-3 mb-2 mt-2 shadow-dark">
 	        <div class="relative flex  flex-col justify-between overflow-hidden rounded-[5px] bg-white dark">
 	            <div class="flex h-[100px] space-x-[12px] p-[10px]">
@@ -154,7 +156,7 @@
                               </div>
                               <div class="flex items-center space-x-[5px] mt-1">
                               <span style="border-radius:0.4rem;" class="badge bg-faded-success text-success border border-success">New Users</span>
-                              <span style="border-radius:0.4rem;" class="badge bg-faded-info text-info border border-info" id="taskid">0000000</span>
+                              <span style="border-radius:0.4rem;" class="badge bg-faded-info text-info border border-info" id="taskid">{{ $offer->payout }}</span>
                             </div>
                             </div>
 
@@ -227,7 +229,7 @@
                           <br><br>
 
                           <center>
-                            <h4 class="">Scan Code on Other Device</h4>
+                            <h4 style="color:#576071">Scan Code on Other Device</h4>
                             <div id="qrcode"></div>
                           </center>
                           <hr>
@@ -296,6 +298,10 @@
             <div class="modal-body" style="padding: 0px 20px" id="completed-offers-data">
 
                 <div class="target col-span-2 lg:col-span-4  sm:col-span-1 search-block campaign-block" id="parent">
+
+
+
+
 			<div class=" dark col-span-2 sm:col-span-3 mb-2 mt-2 shadow-dark">
 				<div class="relative flex  flex-col justify-between overflow-hidden rounded-[5px] bg-white dark">
 					<div class="flex h-[100px] space-x-[12px] p-[10px]">
@@ -328,6 +334,5 @@
         </div>
         </div>
     </div>
-
 @endsection
 
