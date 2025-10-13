@@ -105,7 +105,7 @@
         <label>
             <img src="{{ asset('assets/images/coin.png') }}" style="width: 15px; margin-top: -5px">
         </label><br>
-        <span style="font-size: 12px">{{ $offer->payout }}</span><br>
+        <span style="font-size: 12px">{{ $offer->adjusted_payout ? $offer->adjusted_payout : $offer->payout }}</span><br>
         <span style="font-size: 10px; margin-right: 3px">UP-TO</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 384 512">
             <path fill="#f2f402"

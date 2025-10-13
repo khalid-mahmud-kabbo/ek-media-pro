@@ -34,12 +34,12 @@ class IframeController extends Controller
         return view('errors.404');
     }
 
-    // filter check
+    // Allowed filters
     $allowedFilters = ['all', 'android', 'ios', 'windows', 'web'];
     $filter = $request->query('filter', 'all');
 
     if (!in_array($filter, $allowedFilters)) {
-        $filter = 'all'; // fallback if invalid filter
+        $filter = 'all';
     }
 
     $offersQuery = Offers::latest();
@@ -48,29 +48,14 @@ class IframeController extends Controller
         $offersQuery->whereJsonContains('os', $filter);
     }
 
-    $offers = $offersQuery->get();
+    $offers = $offersQuery->get()->map(function ($offer) use ($placement) {
+        // multiply payout by payout_rate
+        $offer->adjusted_payout = round($offer->payout * $placement->payout_rate, 2);
+        return $offer;
+    });
 
-    return view('frontend.pages.iframe.home', compact('offers', 'filter'));
+    return view('frontend.pages.iframe.home', compact('offers', 'filter', 'placement'));
 }
-
-
-
-public function filter(Request $request)
-{
-    $filter = $request->query('filter', 'all');
-    $offersQuery = Offers::latest();
-
-    if ($filter !== 'all') {
-        $offersQuery->whereJsonContains('os', $filter);
-    }
-
-    $offers = $offersQuery->get();
-
-    // শুধু offers এর row render হবে
-    return view('frontend.pages.iframe.partials.offers', compact('offers'));
-}
-
-
 
 
 
