@@ -151,7 +151,7 @@
                               </div>
                               <div class="flex items-center space-x-[5px] mt-1">
                               <span style="border-radius:0.4rem;" class="badge bg-faded-success text-success border border-success">New Users</span>
-                              <span style="border-radius:0.4rem;" class="badge bg-faded-info text-info border border-info" id="taskid">{{ $offer->payout }}</span>
+                              <span style="border-radius:0.4rem;" class="badge bg-faded-info text-info border border-info" id="taskid">{{ $offer->adjusted_payout ? $offer->adjusted_payout : $offer->payout }}</span>
                             </div>
                             </div>
 
