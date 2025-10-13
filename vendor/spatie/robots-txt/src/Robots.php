@@ -2,13 +2,15 @@
 
 namespace Spatie\Robots;
 
+use InvalidArgumentException;
+
 class Robots
 {
-    protected RobotsTxt | null $robotsTxt;
+    protected ?RobotsTxt $robotsTxt;
 
     public function __construct(
-        protected string | null $userAgent = null,
-        RobotsTxt | string | null $source = null,
+        protected ?string $userAgent = null,
+        RobotsTxt|string|null $source = null,
     ) {
         if ($source instanceof RobotsTxt) {
             $this->robotsTxt = $source;
@@ -19,7 +21,7 @@ class Robots
         }
     }
 
-    public function withTxt(RobotsTxt | string $source): self
+    public function withTxt(RobotsTxt|string $source): self
     {
         $this->robotsTxt = $source instanceof RobotsTxt
                                 ? $source
@@ -28,26 +30,28 @@ class Robots
         return $this;
     }
 
-    public static function create(string $userAgent = null, string $source = null): self
+    public static function create(?string $userAgent = null, ?string $source = null): self
     {
         return new self($userAgent, $source);
     }
 
-    public function mayIndex(string $url, string $userAgent = null): bool
+    public function mayIndex(string $url, ?string $userAgent = null): bool
     {
         $userAgent = $userAgent ?? $this->userAgent;
 
         $robotsTxt = $this->robotsTxt ?? RobotsTxt::create($this->createRobotsUrl($url));
 
-        $content = @file_get_contents($url);
+        if (! $robotsTxt->allows($url, $userAgent)) {
+            return false;
+        }
+
+        $content = $robotsTxt->content;
 
         if ($content === false) {
             throw new InvalidArgumentException("Could not read url `{$url}`");
         }
 
-        return
-            $robotsTxt->allows($url, $userAgent)
-            && RobotsMeta::create($content)->mayIndex()
+        return RobotsMeta::create($content)->mayIndex()
             && RobotsHeaders::create($http_response_header ?? [])->mayIndex();
     }
 
