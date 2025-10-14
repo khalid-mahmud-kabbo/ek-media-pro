@@ -34,7 +34,6 @@ class IframeController extends Controller
         return view('errors.404');
     }
 
-    // Allowed filters
     $allowedFilters = ['all', 'android', 'ios', 'windows', 'web'];
     $filter = $request->query('filter', 'all');
 
@@ -49,7 +48,6 @@ class IframeController extends Controller
     }
 
     $offers = $offersQuery->get()->map(function ($offer) use ($placement) {
-        // multiply payout by payout_rate
         $offer->adjusted_payout = round($offer->payout * $placement->payout_rate, 2);
         return $offer;
     });

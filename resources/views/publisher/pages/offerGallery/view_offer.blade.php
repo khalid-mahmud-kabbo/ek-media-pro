@@ -42,18 +42,6 @@
                                     <h4>{{ $offer->name }}</h4>
                                     </div>
 
-                                    <div class="d-flex justify-content-between">
-
-                                        <div class="app-namer d-flex gap-2">
-                                            <div class="icon-boxer">
-                                               <i class="fa-solid fa-globe"></i>
-                                            </div>
-                                            <h6 class="mb-10">App:</h6>
-                                            <p>{{ ("EK Profithub") }}</p>
-                                        </div>
-
-                                    </div>
-
 </div>
 
 
