@@ -3,12 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\GeneralSettingsController;
-use App\Http\Controllers\Admin\SiteContent\HomePageController;
 use App\Http\Controllers\Admin\SiteContent\SocialLinkController;
 use App\Http\Controllers\Admin\SiteContent\FooterInformationController;
 use App\Http\Controllers\Admin\MenuController;
@@ -16,6 +13,7 @@ use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SitemapController;
+use App\Http\Controllers\Admin\OffersController;
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login')->middleware('guest');
 Route::post('/admin/login', [AuthController::class, 'LoginDashboard'])->name('login.post');
@@ -44,26 +42,25 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin', 'en.loca
         Route::get('/delete/{id}', [BlogController::class, 'blogDelete'])->name('blog.delete')->middleware(['permission:blog-delete', 'isDemo']);
     });
 
-    Route::group(['prefix' => 'category'], function () {
-        Route::get('', [CategoryController::class, 'category'])->name('category')->middleware(['permission:category-list|category-create|category-edit|category-delete']);
-        Route::get('/create', [CategoryController::class, 'categoryCreate'])->name('category.create')->middleware(['permission:category-create']);
-        Route::post('/create', [CategoryController::class, 'categoryStore'])->name('category.store')->middleware(['permission:category-create', 'isDemo']);
-        Route::get('/edit/{id}', [CategoryController::class, 'categoryEdit'])->name('category.edit')->middleware(['permission:category-edit']);
-        Route::post('/update', [CategoryController::class, 'categoryUpdate'])->name('category.update')->middleware(['permission:category-edit', 'isDemo']);
-        Route::get('/active/{id}', [CategoryController::class, 'categoryActive'])->name('category.active')->middleware(['permission:category-edit', 'isDemo']);
-        Route::get('/inactive/{d}', [CategoryController::class, 'categoryInactive'])->name('category.inactive')->middleware(['permission:category-edit', 'isDemo']);
-        Route::get('/delete/{id}', [CategoryController::class, 'categoryDelete'])->name('category.delete')->middleware(['permission:category-delete', 'isDemo']);
+
+
+    Route::group(['prefix' => 'offers'], function () {
+        Route::get('', [OffersController::class, 'index'])->name('offers.index');
+        Route::get('/create', [OffersController::class, 'create'])->name('offers.create');
+        Route::get('/edit/{id}', [OffersController::class, 'edit'])->name('offers.edit');
+        Route::get('/fetch-offers', [OffersController::class, 'fetchOffers'])->name('offers.fetch-offers');
+        Route::get('/offers-providers', [OffersController::class, 'offersProvider'])->name('offers.offers-providers');
     });
-    Route::group(['prefix' => 'brand'], function () {
-        Route::get('', [BrandController::class, 'brand'])->name('brand')->middleware(['permission:brand-list|brand-create|brand-edit|brand-delete']);
-        Route::get('/create', [BrandController::class, 'brandCreate'])->name('brand.create')->middleware(['permission:brand-create']);
-        Route::post('/create', [BrandController::class, 'brandStore'])->name('brand.store')->middleware(['permission:brand-create', 'isDemo']);
-        Route::get('/edit/{id}', [BrandController::class, 'brandEdit'])->name('brand.edit')->middleware(['permission:brand-edit']);
-        Route::post('/update', [BrandController::class, 'brandUpdate'])->name('brand.update')->middleware(['permission:brand-edit', 'isDemo']);
-        Route::get('/active/{id}', [BrandController::class, 'brandActive'])->name('brand.active')->middleware(['permission:brand-edit', 'isDemo']);
-        Route::get('/inactive/{d}', [BrandController::class, 'brandInactive'])->name('brand.inactive')->middleware(['permission:brand-edit', 'isDemo']);
-        Route::get('/delete/{id}', [BrandController::class, 'brandDelete'])->name('brand.delete')->middleware(['permission:brand-delete', 'isDemo']);
+
+
+    Route::group(['prefix' => 'publishers'], function () {
+        Route::get('', [OffersController::class, 'index'])->name('offers.index');
+        Route::get('/create', [OffersController::class, 'create'])->name('offers.create');
+        Route::get('/edit/{id}', [OffersController::class, 'edit'])->name('offers.edit');
+        Route::get('/fetch-offers', [OffersController::class, 'fetchOffers'])->name('offers.fetch-offers');
+        Route::get('/offers-providers', [OffersController::class, 'offersProvider'])->name('offers.offers-providers');
     });
+
 
 
 
@@ -74,11 +71,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin', 'en.loca
         Route::post('change-password', [AdminProfileController::class, 'changePassword'])->name('change_password')->middleware(['isDemo']);
     });
 
-    Route::group(['prefix' => 'site-content/home-page'], function () {
-        Route::get('', [HomePageController::class, 'homePage'])->name('home.page.site.content')->middleware(['permission:cms-list|cms-create|cms-edit|cms-delete']);
-        Route::get('/edit/{id}', [HomePageController::class, 'homePageEdit'])->name('home.page.site.content.edit')->middleware(['permission:cms-edit']);
-        Route::post('/update', [HomePageController::class, 'homePageUpdate'])->name('home.page.site.content.update')->middleware(['permission:cms-edit', 'isDemo']);
-    });
 
 
     Route::group(['prefix' => 'social-link'], function () {
