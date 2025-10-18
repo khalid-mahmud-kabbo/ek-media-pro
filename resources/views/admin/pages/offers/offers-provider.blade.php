@@ -1,4 +1,4 @@
-@extends('admin.master', ['menu' => 'offers', 'submenu' => 'offers_providers'])
+@extends('admin.layout.master', ['menu' => 'offers', 'submenu' => 'offers_providers'])
 @section('title', isset($title) ? $title : 'Offers Providers')
 @section('description', isset($description) ? $description : '')
 @section('keywords', isset($keywords) ? $keywords : '')

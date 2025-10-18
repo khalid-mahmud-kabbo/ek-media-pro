@@ -101,31 +101,7 @@ class UserController extends Controller
             ->with('success', 'User Updated successfully');
     }
 
-    public function customerList(Request $request)
-    {
-        if ($request->ajax()) {
-            $data = User::where('is_admin', INACTIVE);
-            return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('orders', function ($data) {
-                    return orderCountuser($data->id);
-                })
-                ->addColumn('action', function ($data) {
-                    $btn = '<div class="action__buttons">';
-                    if ($data->status == ACTIVE) {
-                        $btn = $btn . '<a href="' . route('admin.customer_status_change', ['inactive', encrypt($data->id)]) . '" class="btn-action" title="Active"><i class="fas fa-toggle-on"></i></a>';
-                    } else {
-                        $btn = $btn . '<a href="' . route('admin.customer_status_change', ['active', encrypt($data->id)]) . '" class="btn-action" title="Block"><i class="fas fa-toggle-off"></i></a>';
-                    }
-                    $btn = $btn . '</div>';
-                    return $btn;
-                })
-                ->rawColumns(['orders', 'action'])
-                ->make(true);
-        }
-        $data['title'] = __('All Customers');
-        return view('admin.pages.users.customer-list', $data);
-    }
+
 
     public function customerStatusChange($status, $user_id)
     {

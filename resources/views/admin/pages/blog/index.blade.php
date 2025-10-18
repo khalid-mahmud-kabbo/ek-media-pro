@@ -1,4 +1,4 @@
-@extends('admin.master', ['menu' => 'blog'])
+@extends('admin.layout.master', ['menu' => 'blog'])
 @section('title', isset($title) ? $title : '')
 @section('content')
 

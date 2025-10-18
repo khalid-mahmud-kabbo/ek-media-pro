@@ -16,7 +16,7 @@ class AdminProfileController extends Controller
     {
         $auth = Auth::user()->id;
         $user = User::where('id', $auth)->first();
-        return view('admin.admin_profile.index', compact('user'));
+        return view('admin.pages.admin_profile.index', compact('user'));
     }
 
     public function adminProfileUpdate(AdminProfileUpdateRequest $request)

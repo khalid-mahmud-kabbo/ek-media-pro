@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('admin.includes.head')
+@include('admin.layout.includes.head')
 
 <body>
-    @include('admin.includes.leftsidebar')
+    @include('admin.layout.includes.sidebar')
     <div class="main-content">
-        @include('admin.includes.header')
+        @include('admin.layout.includes.header')
         <div class="page-content-wrap">
             <!-- Container Fluid-->
             <div class="page-content">
@@ -13,12 +13,12 @@
                     @yield('content')
                 </div>
             </div>
-            @include('admin.includes.footer')
+            @include('admin.layout.includes.footer')
         </div>
 
     </div>
-    @include('admin.includes.logout_modal')
-    @include('admin.includes.script')
+    @include('admin.layout.includes.logout_modal')
+    @include('admin.layout.includes.script')
     @include('sweetalert::alert')
     <script>
         toastr.options = {

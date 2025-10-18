@@ -1,4 +1,4 @@
-@extends('admin.master', ['menu' => 'seo', 'submenu' => $seo->slug])
+@extends('admin.layout.master', ['menu' => 'seo', 'submenu' => $seo->slug])
 @section('title', isset($title) ? $title : '')
 @section('content')
     <div class="row">

@@ -14,6 +14,11 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\OffersController;
+use App\Http\Controllers\Admin\PublisherController;
+use App\Http\Controllers\Admin\AdvertiserController;
+use App\Http\Controllers\Admin\FinanceController;
+use App\Http\Controllers\Admin\ReportsController;
+use App\Http\Controllers\Admin\SupportController;
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login')->middleware('guest');
 Route::post('/admin/login', [AuthController::class, 'LoginDashboard'])->name('login.post');
@@ -54,12 +59,49 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin', 'en.loca
 
 
     Route::group(['prefix' => 'publishers'], function () {
-        Route::get('', [OffersController::class, 'index'])->name('offers.index');
-        Route::get('/create', [OffersController::class, 'create'])->name('offers.create');
-        Route::get('/edit/{id}', [OffersController::class, 'edit'])->name('offers.edit');
-        Route::get('/fetch-offers', [OffersController::class, 'fetchOffers'])->name('offers.fetch-offers');
-        Route::get('/offers-providers', [OffersController::class, 'offersProvider'])->name('offers.offers-providers');
+        Route::get('', [PublisherController::class, 'index'])->name('publisher.index');
+        Route::get('/create', [PublisherController::class, 'create'])->name('publisher.create');
+        Route::get('/edit/{id}', [PublisherController::class, 'edit'])->name('publisher.edit');
     });
+
+
+    Route::group(['prefix' => 'advertisers'], function () {
+        Route::get('', [AdvertiserController::class, 'index'])->name('advertiser.index');
+        Route::get('/create', [AdvertiserController::class, 'create'])->name('advertiser.create');
+        Route::get('/edit/{id}', [AdvertiserController::class, 'edit'])->name('advertiser.edit');
+    });
+
+
+
+
+
+
+    Route::group(['prefix' => 'finances'], function () {
+        Route::get('/withdrawals', [AdvertiserController::class, 'withdrawals'])->name('finances.withdrawals');
+        Route::get('/deposits', [AdvertiserController::class, 'deposits'])->name('finances.deposits');
+    });
+
+
+    Route::group(['prefix' => 'support'], function () {
+        Route::get('/live-chat', [SupportController::class, 'livechat'])->name('support.live-chat');
+        Route::get('/tickets', [SupportController::class, 'tickets'])->name('support.tickets');
+    });
+
+
+
+
+    Route::group(['prefix' => 'reports'], function () {
+        Route::get('/publisher-reports', [AdvertiserController::class, 'publisherReports'])->name('reports.publisher-reports');
+        Route::get('/advertiser-reports', [AdvertiserController::class, 'advertiserReports'])->name('reports.advertiser-reports');
+        Route::get('/offer-reports', [AdvertiserController::class, 'offerReports'])->name('reports.offer-reports');
+        Route::get('/deposit-reports', [AdvertiserController::class, 'depositsReports'])->name('reports.deposit-reports');
+        Route::get('/withdrawal-reports', [AdvertiserController::class, 'withdrawalsReports'])->name('reports.withdrawal-reports');
+        Route::get('/credit-reports', [AdvertiserController::class, 'creditsReports'])->name('reports.credit-reports');
+        Route::get('/chargeback-reports', [AdvertiserController::class, 'chargebackReports'])->name('reports.chargeback-reports');
+    });
+
+
+
 
 
 

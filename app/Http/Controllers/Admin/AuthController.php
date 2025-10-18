@@ -16,7 +16,7 @@ class AuthController extends Controller
     }
     public  function  login()
     {
-        return view('admin.auth.signin');
+        return view('admin.pages.auth.signin');
     }
     public  function LoginDashboard(Request $request)
     {

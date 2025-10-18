@@ -4,43 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
-class OffersController extends Controller
+class PublisherController extends Controller
 {
 
     public function index()
     {
-        $data['title'] = __('Offers');
-        return view('admin.pages.offers.index', $data);
+        $data['title'] = __('Publishers');
+        return view('admin.pages.publisher.index', $data);
     }
 
 
 
     public function create()
     {
-        $data['title'] = __('Create Offer');
-        return view('admin.pages.offers.create', $data);
+        $data['title'] = __('Create Publisher');
+        return view('admin.pages.publisher.create', $data);
     }
 
     public function edit()
     {
-        $data['title'] = __('Edit Offer');
-        return view('admin.pages.offers.edit', $data);
+        $data['title'] = __('Edit Publisher');
+        return view('admin.pages.publisher.edit', $data);
     }
-
-
-    public function fetchOffers()
-    {
-        $data['title'] = __('Fetch Offers');
-        return view('admin.pages.offers.fetch-offer', $data);
-    }
-
-    public function offersProvider()
-    {
-        $data['title'] = __('Offers Provider');
-        return view('admin.pages.offers.offers-provider', $data);
-    }
-
-
 
 
 
